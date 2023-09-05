@@ -19,6 +19,8 @@
 		D2326D0E2AA64D42009B35FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2326D0D2AA64D42009B35FD /* MainViewController.swift */; };
 		D2326D132AA64FA3009B35FD /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2326D112AA64FA3009B35FD /* MainTableViewCell.swift */; };
 		D2326D142AA64FA3009B35FD /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */; };
+		D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F83FF2AA7D74600D1F229 /* Main2TableViewCell.swift */; };
+		D26F84022AA7D74600D1F229 /* Main2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26F84002AA7D74600D1F229 /* Main2TableViewCell.xib */; };
 		D2AA2E382AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */; };
 		D2E6EA982AA77CB6002413FA /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */; };
 /* End PBXBuildFile section */
@@ -38,6 +40,8 @@
 		D2326D0D2AA64D42009B35FD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D2326D112AA64FA3009B35FD /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		D26F83FF2AA7D74600D1F229 /* Main2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main2TableViewCell.swift; sourceTree = "<group>"; };
+		D26F84002AA7D74600D1F229 /* Main2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main2TableViewCell.xib; sourceTree = "<group>"; };
 		D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,11 +110,21 @@
 			isa = PBXGroup;
 			children = (
 				D2326D112AA64FA3009B35FD /* MainTableViewCell.swift */,
-				D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */,
 				D22D927E2AA71BF2004EA4E2 /* CollectionViewCell.swift */,
-				D22D927F2AA71BF2004EA4E2 /* CollectionViewCell.xib */,
+				D26F83FF2AA7D74600D1F229 /* Main2TableViewCell.swift */,
+				D26F83FE2AA7D6C500D1F229 /* Xib */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		D26F83FE2AA7D6C500D1F229 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */,
+				D26F84002AA7D74600D1F229 /* Main2TableViewCell.xib */,
+				D22D927F2AA71BF2004EA4E2 /* CollectionViewCell.xib */,
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 		D2E6EA962AA7707D002413FA /* Fonts */ = {
@@ -189,6 +203,7 @@
 				D2AA2E382AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf in Resources */,
 				D22D92812AA71BF2004EA4E2 /* CollectionViewCell.xib in Resources */,
 				D2E6EA982AA77CB6002413FA /* SF-Pro-Display-Medium.otf in Resources */,
+				D26F84022AA7D74600D1F229 /* Main2TableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +217,7 @@
 				D2326CF12AA64342009B35FD /* AppDelegate.swift in Sources */,
 				D2326D0C2AA64514009B35FD /* NetworkManager.swift in Sources */,
 				D22D92802AA71BF2004EA4E2 /* CollectionViewCell.swift in Sources */,
+				D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */,
 				D2326CF32AA64342009B35FD /* SceneDelegate.swift in Sources */,
 				D2326D0E2AA64D42009B35FD /* MainViewController.swift in Sources */,
 				D2326D132AA64FA3009B35FD /* MainTableViewCell.swift in Sources */,
