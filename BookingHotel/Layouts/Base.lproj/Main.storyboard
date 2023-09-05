@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZxQ-hY-ZAQ">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Отель-->
+        <scene sceneID="AUm-YY-6Eb">
+            <objects>
+                <viewController id="fHX-j9-HwX" customClass="MainViewController" customModule="BookingHotel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o7g-Bo-yvZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eUr-eN-VNd">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="747"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsL-PW-dtK" userLabel="BottomViewWithButton">
+                                <rect key="frame" x="0.0" y="757" width="393" height="95"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="glh-SH-Jt0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DtI-7c-zoI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eUr-eN-VNd" firstAttribute="leading" secondItem="o7g-Bo-yvZ" secondAttribute="leading" id="BwJ-dl-QAs"/>
+                            <constraint firstAttribute="trailing" secondItem="eUr-eN-VNd" secondAttribute="trailing" id="RMV-a2-drh"/>
+                            <constraint firstItem="eUr-eN-VNd" firstAttribute="top" secondItem="o7g-Bo-yvZ" secondAttribute="top" id="UR3-hl-RuQ"/>
+                            <constraint firstItem="ZsL-PW-dtK" firstAttribute="leading" secondItem="o7g-Bo-yvZ" secondAttribute="leading" id="UdA-Vi-9zu"/>
+                            <constraint firstItem="ZsL-PW-dtK" firstAttribute="trailing" secondItem="o7g-Bo-yvZ" secondAttribute="trailing" id="brx-Uh-8xa"/>
+                            <constraint firstAttribute="bottom" secondItem="ZsL-PW-dtK" secondAttribute="bottom" id="d6N-eF-EeE"/>
+                            <constraint firstItem="ZsL-PW-dtK" firstAttribute="top" secondItem="eUr-eN-VNd" secondAttribute="bottom" constant="10" id="j6T-GB-1V3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Отель" id="2ub-kl-sTX"/>
+                    <connections>
+                        <outlet property="tableView" destination="eUr-eN-VNd" id="a4c-mg-aqB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tdJ-vf-bUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1351.9083969465648" y="-52.112676056338032"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="buh-aM-08u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZxQ-hY-ZAQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eJD-J2-fjd">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fHX-j9-HwX" kind="relationship" relationship="rootViewController" id="ljr-kH-Nqg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vy0-93-ZF6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="425.19083969465646" y="-52.112676056338032"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
