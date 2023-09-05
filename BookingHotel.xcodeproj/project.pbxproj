@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2215B6F2AA7856E00424CF7 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2215B6E2AA7856E00424CF7 /* SF-Pro-Display-Semibold.otf */; };
 		D22D92802AA71BF2004EA4E2 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D927E2AA71BF2004EA4E2 /* CollectionViewCell.swift */; };
 		D22D92812AA71BF2004EA4E2 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D22D927F2AA71BF2004EA4E2 /* CollectionViewCell.xib */; };
 		D2326CF12AA64342009B35FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2326CF02AA64342009B35FD /* AppDelegate.swift */; };
@@ -18,9 +19,12 @@
 		D2326D0E2AA64D42009B35FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2326D0D2AA64D42009B35FD /* MainViewController.swift */; };
 		D2326D132AA64FA3009B35FD /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2326D112AA64FA3009B35FD /* MainTableViewCell.swift */; };
 		D2326D142AA64FA3009B35FD /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */; };
+		D2AA2E382AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */; };
+		D2E6EA982AA77CB6002413FA /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2215B6E2AA7856E00424CF7 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		D22D927E2AA71BF2004EA4E2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		D22D927F2AA71BF2004EA4E2 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		D2326CED2AA64342009B35FD /* BookingHotel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookingHotel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +38,8 @@
 		D2326D0D2AA64D42009B35FD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D2326D112AA64FA3009B35FD /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 				D2326D082AA644AE009B35FD /* Layouts */,
 				D2326D092AA644CE009B35FD /* ViewControllers */,
 				D2326CF92AA64343009B35FD /* Assets.xcassets */,
+				D2E6EA962AA7707D002413FA /* Fonts */,
 				D2326CFE2AA64343009B35FD /* Info.plist */,
 			);
 			path = BookingHotel;
@@ -104,6 +111,16 @@
 				D22D927F2AA71BF2004EA4E2 /* CollectionViewCell.xib */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		D2E6EA962AA7707D002413FA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */,
+				D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */,
+				D2215B6E2AA7856E00424CF7 /* SF-Pro-Display-Semibold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,11 +181,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2215B6F2AA7856E00424CF7 /* SF-Pro-Display-Semibold.otf in Resources */,
 				D2326CFD2AA64343009B35FD /* LaunchScreen.storyboard in Resources */,
 				D2326CFA2AA64343009B35FD /* Assets.xcassets in Resources */,
 				D2326D142AA64FA3009B35FD /* MainTableViewCell.xib in Resources */,
 				D2326CF82AA64342009B35FD /* Main.storyboard in Resources */,
+				D2AA2E382AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf in Resources */,
 				D22D92812AA71BF2004EA4E2 /* CollectionViewCell.xib in Resources */,
+				D2E6EA982AA77CB6002413FA /* SF-Pro-Display-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +357,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -369,6 +390,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

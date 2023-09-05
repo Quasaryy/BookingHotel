@@ -9,6 +9,10 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    
+    @IBOutlet weak var ratingNumber: UILabel!
+    @IBOutlet weak var ratingText: UILabel!
+    @IBOutlet weak var stackViewWithStar: UIStackView!
     @IBOutlet weak var viewWithPagination: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -21,6 +25,11 @@ class MainTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
             
             collectionView.delegate = self
             collectionView.dataSource = self
+    
+            
+            stackViewWithStar.backgroundColor = UIColor(red: 255/255, green: 199/255, blue: 0/255, alpha: 0.2)
+            stackViewWithStar.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+            stackViewWithStar.isLayoutMarginsRelativeArrangement = true
             
             viewWithPagination.layer.cornerRadius = 5
             
@@ -45,7 +54,17 @@ class MainTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
                 layout.itemSize = CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
             }
             
+            collectionView.layer.cornerRadius = 15
+            
             collectionView.reloadData()
+            
+            self.backgroundColor = UIColor.clear // Задаем прозрачный фон для ячейки
+            self.contentView.backgroundColor = .white
+
+
+            
+            self.contentView.layer.cornerRadius = 15
+            self.contentView.layer.masksToBounds = true
         }
         
         // MARK: UICollectionView DataSource Methods
