@@ -11,7 +11,12 @@ class Main2TableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.backgroundColor = UIColor.clear // Задаем прозрачный фон для ячейки
+        self.contentView.backgroundColor = .white
+        
+        self.contentView.layer.cornerRadius = 15
+        self.contentView.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

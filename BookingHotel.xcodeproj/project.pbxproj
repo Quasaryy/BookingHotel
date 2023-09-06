@@ -21,6 +21,8 @@
 		D2326D142AA64FA3009B35FD /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */; };
 		D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F83FF2AA7D74600D1F229 /* Main2TableViewCell.swift */; };
 		D26F84022AA7D74600D1F229 /* Main2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26F84002AA7D74600D1F229 /* Main2TableViewCell.xib */; };
+		D26F84042AA7F19600D1F229 /* AboutHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F84032AA7F19600D1F229 /* AboutHotel.swift */; };
+		D26F84072AA8654C00D1F229 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F84062AA8654C00D1F229 /* Logger.swift */; };
 		D2AA2E382AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */; };
 		D2E6EA982AA77CB6002413FA /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */; };
 /* End PBXBuildFile section */
@@ -42,6 +44,8 @@
 		D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		D26F83FF2AA7D74600D1F229 /* Main2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main2TableViewCell.swift; sourceTree = "<group>"; };
 		D26F84002AA7D74600D1F229 /* Main2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main2TableViewCell.xib; sourceTree = "<group>"; };
+		D26F84032AA7F19600D1F229 /* AboutHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHotel.swift; sourceTree = "<group>"; };
+		D26F84062AA8654C00D1F229 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,12 +82,13 @@
 			children = (
 				D2326CF02AA64342009B35FD /* AppDelegate.swift */,
 				D2326CF22AA64342009B35FD /* SceneDelegate.swift */,
-				D2326D0B2AA64514009B35FD /* NetworkManager.swift */,
+				D26F84082AA8656B00D1F229 /* DataManagers */,
+				D26F84052AA7F19C00D1F229 /* Model */,
 				D2326D082AA644AE009B35FD /* Layouts */,
 				D2326D092AA644CE009B35FD /* ViewControllers */,
-				D2326CF92AA64343009B35FD /* Assets.xcassets */,
 				D2E6EA962AA7707D002413FA /* Fonts */,
 				D2326CFE2AA64343009B35FD /* Info.plist */,
+				D2326CF92AA64343009B35FD /* Assets.xcassets */,
 			);
 			path = BookingHotel;
 			sourceTree = "<group>";
@@ -110,8 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				D2326D112AA64FA3009B35FD /* MainTableViewCell.swift */,
-				D22D927E2AA71BF2004EA4E2 /* CollectionViewCell.swift */,
 				D26F83FF2AA7D74600D1F229 /* Main2TableViewCell.swift */,
+				D22D927E2AA71BF2004EA4E2 /* CollectionViewCell.swift */,
 				D26F83FE2AA7D6C500D1F229 /* Xib */,
 			);
 			path = CustomCells;
@@ -125,6 +130,23 @@
 				D22D927F2AA71BF2004EA4E2 /* CollectionViewCell.xib */,
 			);
 			path = Xib;
+			sourceTree = "<group>";
+		};
+		D26F84052AA7F19C00D1F229 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D26F84032AA7F19600D1F229 /* AboutHotel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D26F84082AA8656B00D1F229 /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				D2326D0B2AA64514009B35FD /* NetworkManager.swift */,
+				D26F84062AA8654C00D1F229 /* Logger.swift */,
+			);
+			path = DataManagers;
 			sourceTree = "<group>";
 		};
 		D2E6EA962AA7707D002413FA /* Fonts */ = {
@@ -216,7 +238,9 @@
 			files = (
 				D2326CF12AA64342009B35FD /* AppDelegate.swift in Sources */,
 				D2326D0C2AA64514009B35FD /* NetworkManager.swift in Sources */,
+				D26F84042AA7F19600D1F229 /* AboutHotel.swift in Sources */,
 				D22D92802AA71BF2004EA4E2 /* CollectionViewCell.swift in Sources */,
+				D26F84072AA8654C00D1F229 /* Logger.swift in Sources */,
 				D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */,
 				D2326CF32AA64342009B35FD /* SceneDelegate.swift in Sources */,
 				D2326D0E2AA64D42009B35FD /* MainViewController.swift in Sources */,

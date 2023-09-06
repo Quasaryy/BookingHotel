@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -16,8 +21,52 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="364" height="334"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Об отеле" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qN2-jx-TBy">
+                        <rect key="frame" x="16" y="16" width="92" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="Fqy-yv-gSu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUU-oz-2wC">
+                        <rect key="frame" x="16" y="58" width="58" height="29"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb1-Sd-DHx">
+                                <rect key="frame" x="10" y="5" width="38" height="19"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
+                                <color key="textColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="1LE-BM-dr1"/>
+                            <constraint firstItem="Jb1-Sd-DHx" firstAttribute="top" secondItem="UUU-oz-2wC" secondAttribute="top" constant="5" id="4U3-rx-t5y"/>
+                            <constraint firstAttribute="bottom" secondItem="Jb1-Sd-DHx" secondAttribute="bottom" constant="5" id="eOI-bo-jys"/>
+                            <constraint firstAttribute="trailing" secondItem="Jb1-Sd-DHx" secondAttribute="trailing" constant="10" id="tl4-T4-wTX"/>
+                            <constraint firstItem="Jb1-Sd-DHx" firstAttribute="leading" secondItem="UUU-oz-2wC" secondAttribute="leading" constant="10" id="zHM-KJ-Cqz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UUU-oz-2wC" firstAttribute="top" secondItem="qN2-jx-TBy" secondAttribute="bottom" constant="16" id="4q0-c8-UEM"/>
+                    <constraint firstItem="UUU-oz-2wC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Fml-0p-isQ"/>
+                    <constraint firstAttribute="height" constant="334" id="H1A-aK-XBc"/>
+                    <constraint firstItem="qN2-jx-TBy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Hwp-lT-0sU"/>
+                    <constraint firstItem="qN2-jx-TBy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="n8J-eV-YSV"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UUU-oz-2wC" secondAttribute="trailing" constant="16" id="tBL-DB-Mcc"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="H2p-sc-9uM" firstAttribute="trailing" secondItem="njF-e1-oar" secondAttribute="trailing" id="Ak6-Nm-6fq"/>
+                <constraint firstItem="H2p-sc-9uM" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" id="CjQ-TD-F9H"/>
+                <constraint firstItem="H2p-sc-9uM" firstAttribute="bottom" secondItem="njF-e1-oar" secondAttribute="bottom" id="Qke-E7-028"/>
+                <constraint firstItem="H2p-sc-9uM" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" id="wAI-n8-T33"/>
+            </constraints>
             <point key="canvasLocation" x="93.129770992366403" y="-9.1549295774647899"/>
         </tableViewCell>
     </objects>

@@ -9,6 +9,8 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    var dataModel = Hotel.shared
+    
     // MARK: - IB Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomViewWithButton: UIView!
@@ -33,7 +35,12 @@ class MainViewController: UIViewController {
         
         // Регистрируем xib
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainCell")
-        tableView.register(UINib(nibName: "Main2TableViewCell", bundle: nil), forCellReuseIdentifier: "Main2Cell")
+        tableView.register(UINib(nibName: "Main2TableViewCell", bundle: nil), forCellReuseIdentifier: "MainSecondCell")
+        
+        // Getting data from remote server for data model
+        NetworkManager.shared.getDataFromRemoteServer(tableView: tableView, from: self) { hotel in
+            self.dataModel = hotel
+        }
         
     }
     
@@ -72,18 +79,31 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             
             // Настройка кастомной ячейки
             mainCell.selectionStyle = .none
+            mainCell.ratingText.text = dataModel.ratingName
+            mainCell.ratingNumber.text = String(dataModel.rating)
+            mainCell.hotelName.text = dataModel.name
+            mainCell.hotelAdress.text = dataModel.adress
+            mainCell.priceFor.text = dataModel.priceForIt
+            mainCell.minimalPrice.text = formatMinimalPrice(dataModel.minimalPrice)
+            
+            // Устанавливаем картинки для слайдера
+            mainCell.imageUrls = dataModel.imageUrls
+            mainCell.pageControl.numberOfPages = mainCell.imageUrls.count // Обновляем количество страниц для pageControl
+                
+            mainCell.collectionView.reloadData() // Перезагружаем данные коллекции
+
             
             return mainCell
             
         } else {
             
             // Регистрируем ячейку и кастим как кастомную
-            let main2Cell = tableView.dequeueReusableCell(withIdentifier: "Main2Cell", for: indexPath) as! Main2TableViewCell
+            let mainSecondCell = tableView.dequeueReusableCell(withIdentifier: "MainSecondCell", for: indexPath) as! Main2TableViewCell
             
             // Настройка кастомной ячейки
-            main2Cell.selectionStyle = .none
+            mainSecondCell.selectionStyle = .none
             
-            return main2Cell
+            return mainSecondCell
         }
     }
     
@@ -130,5 +150,21 @@ extension MainViewController {
             scrollView.contentOffset.y = 0
         }
     }
+}
+
+extension MainViewController {
+    
+    func formatMinimalPrice(_ minimalPrice: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = " "
+        if let formattedNumber = formatter.string(from: NSNumber(value: minimalPrice)) {
+            return "от \(formattedNumber) ₽"
+        } else {
+            return "Цена не доступна"
+        }
+    }
+    
+    
 }
 
