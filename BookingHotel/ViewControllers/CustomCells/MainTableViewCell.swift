@@ -74,7 +74,7 @@ class MainTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
     
     
     @IBAction func hotelAdressButttonTapped(_ sender: UIButton) {
-        print("Кнопка адреса отеля была нажата, но ничего не происходит согласно тех заданию")
+        Logger.log("Кнопка адреса отеля была нажата, но ничего не происходит согласно тех заданию")  
     }
     
     
