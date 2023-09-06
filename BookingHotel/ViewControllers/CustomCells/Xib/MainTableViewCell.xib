@@ -57,20 +57,20 @@
                             <constraint firstItem="2vg-dw-dOY" firstAttribute="top" secondItem="C0b-Ki-Z3m" secondAttribute="top" constant="-3" id="e9V-1a-4Rb"/>
                         </constraints>
                     </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-aS-CZu">
-                        <rect key="frame" x="16" y="278" width="84.666666666666671" height="29"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-aS-CZu">
+                        <rect key="frame" x="16" y="278" width="86.666666666666671" height="29"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Xhj-VO-pdl">
                                 <rect key="frame" x="0.0" y="7" width="15" height="15"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLN-AZ-59H">
-                                <rect key="frame" x="17" y="5" width="10" height="19.333333333333332"/>
+                                <rect key="frame" x="18" y="5" width="10" height="19.333333333333332"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                                 <color key="textColor" red="1" green="0.6588235294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оценка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3K-YU-9ht">
-                                <rect key="frame" x="28.999999999999996" y="5" width="55.666666666666657" height="19.333333333333332"/>
+                                <rect key="frame" x="30.999999999999996" y="5" width="55.666666666666657" height="19.333333333333332"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                                 <color key="textColor" red="1" green="0.6588235294" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

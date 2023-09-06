@@ -34,16 +34,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b9-gF-7EP">
-                        <rect key="frame" x="16" y="138" width="332" height="76.666666666666686"/>
-                        <string key="text">Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!</string>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Описание отеля и его преимуществ" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b9-gF-7EP">
+                        <rect key="frame" x="16" y="138" width="332" height="19.333333333333343"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rc-Vf-7UN" userLabel="Button1">
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TDG-DT-wb0">
+                        <rect key="frame" x="16" y="58" width="332" height="68"/>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rc-Vf-7UN" userLabel="Button1">
                         <rect key="frame" x="16" y="58" width="67" height="30"/>
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -51,55 +54,50 @@
                             <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoG-lc-jaV" userLabel="Button2">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoG-lc-jaV" userLabel="Button2">
                         <rect key="frame" x="91" y="58" width="67" height="30"/>
-                        <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" red="0.50980392159999999" green="0.52941176469999995" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmH-ZU-d0X" userLabel="Button3">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmH-ZU-d0X" userLabel="Button3">
                         <rect key="frame" x="16" y="96" width="67" height="30"/>
-                        <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" red="0.50980392159999999" green="0.52941176469999995" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R09-2X-0gM" userLabel="Button4">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R09-2X-0gM" userLabel="Button4">
                         <rect key="frame" x="91" y="96" width="67" height="30"/>
-                        <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" red="0.50980392159999999" green="0.52941176469999995" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </state>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="8Rc-Vf-7UN" firstAttribute="top" secondItem="qN2-jx-TBy" secondAttribute="bottom" constant="16" id="Br6-et-f4t"/>
-                    <constraint firstItem="R09-2X-0gM" firstAttribute="leading" secondItem="KmH-ZU-d0X" secondAttribute="trailing" constant="8" id="Gae-zC-Vc3"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WoG-lc-jaV" secondAttribute="trailing" constant="16" id="HqV-UY-luE"/>
+                    <constraint firstItem="TDG-DT-wb0" firstAttribute="top" secondItem="qN2-jx-TBy" secondAttribute="bottom" constant="16" id="4Kk-8J-Wzp"/>
+                    <constraint firstItem="TDG-DT-wb0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5z4-LG-jes"/>
+                    <constraint firstAttribute="trailing" secondItem="TDG-DT-wb0" secondAttribute="trailing" constant="16" id="Cqr-eO-Seh"/>
                     <constraint firstItem="qN2-jx-TBy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Hwp-lT-0sU"/>
-                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="R09-2X-0gM" secondAttribute="trailing" constant="16" id="JT5-Wa-OsS"/>
                     <constraint firstAttribute="trailing" secondItem="4b9-gF-7EP" secondAttribute="trailing" constant="16" id="MZ4-hL-WzV"/>
-                    <constraint firstItem="4b9-gF-7EP" firstAttribute="top" secondItem="KmH-ZU-d0X" secondAttribute="bottom" constant="12" id="MkQ-pR-jb7"/>
-                    <constraint firstItem="4b9-gF-7EP" firstAttribute="top" secondItem="R09-2X-0gM" secondAttribute="bottom" constant="12" id="QFy-HD-Zri"/>
+                    <constraint firstItem="4b9-gF-7EP" firstAttribute="top" secondItem="TDG-DT-wb0" secondAttribute="bottom" constant="12" id="O5M-tx-bx5"/>
                     <constraint firstAttribute="height" constant="461" id="V2I-fW-X8B"/>
                     <constraint firstItem="4b9-gF-7EP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ZLG-8J-MPx"/>
-                    <constraint firstItem="R09-2X-0gM" firstAttribute="top" secondItem="WoG-lc-jaV" secondAttribute="bottom" constant="8" id="dLe-rg-gJN"/>
-                    <constraint firstItem="KmH-ZU-d0X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="geP-Wz-Ogt"/>
-                    <constraint firstItem="8Rc-Vf-7UN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kFW-Nn-99f"/>
                     <constraint firstItem="qN2-jx-TBy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="n8J-eV-YSV"/>
-                    <constraint firstItem="KmH-ZU-d0X" firstAttribute="top" secondItem="8Rc-Vf-7UN" secondAttribute="bottom" constant="8" id="sEn-Mt-N12"/>
-                    <constraint firstItem="WoG-lc-jaV" firstAttribute="top" secondItem="qN2-jx-TBy" secondAttribute="bottom" constant="16" id="wx3-tH-kWc"/>
-                    <constraint firstItem="WoG-lc-jaV" firstAttribute="leading" secondItem="8Rc-Vf-7UN" secondAttribute="trailing" constant="8" id="yb0-mS-P8d"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -109,6 +107,14 @@
                 <constraint firstItem="H2p-sc-9uM" firstAttribute="bottom" secondItem="njF-e1-oar" secondAttribute="bottom" id="Qke-E7-028"/>
                 <constraint firstItem="H2p-sc-9uM" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" id="wAI-n8-T33"/>
             </constraints>
+            <connections>
+                <outlet property="hotelDescription" destination="4b9-gF-7EP" id="GJ3-DA-yYb"/>
+                <outlet property="verticalStackView" destination="TDG-DT-wb0" id="Ymz-1s-X8D"/>
+                <outletCollection property="hotelAdvantagesButtons" destination="8Rc-Vf-7UN" collectionClass="NSMutableArray" id="Ijv-Nq-0cR"/>
+                <outletCollection property="hotelAdvantagesButtons" destination="WoG-lc-jaV" collectionClass="NSMutableArray" id="Pob-rg-vjH"/>
+                <outletCollection property="hotelAdvantagesButtons" destination="KmH-ZU-d0X" collectionClass="NSMutableArray" id="ud0-QR-cN6"/>
+                <outletCollection property="hotelAdvantagesButtons" destination="R09-2X-0gM" collectionClass="NSMutableArray" id="AXU-UO-ptL"/>
+            </connections>
             <point key="canvasLocation" x="93.129770992366403" y="35.563380281690144"/>
         </tableViewCell>
     </objects>

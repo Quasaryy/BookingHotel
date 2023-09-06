@@ -37,6 +37,7 @@ class MainTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
         stackViewWithStar.backgroundColor = UIColor(red: 255/255, green: 199/255, blue: 0/255, alpha: 0.2)
         stackViewWithStar.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         stackViewWithStar.isLayoutMarginsRelativeArrangement = true
+        stackViewWithStar.layer.cornerRadius = 5
         
         viewWithPagination.layer.cornerRadius = 5
         
@@ -74,7 +75,7 @@ class MainTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
     
     
     @IBAction func hotelAdressButttonTapped(_ sender: UIButton) {
-        Logger.log("Кнопка адреса отеля была нажата, но ничего не происходит согласно тех заданию")  
+        Logger.log("Кнопка адреса отеля была нажата, но ничего не происходит согласно тех заданию")
     }
     
     
