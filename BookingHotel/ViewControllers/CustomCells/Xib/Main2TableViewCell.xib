@@ -53,6 +53,9 @@
                         <state key="normal" title="Button">
                             <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="advantagesButtonsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tjc-d5-Q15"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoG-lc-jaV" userLabel="Button2">
                         <rect key="frame" x="91" y="58" width="67" height="30"/>
@@ -64,6 +67,9 @@
                         <state key="normal" title="Button">
                             <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="advantagesButtonsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DFv-Zh-wdy"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmH-ZU-d0X" userLabel="Button3">
                         <rect key="frame" x="16" y="96" width="67" height="30"/>
@@ -75,6 +81,9 @@
                         <state key="normal" title="Button">
                             <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="advantagesButtonsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PIh-AW-PD9"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R09-2X-0gM" userLabel="Button4">
                         <rect key="frame" x="91" y="96" width="67" height="30"/>
@@ -86,6 +95,9 @@
                         <state key="normal" title="Button">
                             <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="advantagesButtonsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6qW-pY-rFG"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

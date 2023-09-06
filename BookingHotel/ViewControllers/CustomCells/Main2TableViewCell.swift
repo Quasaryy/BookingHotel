@@ -34,6 +34,14 @@ class Main2TableViewCell: UITableViewCell {
         }
     }
     
+    @IBAction func advantagesButtonsTapped(_ sender: UIButton) {
+        if let buttonTitle = sender.currentTitle {
+            Logger.log("Кнопка с названием \"\(buttonTitle)\" была нажата, но ничего не произошло согласно тех заданию")
+        }
+    }
+    
+    
+    
     // Вспомогательная функция для измерения ширины текста
     private func textWidth(_ text: String, font: UIFont, height: CGFloat) -> CGFloat {
         return text.width(withConstrainedHeight: height, font: font)
