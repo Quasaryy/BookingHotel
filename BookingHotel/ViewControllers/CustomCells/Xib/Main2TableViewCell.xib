@@ -11,15 +11,18 @@
         <array key="SF-Pro-Display-Medium.otf">
             <string>SFProDisplay-Medium</string>
         </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="334" id="KGk-i7-Jjw" customClass="Main2TableViewCell" customModule="BookingHotel" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="364" height="334"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="461" id="KGk-i7-Jjw" customClass="Main2TableViewCell" customModule="BookingHotel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="364" height="461"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="364" height="334"/>
+                <rect key="frame" x="0.0" y="0.0" width="364" height="461"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Об отеле" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qN2-jx-TBy">
@@ -50,12 +53,22 @@
                             <constraint firstItem="Jb1-Sd-DHx" firstAttribute="leading" secondItem="UUU-oz-2wC" secondAttribute="leading" constant="10" id="zHM-KJ-Cqz"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b9-gF-7EP">
+                        <rect key="frame" x="16" y="99" width="332" height="76.666666666666686"/>
+                        <string key="text">Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!</string>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="UUU-oz-2wC" firstAttribute="top" secondItem="qN2-jx-TBy" secondAttribute="bottom" constant="16" id="4q0-c8-UEM"/>
                     <constraint firstItem="UUU-oz-2wC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Fml-0p-isQ"/>
-                    <constraint firstAttribute="height" constant="334" id="H1A-aK-XBc"/>
                     <constraint firstItem="qN2-jx-TBy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Hwp-lT-0sU"/>
+                    <constraint firstAttribute="trailing" secondItem="4b9-gF-7EP" secondAttribute="trailing" constant="16" id="MZ4-hL-WzV"/>
+                    <constraint firstAttribute="height" constant="461" id="V2I-fW-X8B"/>
+                    <constraint firstItem="4b9-gF-7EP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ZLG-8J-MPx"/>
+                    <constraint firstItem="4b9-gF-7EP" firstAttribute="top" secondItem="UUU-oz-2wC" secondAttribute="bottom" constant="12" id="ZcB-8q-6CS"/>
                     <constraint firstItem="qN2-jx-TBy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="n8J-eV-YSV"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UUU-oz-2wC" secondAttribute="trailing" constant="16" id="tBL-DB-Mcc"/>
                 </constraints>
@@ -67,7 +80,7 @@
                 <constraint firstItem="H2p-sc-9uM" firstAttribute="bottom" secondItem="njF-e1-oar" secondAttribute="bottom" id="Qke-E7-028"/>
                 <constraint firstItem="H2p-sc-9uM" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" id="wAI-n8-T33"/>
             </constraints>
-            <point key="canvasLocation" x="93.129770992366403" y="-9.1549295774647899"/>
+            <point key="canvasLocation" x="93.129770992366403" y="35.563380281690144"/>
         </tableViewCell>
     </objects>
 </document>

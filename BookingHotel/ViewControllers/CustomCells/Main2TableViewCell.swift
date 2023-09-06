@@ -8,7 +8,7 @@
 import UIKit
 
 class Main2TableViewCell: UITableViewCell {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -18,10 +18,10 @@ class Main2TableViewCell: UITableViewCell {
         self.contentView.layer.cornerRadius = 15
         self.contentView.layer.masksToBounds = true
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     

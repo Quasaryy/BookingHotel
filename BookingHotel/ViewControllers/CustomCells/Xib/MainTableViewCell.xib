@@ -81,16 +81,10 @@
                             <constraint firstAttribute="height" constant="29" id="dKb-8j-mwf"/>
                         </constraints>
                     </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Название Отеля" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hih-0j-9Ah">
-                        <rect key="frame" x="16" y="315" width="164.33333333333334" height="26.333333333333314"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название Отеля" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hih-0j-9Ah">
+                        <rect key="frame" x="16" y="315" width="164.33333333333334" height="45.666666666666686"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адрес отеля" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3Z-AT-dZH">
-                        <rect key="frame" x="16" y="349.33333333333331" width="80.666666666666671" height="36.333333333333314"/>
-                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
-                        <color key="textColor" red="0.050980392156862744" green="0.44705882352941173" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQ0-sw-JGp">
@@ -105,11 +99,24 @@
                         <color key="textColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1s-mU-vgF">
+                        <rect key="frame" x="16" y="368.66666666666669" width="408" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="76W-c7-VgU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="Адрес отеля">
+                            <color key="titleColor" red="0.050980392156862744" green="0.44705882352941173" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="hotelAdressButttonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ynJ-jk-w6H"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="HQ0-sw-JGp" secondAttribute="bottom" constant="16" id="2tm-1f-SYH"/>
                     <constraint firstItem="ikK-Ns-v1H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="3td-7S-7KM"/>
-                    <constraint firstItem="aY2-Cn-ADN" firstAttribute="top" secondItem="v3Z-AT-dZH" secondAttribute="bottom" constant="30" id="4Ij-ld-ezN"/>
                     <constraint firstItem="hih-0j-9Ah" firstAttribute="top" secondItem="Mkv-aS-CZu" secondAttribute="bottom" constant="8" id="AWr-Cp-eix"/>
                     <constraint firstItem="ikK-Ns-v1H" firstAttribute="bottom" secondItem="C0b-Ki-Z3m" secondAttribute="bottom" constant="8" id="BHH-KA-lQC"/>
                     <constraint firstItem="C0b-Ki-Z3m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="CtD-9y-fnt"/>
@@ -117,14 +124,15 @@
                     <constraint firstItem="ikK-Ns-v1H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IBN-I2-xL4"/>
                     <constraint firstAttribute="bottom" secondItem="aY2-Cn-ADN" secondAttribute="bottom" constant="19" id="Kn9-MM-f2o"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hih-0j-9Ah" secondAttribute="trailing" constant="16" id="MXW-qy-ca4"/>
-                    <constraint firstItem="v3Z-AT-dZH" firstAttribute="top" secondItem="hih-0j-9Ah" secondAttribute="bottom" constant="8" id="NWh-K1-zTb"/>
+                    <constraint firstItem="b1s-mU-vgF" firstAttribute="top" secondItem="hih-0j-9Ah" secondAttribute="bottom" constant="8" id="PG6-FD-C2G"/>
+                    <constraint firstItem="b1s-mU-vgF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="RNg-Iv-0g1"/>
+                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="b1s-mU-vgF" secondAttribute="trailing" constant="16" id="RRD-hb-QqG"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="C0b-Ki-Z3m" secondAttribute="trailing" constant="16" id="YQ4-Ty-OSe"/>
-                    <constraint firstItem="HQ0-sw-JGp" firstAttribute="top" secondItem="v3Z-AT-dZH" secondAttribute="bottom" constant="16" id="YbZ-Hh-ff6"/>
                     <constraint firstItem="C0b-Ki-Z3m" firstAttribute="centerX" secondItem="ikK-Ns-v1H" secondAttribute="centerX" id="Z8q-M9-VBf"/>
                     <constraint firstItem="HQ0-sw-JGp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hY4-aY-0JE"/>
                     <constraint firstAttribute="trailing" secondItem="ikK-Ns-v1H" secondAttribute="trailing" constant="16" id="kbK-Tf-f10"/>
-                    <constraint firstItem="v3Z-AT-dZH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ldG-Kx-8fJ"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="v3Z-AT-dZH" secondAttribute="trailing" constant="16" id="oE3-iN-oSR"/>
+                    <constraint firstItem="HQ0-sw-JGp" firstAttribute="top" secondItem="b1s-mU-vgF" secondAttribute="bottom" constant="16" id="ljt-WJ-uJA"/>
+                    <constraint firstItem="aY2-Cn-ADN" firstAttribute="top" secondItem="b1s-mU-vgF" secondAttribute="bottom" constant="30" id="m27-T1-WyA"/>
                     <constraint firstItem="aY2-Cn-ADN" firstAttribute="leading" secondItem="HQ0-sw-JGp" secondAttribute="trailing" constant="8" id="ojZ-0l-ITj"/>
                     <constraint firstItem="Mkv-aS-CZu" firstAttribute="top" secondItem="ikK-Ns-v1H" secondAttribute="bottom" constant="16" id="xvB-Pl-l2G"/>
                     <constraint firstItem="hih-0j-9Ah" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="y6m-fq-PZe"/>
@@ -133,7 +141,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="collectionView" destination="ikK-Ns-v1H" id="3KY-Sw-f33"/>
-                <outlet property="hotelAdress" destination="v3Z-AT-dZH" id="ZIe-qM-LdO"/>
+                <outlet property="hotelAdress" destination="b1s-mU-vgF" id="lJG-p0-iL5"/>
                 <outlet property="hotelName" destination="hih-0j-9Ah" id="DxF-Hg-oj1"/>
                 <outlet property="minimalPrice" destination="HQ0-sw-JGp" id="W2f-y1-4Hz"/>
                 <outlet property="pageControl" destination="2vg-dw-dOY" id="hpB-cM-O9Y"/>

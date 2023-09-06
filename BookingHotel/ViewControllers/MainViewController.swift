@@ -82,16 +82,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             mainCell.ratingText.text = dataModel.ratingName
             mainCell.ratingNumber.text = String(dataModel.rating)
             mainCell.hotelName.text = dataModel.name
-            mainCell.hotelAdress.text = dataModel.adress
+            mainCell.hotelAdress.setTitle(dataModel.adress, for: .normal)
             mainCell.priceFor.text = dataModel.priceForIt
             mainCell.minimalPrice.text = formatMinimalPrice(dataModel.minimalPrice)
             
             // Устанавливаем картинки для слайдера
             mainCell.imageUrls = dataModel.imageUrls
             mainCell.pageControl.numberOfPages = mainCell.imageUrls.count // Обновляем количество страниц для pageControl
-                
+            
             mainCell.collectionView.reloadData() // Перезагружаем данные коллекции
-
+            
             
             return mainCell
             
