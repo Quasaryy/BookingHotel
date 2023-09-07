@@ -50,6 +50,12 @@ class MainViewController: UIViewController {
         NetworkManager.shared.getDataFromRemoteServer(tableView: tableView, from: self) { hotel in
             self.dataModel = hotel
         }
+        
+        // Чтобы при "оттягивании" таблицы вниз, пользователь видел белый фон, а не фон таблицы.
+        let whiteView = UIView(frame: CGRect(x: 0, y: -300, width: tableView.bounds.width, height: 300))
+        whiteView.backgroundColor = .white
+        tableView.addSubview(whiteView)
+        
     }
     
     
@@ -83,6 +89,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             
             // Регистрируем ячейку и кастим как кастомную
             let mainCell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! MainTableViewCell
+            
             
             // Настройка кастомной ячейки
             mainCell.selectionStyle = .none
@@ -150,13 +157,6 @@ extension MainViewController {
         appearance.titleTextAttributes = [.foregroundColor: UIColor.black, .font: font]
     }
     
-    // Метод для ограничения прокрутки вверх
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y <= 0 {
-            scrollView.contentOffset.y = 0
-        }
-    }
-    
     // Функция для форматирования минимальной цены с добавлением разделителя тысяч
     func formatMinimalPrice(_ minimalPrice: Int) -> String {
         let formatter = NumberFormatter()
@@ -168,5 +168,6 @@ extension MainViewController {
             return "Цена не доступна"
         }
     }
+    
 }
 

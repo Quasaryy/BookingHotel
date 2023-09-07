@@ -15,6 +15,9 @@ class MainTableViewCell: UITableViewCell {
     // Массив URL строк для загрузки изображений
     var imageUrls: [String] = []
     
+    // Создаем новый объект CAShapeLayer, который будет служить маской для слоя.
+    let maskLayer = CAShapeLayer()
+    
     
     // MARK: - IB Outlets
     
@@ -68,8 +71,20 @@ class MainTableViewCell: UITableViewCell {
         // Настройка вида ячейки
         self.backgroundColor = UIColor.clear
         self.contentView.backgroundColor = .white
-        self.contentView.layer.cornerRadius = 15
-        self.contentView.layer.masksToBounds = true
+        
+        // Устанавливаем созданный CAShapeLayer как маску для текущего слоя.
+        self.layer.mask = maskLayer
+    }
+    
+    // MARK: - layoutSubviews
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        // Закругляем углы ячейки только снизу.
+        maskLayer.path = UIBezierPath(roundedRect: self.bounds,
+                                      byRoundingCorners: [.bottomLeft, .bottomRight],
+                                      cornerRadii: CGSize(width: 15, height: 15)).cgPath
     }
     
     
