@@ -10,18 +10,22 @@ import Foundation
 struct Logger {
     
     // MARK: - Properties
-    static var isLoggingEnabled = true // Flag to enable/disable logging
+    
+    // Флаг для включения/отключения логирования
+    static var isLoggingEnabled = true
     
 }
 
 // MARK: - Methods
+
 extension Logger {
     
     
-    // Method for logging response information
+    // Метод для логирования информации об ответе от сервера
     static func logResponse(_ response: URLResponse) {
         guard isLoggingEnabled else { return }
         
+        // Проверяем, является ли response экземпляром HTTPURLResponse, чтобы получить HTTP-статус код. В противном случае, просто логируем сам response
         if let httpResponse = response as? HTTPURLResponse {
             let statusCode = httpResponse.statusCode
             log("HTTP Status Code: \(statusCode)")
@@ -30,14 +34,14 @@ extension Logger {
         }
     }
     
-    // Method for logging URLSession error with description
+    // Метод для логирования ошибок URLSession с их описанием
     static func logErrorDescription(_ error: Error) {
         guard isLoggingEnabled else { return }
         
         print(error.localizedDescription)
     }
     
-    // General method for logging
+    // Общий метод для логирования сообщений
     static func log(_ message: String) {
         guard isLoggingEnabled else { return }
         

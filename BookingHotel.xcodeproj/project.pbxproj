@@ -23,6 +23,7 @@
 		D26F84022AA7D74600D1F229 /* Main2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26F84002AA7D74600D1F229 /* Main2TableViewCell.xib */; };
 		D26F84042AA7F19600D1F229 /* AboutHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F84032AA7F19600D1F229 /* AboutHotel.swift */; };
 		D26F84072AA8654C00D1F229 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F84062AA8654C00D1F229 /* Logger.swift */; };
+		D28746E12AA9CC30003CB32D /* NestedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28746E02AA9CC30003CB32D /* NestedTableViewController.swift */; };
 		D2AA2E382AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */; };
 		D2E6EA982AA77CB6002413FA /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */; };
 		D2F03C862AA8E72B00360AA3 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F03C852AA8E72B00360AA3 /* String+extension.swift */; };
@@ -47,6 +48,7 @@
 		D26F84002AA7D74600D1F229 /* Main2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main2TableViewCell.xib; sourceTree = "<group>"; };
 		D26F84032AA7F19600D1F229 /* AboutHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHotel.swift; sourceTree = "<group>"; };
 		D26F84062AA8654C00D1F229 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		D28746E02AA9CC30003CB32D /* NestedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTableViewController.swift; sourceTree = "<group>"; };
 		D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		D2F03C852AA8E72B00360AA3 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				D2326D0D2AA64D42009B35FD /* MainViewController.swift */,
+				D28746E02AA9CC30003CB32D /* NestedTableViewController.swift */,
 				D2326D0A2AA644DF009B35FD /* CustomCells */,
 			);
 			path = ViewControllers;
@@ -255,6 +258,7 @@
 				D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */,
 				D2F03C862AA8E72B00360AA3 /* String+extension.swift in Sources */,
 				D2326CF32AA64342009B35FD /* SceneDelegate.swift in Sources */,
+				D28746E12AA9CC30003CB32D /* NestedTableViewController.swift in Sources */,
 				D2326D0E2AA64D42009B35FD /* MainViewController.swift in Sources */,
 				D2326D132AA64FA3009B35FD /* MainTableViewCell.swift in Sources */,
 			);

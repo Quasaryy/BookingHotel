@@ -18,7 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="461" id="KGk-i7-Jjw" customClass="Main2TableViewCell" customModule="BookingHotel" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="479" id="KGk-i7-Jjw" customClass="Main2TableViewCell" customModule="BookingHotel" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="364" height="461"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -27,21 +27,18 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Об отеле" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qN2-jx-TBy">
                         <rect key="frame" x="16" y="16" width="92" height="26"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="26" id="Fqy-yv-gSu"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Описание отеля и его преимуществ" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b9-gF-7EP">
-                        <rect key="frame" x="16" y="138" width="332" height="19.333333333333343"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание отеля и его преимуществ" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b9-gF-7EP">
+                        <rect key="frame" x="16" y="209.66666666666666" width="332" height="19.333333333333343"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TDG-DT-wb0">
-                        <rect key="frame" x="16" y="58" width="332" height="68"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TDG-DT-wb0">
+                        <rect key="frame" x="16" y="58" width="332" height="139.66666666666666"/>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rc-Vf-7UN" userLabel="Button1">
                         <rect key="frame" x="16" y="58" width="67" height="30"/>
@@ -99,27 +96,32 @@
                             <action selector="advantagesButtonsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6qW-pY-rFG"/>
                         </connections>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drh-IV-Hak">
+                        <rect key="frame" x="0.0" y="245" width="364" height="200"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="Mbf-8p-G5X"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="drh-IV-Hak" secondAttribute="trailing" id="2Y6-l3-gHH"/>
                     <constraint firstItem="TDG-DT-wb0" firstAttribute="top" secondItem="qN2-jx-TBy" secondAttribute="bottom" constant="16" id="4Kk-8J-Wzp"/>
                     <constraint firstItem="TDG-DT-wb0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5z4-LG-jes"/>
                     <constraint firstAttribute="trailing" secondItem="TDG-DT-wb0" secondAttribute="trailing" constant="16" id="Cqr-eO-Seh"/>
                     <constraint firstItem="qN2-jx-TBy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Hwp-lT-0sU"/>
+                    <constraint firstItem="drh-IV-Hak" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="M57-sa-Sco"/>
                     <constraint firstAttribute="trailing" secondItem="4b9-gF-7EP" secondAttribute="trailing" constant="16" id="MZ4-hL-WzV"/>
                     <constraint firstItem="4b9-gF-7EP" firstAttribute="top" secondItem="TDG-DT-wb0" secondAttribute="bottom" constant="12" id="O5M-tx-bx5"/>
-                    <constraint firstAttribute="height" constant="461" id="V2I-fW-X8B"/>
                     <constraint firstItem="4b9-gF-7EP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ZLG-8J-MPx"/>
+                    <constraint firstItem="drh-IV-Hak" firstAttribute="top" secondItem="4b9-gF-7EP" secondAttribute="bottom" constant="16" id="gg1-9M-P8k"/>
                     <constraint firstItem="qN2-jx-TBy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="n8J-eV-YSV"/>
+                    <constraint firstAttribute="bottom" secondItem="drh-IV-Hak" secondAttribute="bottom" constant="16" id="qhb-Tz-pAm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <constraints>
-                <constraint firstItem="H2p-sc-9uM" firstAttribute="trailing" secondItem="njF-e1-oar" secondAttribute="trailing" id="Ak6-Nm-6fq"/>
-                <constraint firstItem="H2p-sc-9uM" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" id="CjQ-TD-F9H"/>
-                <constraint firstItem="H2p-sc-9uM" firstAttribute="bottom" secondItem="njF-e1-oar" secondAttribute="bottom" id="Qke-E7-028"/>
-                <constraint firstItem="H2p-sc-9uM" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" id="wAI-n8-T33"/>
-            </constraints>
             <connections>
+                <outlet property="containerView" destination="drh-IV-Hak" id="9se-0z-z6h"/>
                 <outlet property="hotelDescription" destination="4b9-gF-7EP" id="GJ3-DA-yYb"/>
                 <outlet property="verticalStackView" destination="TDG-DT-wb0" id="Ymz-1s-X8D"/>
                 <outletCollection property="hotelAdvantagesButtons" destination="8Rc-Vf-7UN" collectionClass="NSMutableArray" id="Ijv-Nq-0cR"/>

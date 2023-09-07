@@ -9,11 +9,14 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
+    // MARK: - IB Outlets
+    
+    // Outlet для UIImageView, который будет отображать изображение в ячейке
     @IBOutlet weak var imageView: UIImageView!
     
+    // MARK: - awakeFromNib
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
 }

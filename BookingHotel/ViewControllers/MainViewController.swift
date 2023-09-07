@@ -9,39 +9,47 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    // Синглтон модели данных для хранения информации об отеле, хотя для структуры синглтон не нужен но так красивее :)
     var dataModel = Hotel.shared
     
     // MARK: - IB Outlets
+    
+    // Связывание элементов интерфейса с переменными
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomViewWithButton: UIView!
     @IBOutlet weak var blueButton: UIButton!
     
     // MARK: - ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Добавляем делагаты для таблицы
+        // Установка делегатов для управления поведением таблицы
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Настройка внешнего вида таблицы
         tableView.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
         
-        
-        
+        // Настройка внешнего вида кнопки
         blueButton.layer.cornerRadius = 15
+        
+        // Настройка границ нижнего вида
         configureBordersForBottomView()
         
+        // Настройка навигационной панели
         setupNavigationBar(for: self)
         
-        
-        // Регистрируем xib
+        // Регистрация XIB для ячеек таблицы
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainCell")
         tableView.register(UINib(nibName: "Main2TableViewCell", bundle: nil), forCellReuseIdentifier: "MainSecondCell")
         
-        // Getting data from remote server for data model
+        // Запрос данных с удаленного сервера для модели данных
         NetworkManager.shared.getDataFromRemoteServer(tableView: tableView, from: self) { hotel in
             self.dataModel = hotel
         }
-        
     }
     
     
@@ -57,10 +65,9 @@ class MainViewController: UIViewController {
     
 }
 
-// MARK: - Methods
+// MARK: - Table View
+
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    // MARK: - Table View
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -89,9 +96,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             // Устанавливаем картинки для слайдера
             mainCell.imageUrls = dataModel.imageUrls
             mainCell.pageControl.numberOfPages = mainCell.imageUrls.count // Обновляем количество страниц для pageControl
-            
             mainCell.collectionView.reloadData() // Перезагружаем данные коллекции
-            
             
             return mainCell
             
@@ -123,18 +128,18 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension MainViewController {
-    
-    func configureBordersForBottomView() {
-        
-        bottomViewWithButton.layer.borderWidth = 1
-        bottomViewWithButton.layer.borderColor = UIColor(red: 232/255, green: 233/255, blue: 236/255, alpha: 1).cgColor
-    }
-}
+// MARK: - Methods
 
 extension MainViewController {
     
+    func configureBordersForBottomView() {
+        // Настройка границ для bottomView
+        bottomViewWithButton.layer.borderWidth = 1
+        bottomViewWithButton.layer.borderColor = UIColor(red: 232/255, green: 233/255, blue: 236/255, alpha: 1).cgColor
+    }
+    
     func setupNavigationBar(for viewController: UIViewController) {
+        // Настройка внешнего вида навигационной панели
         let appearance = UINavigationBarAppearance()
         appearance.shadowColor = .clear
         appearance.backgroundColor = .white
@@ -144,19 +149,15 @@ extension MainViewController {
         guard let font = UIFont(name: "SFProDisplay-Medium", size: 18) else { return }
         appearance.titleTextAttributes = [.foregroundColor: UIColor.black, .font: font]
     }
-}
-
-extension MainViewController {
     
+    // Метод для ограничения прокрутки вверх
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y <= 0 {
             scrollView.contentOffset.y = 0
         }
     }
-}
-
-extension MainViewController {
     
+    // Функция для форматирования минимальной цены с добавлением разделителя тысяч
     func formatMinimalPrice(_ minimalPrice: Int) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -167,7 +168,5 @@ extension MainViewController {
             return "Цена не доступна"
         }
     }
-    
-    
 }
 

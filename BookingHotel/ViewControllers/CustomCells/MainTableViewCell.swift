@@ -7,12 +7,18 @@
 
 import UIKit
 
-class MainTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+// Основной класс для представления ячейки в таблице
+class MainTableViewCell: UITableViewCell {
     
-    // Массив изображений
+    // MARK: - Properties
+    
+    // Массив URL строк для загрузки изображений
     var imageUrls: [String] = []
     
     
+    // MARK: - IB Outlets
+    
+    // Аутлеты для различных UI элементов
     @IBOutlet weak var hotelAdress: UIButton!
     @IBOutlet weak var priceFor: UILabel!
     @IBOutlet weak var minimalPrice: UILabel!
@@ -25,68 +31,73 @@ class MainTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
     @IBOutlet weak var collectionView: UICollectionView!
     
     
+    // MARK: - awakeFromNib
+    
+    // Метод вызывается после загрузки вью из XIB/Storyboard
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        hotelName.numberOfLines = 0
-        hotelName.lineBreakMode = .byWordWrapping
-        
+        // Установка делегата и источника данных для collectionView
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        // Настройка вида стек вью с оценкой отеля
         stackViewWithStar.backgroundColor = UIColor(red: 255/255, green: 199/255, blue: 0/255, alpha: 0.2)
         stackViewWithStar.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         stackViewWithStar.isLayoutMarginsRelativeArrangement = true
         stackViewWithStar.layer.cornerRadius = 5
         
+        // Настройка вида для пагинации
         viewWithPagination.layer.cornerRadius = 5
         
-        collectionView.isPagingEnabled = true
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        // Настройки для pageControl
+        // Настройка pageControl
         pageControl.numberOfPages = imageUrls.count
-        pageControl.currentPage = 0
-        pageControl.pageIndicatorTintColor = UIColor.lightGray
-        pageControl.currentPageIndicatorTintColor = UIColor.black
-        
-        
         pageControl.addTarget(self, action: #selector(changePage(sender:)), for: .valueChanged)
         
+        // Регистрация XIB для collectionView
         let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "СollectionViewMainCell")
         
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-            layout.itemSize = CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
-        }
+        // Скрытие горизонтального индикатора прокрутки
+        collectionView.showsHorizontalScrollIndicator = false
         
+        // Округление углов
         collectionView.layer.cornerRadius = 15
         
-        collectionView.reloadData()
-        
-        self.backgroundColor = UIColor.clear // Задаем прозрачный фон для ячейки
+        // Настройка вида ячейки
+        self.backgroundColor = UIColor.clear
         self.contentView.backgroundColor = .white
-        
         self.contentView.layer.cornerRadius = 15
         self.contentView.layer.masksToBounds = true
     }
     
     
-    @IBAction func hotelAdressButttonTapped(_ sender: UIButton) {
-        Logger.log("Кнопка адреса отеля была нажата, но ничего не происходит согласно тех заданию")
-    }
+    // MARK: - IB Actions
     
+    // Метод, вызываемый при нажатии на кнопку адреса отеля
+    @IBAction func hotelAdressButttonTapped(_ sender: UIButton) {
+        Logger.log("Кнопка \"Адреса отеля\" была нажата, но ничего не происходит согласно тех заданию")
+    }
+}
+
+// MARK:  - UICollectionView
+
+// Расширение для поддержки протоколов UICollectionView
+extension MainTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: UICollectionView DataSource Methods
+    
+    // Возвращение количества элементов в секции
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageUrls.count
     }
     
+    // Настройка ячейки коллекции
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "СollectionViewMainCell", for: indexPath) as! CollectionViewCell
         
+        // Загрузка и установка изображения из URL
         let urlStr = imageUrls[indexPath.row]
         if let url = URL(string: urlStr) {
             URLSession.shared.dataTask(with: url) { data, response, error in
@@ -102,21 +113,28 @@ class MainTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollecti
     }
     
     // MARK: UICollectionViewDelegateFlowLayout Methods
+    
+    // Определение размера элемента
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
+    // Метод для изменения текущей страницы при нажатии на pageControl
     @objc func changePage(sender: UIPageControl) {
         let x = CGFloat(sender.currentPage) * collectionView.frame.size.width
         collectionView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
     }
 }
 
-// MARK: UIScrollViewDelegate methods
+// MARK: - UIScrollViewDelegate methods
+
 extension MainTableViewCell {
     
+    // Метод вызывается при окончании действия декелерации, чтобы индикатор pageControl соответствовал текущей отображаемой странице в collectionView
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        // Получаем ширину одной страницы (или ячейки) в collectionView
         let pageWidth = collectionView.frame.size.width
+        // Вычисляем текущую страницу на основе горизонтального смещения collectionView делённое на ширину страницы.
         pageControl.currentPage = Int(collectionView.contentOffset.x / pageWidth)
     }
 }
