@@ -54,7 +54,7 @@ class MainViewController: UIViewController {
             self.dataModel = hotel
         }
         
-        // Чтобы при оттягивании таблицы вниз, пользователь видел белый фон, а не фон таблицы.
+        // Чтобы при оттягивании таблицы вниз, пользователь видел белый фон, а не фон таблицы
         whiteView.frame = CGRect(x: 0, y: -300, width: tableView.bounds.width, height: 300)
         whiteView.backgroundColor = .white
         tableView.addSubview(whiteView)
@@ -64,7 +64,7 @@ class MainViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        // Обновляем ширину whiteView, чтобы она соответствовала ширине tableView
+        // Обновляем ширину whiteView, чтобы она соответствовала ширине tableView, чтобы при оттягивании таблици вниз на больших экранах не появлялась серая полоса справа
         whiteView.frame.size.width = tableView.bounds.width
     }
     
