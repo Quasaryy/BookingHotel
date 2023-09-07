@@ -14,6 +14,9 @@ class MainViewController: UIViewController {
     // Синглтон модели данных для хранения информации об отеле, хотя для структуры синглтон не нужен но так красивее :)
     var dataModel = Hotel.shared
     
+    // Для последующего использования для белого фона под таблицей при её оттягивании вниз
+    let whiteView = UIView()
+    
     // MARK: - IB Outlets
     
     // Связывание элементов интерфейса с переменными
@@ -51,11 +54,18 @@ class MainViewController: UIViewController {
             self.dataModel = hotel
         }
         
-        // Чтобы при "оттягивании" таблицы вниз, пользователь видел белый фон, а не фон таблицы.
-        let whiteView = UIView(frame: CGRect(x: 0, y: -300, width: tableView.bounds.width, height: 300))
+        // Чтобы при оттягивании таблицы вниз, пользователь видел белый фон, а не фон таблицы.
+        whiteView.frame = CGRect(x: 0, y: -300, width: tableView.bounds.width, height: 300)
         whiteView.backgroundColor = .white
         tableView.addSubview(whiteView)
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // Обновляем ширину whiteView, чтобы она соответствовала ширине tableView
+        whiteView.frame.size.width = tableView.bounds.width
     }
     
     
