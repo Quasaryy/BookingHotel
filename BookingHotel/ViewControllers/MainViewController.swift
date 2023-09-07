@@ -124,8 +124,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             
             // Настройка кастомной ячейки
             mainSecondCell.selectionStyle = .none
-            
-            mainSecondCell.configButtonTitles(with: dataModel)
+            mainSecondCell.configLabelsWithData(with: dataModel)
             mainSecondCell.hotelDescription.text = dataModel.aboutTheHotel.description
             
             return mainSecondCell

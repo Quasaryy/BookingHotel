@@ -40,62 +40,6 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TDG-DT-wb0">
                         <rect key="frame" x="16" y="58" width="332" height="139.66666666666666"/>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rc-Vf-7UN" userLabel="Button1">
-                        <rect key="frame" x="16" y="58" width="67" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
-                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="Button">
-                            <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                        </state>
-                        <connections>
-                            <action selector="advantagesButtonsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tjc-d5-Q15"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoG-lc-jaV" userLabel="Button2">
-                        <rect key="frame" x="91" y="58" width="67" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
-                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="Button">
-                            <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                        </state>
-                        <connections>
-                            <action selector="advantagesButtonsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DFv-Zh-wdy"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmH-ZU-d0X" userLabel="Button3">
-                        <rect key="frame" x="16" y="96" width="67" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
-                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="Button">
-                            <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                        </state>
-                        <connections>
-                            <action selector="advantagesButtonsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PIh-AW-PD9"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R09-2X-0gM" userLabel="Button4">
-                        <rect key="frame" x="91" y="96" width="67" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
-                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="Button">
-                            <color key="titleColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                        </state>
-                        <connections>
-                            <action selector="advantagesButtonsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6qW-pY-rFG"/>
-                        </connections>
-                    </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drh-IV-Hak">
                         <rect key="frame" x="0.0" y="245" width="364" height="200"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -122,12 +66,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="containerView" destination="drh-IV-Hak" id="9se-0z-z6h"/>
-                <outlet property="hotelDescription" destination="4b9-gF-7EP" id="GJ3-DA-yYb"/>
+                <outlet property="hotelDescription" destination="4b9-gF-7EP" id="ESu-hA-NJ8"/>
                 <outlet property="verticalStackView" destination="TDG-DT-wb0" id="Ymz-1s-X8D"/>
-                <outletCollection property="hotelAdvantagesButtons" destination="8Rc-Vf-7UN" collectionClass="NSMutableArray" id="Ijv-Nq-0cR"/>
-                <outletCollection property="hotelAdvantagesButtons" destination="WoG-lc-jaV" collectionClass="NSMutableArray" id="Pob-rg-vjH"/>
-                <outletCollection property="hotelAdvantagesButtons" destination="KmH-ZU-d0X" collectionClass="NSMutableArray" id="ud0-QR-cN6"/>
-                <outletCollection property="hotelAdvantagesButtons" destination="R09-2X-0gM" collectionClass="NSMutableArray" id="AXU-UO-ptL"/>
             </connections>
             <point key="canvasLocation" x="93.129770992366403" y="35.563380281690144"/>
         </tableViewCell>

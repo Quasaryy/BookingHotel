@@ -145,7 +145,7 @@ extension MainTableViewCell: UICollectionViewDataSource, UICollectionViewDelegat
 
 extension MainTableViewCell {
     
-    // Метод вызывается при окончании действия декелерации, чтобы индикатор pageControl соответствовал текущей отображаемой странице в collectionView
+    // Чтобы индикатор pageControl соответствовал текущей отображаемой странице в collectionView
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         // Получаем ширину одной страницы (или ячейки) в collectionView
         let pageWidth = collectionView.frame.size.width
