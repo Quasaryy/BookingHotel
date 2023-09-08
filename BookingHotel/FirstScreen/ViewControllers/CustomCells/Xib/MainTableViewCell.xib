@@ -29,7 +29,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="440" height="454"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ikK-Ns-v1H">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ikK-Ns-v1H">
                         <rect key="frame" x="16" y="5" width="408" height="257"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>

@@ -19,6 +19,11 @@
 		D2326D0E2AA64D42009B35FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2326D0D2AA64D42009B35FD /* MainViewController.swift */; };
 		D2326D132AA64FA3009B35FD /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2326D112AA64FA3009B35FD /* MainTableViewCell.swift */; };
 		D2326D142AA64FA3009B35FD /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */; };
+		D26EFF002AAB05D900E05F4A /* UtilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFEFF2AAB05D900E05F4A /* UtilityManager.swift */; };
+		D26EFF022AAB133800E05F4A /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF012AAB133800E05F4A /* AnimationManager.swift */; };
+		D26EFF042AAB1A5F00E05F4A /* DynamicCreatingViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF032AAB1A5F00E05F4A /* DynamicCreatingViewManager.swift */; };
+		D26EFF062AAB1DA700E05F4A /* TableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF052AAB1DA700E05F4A /* TableViewManager.swift */; };
+		D26EFF0A2AAB359200E05F4A /* SliderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26EFF092AAB359200E05F4A /* SliderManager.swift */; };
 		D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F83FF2AA7D74600D1F229 /* Main2TableViewCell.swift */; };
 		D26F84022AA7D74600D1F229 /* Main2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26F84002AA7D74600D1F229 /* Main2TableViewCell.xib */; };
 		D26F84042AA7F19600D1F229 /* AboutHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F84032AA7F19600D1F229 /* AboutHotel.swift */; };
@@ -44,6 +49,11 @@
 		D2326D0D2AA64D42009B35FD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D2326D112AA64FA3009B35FD /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		D26EFEFF2AAB05D900E05F4A /* UtilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityManager.swift; sourceTree = "<group>"; };
+		D26EFF012AAB133800E05F4A /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
+		D26EFF032AAB1A5F00E05F4A /* DynamicCreatingViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCreatingViewManager.swift; sourceTree = "<group>"; };
+		D26EFF052AAB1DA700E05F4A /* TableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewManager.swift; sourceTree = "<group>"; };
+		D26EFF092AAB359200E05F4A /* SliderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderManager.swift; sourceTree = "<group>"; };
 		D26F83FF2AA7D74600D1F229 /* Main2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main2TableViewCell.swift; sourceTree = "<group>"; };
 		D26F84002AA7D74600D1F229 /* Main2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main2TableViewCell.xib; sourceTree = "<group>"; };
 		D26F84032AA7F19600D1F229 /* AboutHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHotel.swift; sourceTree = "<group>"; };
@@ -89,7 +99,7 @@
 				D26F84082AA8656B00D1F229 /* DataManagers */,
 				D26F84052AA7F19C00D1F229 /* Model */,
 				D2326D082AA644AE009B35FD /* Layouts */,
-				D2326D092AA644CE009B35FD /* ViewControllers */,
+				D2A3C6F52AAA93B4002D08AC /* FirstScreen */,
 				D2F03C872AA8FD7200360AA3 /* Extensions */,
 				D2E6EA962AA7707D002413FA /* Fonts */,
 				D2326CFE2AA64343009B35FD /* Info.plist */,
@@ -151,8 +161,21 @@
 			children = (
 				D2326D0B2AA64514009B35FD /* NetworkManager.swift */,
 				D26F84062AA8654C00D1F229 /* Logger.swift */,
+				D26EFEFF2AAB05D900E05F4A /* UtilityManager.swift */,
+				D26EFF052AAB1DA700E05F4A /* TableViewManager.swift */,
+				D26EFF012AAB133800E05F4A /* AnimationManager.swift */,
+				D26EFF032AAB1A5F00E05F4A /* DynamicCreatingViewManager.swift */,
+				D26EFF092AAB359200E05F4A /* SliderManager.swift */,
 			);
 			path = DataManagers;
+			sourceTree = "<group>";
+		};
+		D2A3C6F52AAA93B4002D08AC /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D2326D092AA644CE009B35FD /* ViewControllers */,
+			);
+			path = FirstScreen;
 			sourceTree = "<group>";
 		};
 		D2E6EA962AA7707D002413FA /* Fonts */ = {
@@ -250,16 +273,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26EFF042AAB1A5F00E05F4A /* DynamicCreatingViewManager.swift in Sources */,
 				D2326CF12AA64342009B35FD /* AppDelegate.swift in Sources */,
 				D2326D0C2AA64514009B35FD /* NetworkManager.swift in Sources */,
 				D26F84042AA7F19600D1F229 /* AboutHotel.swift in Sources */,
+				D26EFF022AAB133800E05F4A /* AnimationManager.swift in Sources */,
 				D22D92802AA71BF2004EA4E2 /* CollectionViewCell.swift in Sources */,
 				D26F84072AA8654C00D1F229 /* Logger.swift in Sources */,
 				D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */,
 				D2F03C862AA8E72B00360AA3 /* String+extension.swift in Sources */,
 				D2326CF32AA64342009B35FD /* SceneDelegate.swift in Sources */,
+				D26EFF062AAB1DA700E05F4A /* TableViewManager.swift in Sources */,
 				D28746E12AA9CC30003CB32D /* NestedTableViewController.swift in Sources */,
+				D26EFF0A2AAB359200E05F4A /* SliderManager.swift in Sources */,
 				D2326D0E2AA64D42009B35FD /* MainViewController.swift in Sources */,
+				D26EFF002AAB05D900E05F4A /* UtilityManager.swift in Sources */,
 				D2326D132AA64FA3009B35FD /* MainTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

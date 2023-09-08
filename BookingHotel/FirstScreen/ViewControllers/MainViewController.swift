@@ -36,14 +36,14 @@ class MainViewController: UIViewController {
         // Настройка внешнего вида таблицы
         tableView.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
         
-        // Настройка внешнего вида кнопки
-        blueButton.layer.cornerRadius = 15
+        // Настройка закргуления кнопки
+        UtilityManager.shared.cornerRadius(for: blueButton, radius: 15)
         
         // Настройка границ нижнего вида
-        configureBordersForBottomView()
+        UtilityManager.shared.configureBordersForBottomView(view: bottomViewWithButton)
         
         // Настройка навигационной панели
-        setupNavigationBar(for: self)
+        UtilityManager.shared.setupNavigationBar(for: self)
         
         // Регистрация XIB для ячеек таблицы
         tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainCell")
@@ -55,9 +55,7 @@ class MainViewController: UIViewController {
         }
         
         // Чтобы при оттягивании таблицы вниз, пользователь видел белый фон, а не фон таблицы
-        whiteView.frame = CGRect(x: 0, y: -300, width: tableView.bounds.width, height: 300)
-        whiteView.backgroundColor = .white
-        tableView.addSubview(whiteView)
+        TableViewManager.shared.wniteBackgroundWnenPullingTable(view: whiteView, tableView: tableView)
         
     }
     
@@ -102,18 +100,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             
             
             // Настройка кастомной ячейки
-            mainCell.selectionStyle = .none
-            mainCell.ratingText.text = dataModel.ratingName
-            mainCell.ratingNumber.text = String(dataModel.rating)
-            mainCell.hotelName.text = dataModel.name
-            mainCell.hotelAdress.setTitle(dataModel.adress, for: .normal)
-            mainCell.priceFor.text = dataModel.priceForIt
-            mainCell.minimalPrice.text = formatMinimalPrice(dataModel.minimalPrice)
-            
-            // Устанавливаем картинки для слайдера
-            mainCell.imageUrls = dataModel.imageUrls
-            mainCell.pageControl.numberOfPages = mainCell.imageUrls.count // Обновляем количество страниц для pageControl
-            mainCell.collectionView.reloadData() // Перезагружаем данные коллекции
+            mainCell.configCell(dataModel: dataModel)
             
             return mainCell
             
@@ -123,9 +110,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let mainSecondCell = tableView.dequeueReusableCell(withIdentifier: "MainSecondCell", for: indexPath) as! Main2TableViewCell
             
             // Настройка кастомной ячейки
-            mainSecondCell.selectionStyle = .none
-            mainSecondCell.configLabelsWithData(with: dataModel)
-            mainSecondCell.hotelDescription.text = dataModel.aboutTheHotel.description
+            mainSecondCell.configCell(dataModel: dataModel)
             
             return mainSecondCell
         }
@@ -140,42 +125,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         footerView.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
         
         return footerView
-    }
-    
-}
-
-// MARK: - Methods
-
-extension MainViewController {
-    
-    func configureBordersForBottomView() {
-        // Настройка границ для bottomView
-        bottomViewWithButton.layer.borderWidth = 1
-        bottomViewWithButton.layer.borderColor = UIColor(red: 232/255, green: 233/255, blue: 236/255, alpha: 1).cgColor
-    }
-    
-    func setupNavigationBar(for viewController: UIViewController) {
-        // Настройка внешнего вида навигационной панели
-        let appearance = UINavigationBarAppearance()
-        appearance.shadowColor = .clear
-        appearance.backgroundColor = .white
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        viewController.navigationController?.navigationBar.standardAppearance = appearance
-        viewController.navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        guard let font = UIFont(name: "SFProDisplay-Medium", size: 18) else { return }
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.black, .font: font]
-    }
-    
-    // Функция для форматирования минимальной цены с добавлением разделителя тысяч
-    func formatMinimalPrice(_ minimalPrice: Int) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.groupingSeparator = " "
-        if let formattedNumber = formatter.string(from: NSNumber(value: minimalPrice)) {
-            return "от \(formattedNumber) ₽"
-        } else {
-            return "Цена не доступна"
-        }
     }
     
 }

@@ -47,4 +47,5 @@ extension Logger {
         
         print(message)
     }
+    
 }

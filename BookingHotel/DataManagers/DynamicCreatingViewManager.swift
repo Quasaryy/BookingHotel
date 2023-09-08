@@ -1,88 +1,38 @@
 //
-//  Main2TableViewCell.swift
+//  DynamicCreatingViewManager.swift
 //  BookingHotel
 //
-//  Created by Yury on 06/09/2023.
+//  Created by Yury on 08/09/2023.
 //
 
+import Foundation
 import UIKit
 
-class Main2TableViewCell: UITableViewCell {
+class DynamicCreatingViewManager {
     
-    // MARK: - Propeties
+    // MARK: - Properties
+    
+    // Синглтон экземпляр класса, чтобы избежать множественных экземпляров этого класса в разных частях приложения
+    static var shared = DynamicCreatingViewManager()
     
     // Константы для горизонтальных отступов и расстояния между вью
     private let horizontalPadding: CGFloat = 16
     private let labelSpacing: CGFloat = 8
     
-    // Ссылка на вложенный контроллер таблицы, который будет использоваться в данной ячейке
-    var nestedTableViewController: NestedTableViewController?
+    // MARK: - Init
     
-    // MARK: - IB Outlets
-    
-    // Ссылки на элементы интерфейса, созданные в Interface Builder
-    @IBOutlet weak var hotelDescription: UILabel!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var verticalStackView: UIStackView!
-    
-    // MARK: - awakeFromNib
-    
-    // Метод, который вызывается после того как объект был загружен из Interface Builder
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        // Настройка вложенного контроллера таблицы и внешнего вида элементов интерфейса
-        setupNestedTableViewController()
-        setupViewAppearance()
-        
-    }
+    // Закрытый инициализатор, чтобы предотвратить создание новых экземпляров класса
+    private init() {}
     
 }
 
 // MARK: - Methods
 
-extension Main2TableViewCell {
-    
-    // MARK: Вложенная таблица
-    
-    // Приватный метод для инициализации и настройки вложенного контроллера таблицы
-    private func setupNestedTableViewController() {
-        if nestedTableViewController == nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            nestedTableViewController = storyboard.instantiateViewController(withIdentifier: "NestedTableViewController") as? NestedTableViewController
-            
-            guard let tableView = nestedTableViewController?.tableView else { return }
-            
-            self.containerView.addSubview(tableView)
-            tableView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                tableView.topAnchor.constraint(equalTo: containerView.topAnchor),
-                tableView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-                tableView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-                tableView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
-            ])
-        }
-    }
-    
-    // MARK: Внешний вид ячейки
-    
-    // Приватный метод для настройки внешнего вида элементов ячейки
-    private func setupViewAppearance() {
-        
-        // Установка фоновых цветов
-        self.backgroundColor = UIColor.clear
-        self.contentView.backgroundColor = .white
-        
-        // Скругление углов для contentView
-        self.contentView.layer.cornerRadius = 15
-        self.contentView.layer.masksToBounds = true
-        
-    }
+extension DynamicCreatingViewManager {
     
     // MARK: Создание лейблов
     
-    func configLabelsWithData(with dataModel: Hotel) {
+    func configLabelsWithData(with dataModel: Hotel, verticalStackView: UIStackView, customCell: UITableViewCell) {
         // Удаление всех текущих subviews в verticalStackView
         for arrangedSubview in verticalStackView.arrangedSubviews {
             verticalStackView.removeArrangedSubview(arrangedSubview)
@@ -94,7 +44,7 @@ extension Main2TableViewCell {
         verticalStackView.addArrangedSubview(horizontalStackView)
         
         // Определение доступной ширины для вью с лейблами
-        var remainingWidth = self.frame.width - 2 * horizontalPadding
+        var remainingWidth = customCell.frame.width - 2 * horizontalPadding
         
         // Итерация по каждому элементу данных (предположим, что это строки)
         for text in dataModel.aboutTheHotel.peculiarities {
@@ -132,7 +82,7 @@ extension Main2TableViewCell {
             if remainingWidth - (titleWidth + labelSpacing) < 0 {
                 horizontalStackView = createNewHorizontalStackView()
                 verticalStackView.addArrangedSubview(horizontalStackView)
-                remainingWidth = self.frame.width - 2 * horizontalPadding
+                remainingWidth = customCell.frame.width - 2 * horizontalPadding
             }
             
             // Уменьшение доступной ширины
@@ -159,6 +109,5 @@ extension Main2TableViewCell {
         guard let font = font else { return 0 }
         return text.width(withConstrainedHeight: height, font: font)
     }
-    
     
 }

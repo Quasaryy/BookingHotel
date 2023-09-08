@@ -17,6 +17,8 @@ class CollectionViewCell: UICollectionViewCell {
     // MARK: - awakeFromNib
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        UtilityManager.shared.cornerRadius(for: imageView, radius: 15)
     }
     
 }
