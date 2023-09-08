@@ -11,11 +11,14 @@ class MainViewController: UIViewController {
     
     // MARK: - Properties
     
-    // Синглтон модели данных для хранения информации об отеле, хотя для структуры синглтон не нужен но так красивее :)
-    var dataModel = Hotel.shared
+    // Синглтон модели данных для хранения информации об отеле, хотя для структуры синглтон не нужен
+    var dataModelHotel = Hotel.shared
     
     // Для последующего использования для белого фона под таблицей при её оттягивании вниз
     let whiteView = UIView()
+    
+    // Урл для URLSession
+    private let url = "https://run.mocky.io/v3/35e0d18e-2521-4f1b-a575-f0fe366f66e3"
     
     // MARK: - IB Outlets
     
@@ -50,8 +53,8 @@ class MainViewController: UIViewController {
         tableView.register(UINib(nibName: "Main2TableViewCell", bundle: nil), forCellReuseIdentifier: "MainSecondCell")
         
         // Запрос данных с удаленного сервера для модели данных
-        NetworkManager.shared.getDataFromRemoteServer(tableView: tableView, from: self) { hotel in
-            self.dataModel = hotel
+        NetworkManager.shared.getDataFromRemoteServer(urlString: url, tableView: tableView, from: self) { hotel in
+            self.dataModelHotel = hotel
         }
         
         // Чтобы при оттягивании таблицы вниз, пользователь видел белый фон, а не фон таблицы
@@ -66,16 +69,20 @@ class MainViewController: UIViewController {
         whiteView.frame.size.width = tableView.bounds.width
     }
     
+    // MARK - IB Actions
     
-    /*
+    @IBAction func blueButtonTapped(_ sender: UIButton) {
+        
+        UtilityManager.shared.changeBackButtonTextAndColor(for: self)
+    }
+    
      // MARK: - Navigation
      
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+         guard let secondTableViewController = segue.destination as? SecondTableViewController else { return }
+         secondTableViewController.navigationTitle = dataModelHotel.name
      }
-     */
+     
     
 }
 
@@ -88,7 +95,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,7 +107,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             
             
             // Настройка кастомной ячейки
-            mainCell.configCell(dataModel: dataModel)
+            mainCell.configCell(dataModel: dataModelHotel)
             
             return mainCell
             
@@ -110,7 +117,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let mainSecondCell = tableView.dequeueReusableCell(withIdentifier: "MainSecondCell", for: indexPath) as! Main2TableViewCell
             
             // Настройка кастомной ячейки
-            mainSecondCell.configCell(dataModel: dataModel)
+            mainSecondCell.configCell(dataModel: dataModelHotel)
             
             return mainSecondCell
         }

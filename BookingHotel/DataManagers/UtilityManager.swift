@@ -41,6 +41,12 @@ extension UtilityManager {
         appearance.titleTextAttributes = [.foregroundColor: UIColor.black, .font: font]
     }
     
+    func changeBackButtonTextAndColor(for viewController: UIViewController) {
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        backButton.tintColor = .black
+        viewController.navigationItem.backBarButtonItem = backButton
+    }
+    
     // Метод для форматирования минимальной цены с добавлением разделителя тысяч
     func formatMinimalPrice(_ minimalPrice: Int) -> String {
         let formatter = NumberFormatter()

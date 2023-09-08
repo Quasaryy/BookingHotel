@@ -30,6 +30,9 @@
 		D26F84072AA8654C00D1F229 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F84062AA8654C00D1F229 /* Logger.swift */; };
 		D28746E12AA9CC30003CB32D /* NestedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28746E02AA9CC30003CB32D /* NestedTableViewController.swift */; };
 		D2AA2E382AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */; };
+		D2B62D9D2AAB9E14003E7E42 /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B62D9C2AAB9E14003E7E42 /* SecondTableViewCell.swift */; };
+		D2B62DA02AABA3B3003E7E42 /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B62D9F2AABA3B3003E7E42 /* Rooms.swift */; };
+		D2DD005E2AAB7A8400BF26EF /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DD005D2AAB7A8400BF26EF /* SecondTableViewController.swift */; };
 		D2E6EA982AA77CB6002413FA /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */; };
 		D2F03C862AA8E72B00360AA3 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F03C852AA8E72B00360AA3 /* String+extension.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +63,9 @@
 		D26F84062AA8654C00D1F229 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D28746E02AA9CC30003CB32D /* NestedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTableViewController.swift; sourceTree = "<group>"; };
 		D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		D2B62D9C2AAB9E14003E7E42 /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
+		D2B62D9F2AABA3B3003E7E42 /* Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
+		D2DD005D2AAB7A8400BF26EF /* SecondTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
 		D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		D2F03C852AA8E72B00360AA3 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +106,7 @@
 				D26F84052AA7F19C00D1F229 /* Model */,
 				D2326D082AA644AE009B35FD /* Layouts */,
 				D2A3C6F52AAA93B4002D08AC /* FirstScreen */,
+				D2DD00602AAB7AA800BF26EF /* SecondScreen */,
 				D2F03C872AA8FD7200360AA3 /* Extensions */,
 				D2E6EA962AA7707D002413FA /* Fonts */,
 				D2326CFE2AA64343009B35FD /* Info.plist */,
@@ -152,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				D26F84032AA7F19600D1F229 /* AboutHotel.swift */,
+				D2B62D9F2AABA3B3003E7E42 /* Rooms.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +184,31 @@
 				D2326D092AA644CE009B35FD /* ViewControllers */,
 			);
 			path = FirstScreen;
+			sourceTree = "<group>";
+		};
+		D2B62D9E2AAB9E1D003E7E42 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				D2B62D9C2AAB9E14003E7E42 /* SecondTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		D2DD00602AAB7AA800BF26EF /* SecondScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D2DD00612AAB7ABA00BF26EF /* ViewControllers */,
+			);
+			path = SecondScreen;
+			sourceTree = "<group>";
+		};
+		D2DD00612AAB7ABA00BF26EF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2DD005D2AAB7A8400BF26EF /* SecondTableViewController.swift */,
+				D2B62D9E2AAB9E1D003E7E42 /* CustomCells */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D2E6EA962AA7707D002413FA /* Fonts */ = {
@@ -278,7 +311,9 @@
 				D2326D0C2AA64514009B35FD /* NetworkManager.swift in Sources */,
 				D26F84042AA7F19600D1F229 /* AboutHotel.swift in Sources */,
 				D26EFF022AAB133800E05F4A /* AnimationManager.swift in Sources */,
+				D2B62D9D2AAB9E14003E7E42 /* SecondTableViewCell.swift in Sources */,
 				D22D92802AA71BF2004EA4E2 /* CollectionViewCell.swift in Sources */,
+				D2DD005E2AAB7A8400BF26EF /* SecondTableViewController.swift in Sources */,
 				D26F84072AA8654C00D1F229 /* Logger.swift in Sources */,
 				D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */,
 				D2F03C862AA8E72B00360AA3 /* String+extension.swift in Sources */,
@@ -288,6 +323,7 @@
 				D26EFF0A2AAB359200E05F4A /* SliderManager.swift in Sources */,
 				D2326D0E2AA64D42009B35FD /* MainViewController.swift in Sources */,
 				D26EFF002AAB05D900E05F4A /* UtilityManager.swift in Sources */,
+				D2B62DA02AABA3B3003E7E42 /* Rooms.swift in Sources */,
 				D2326D132AA64FA3009B35FD /* MainTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

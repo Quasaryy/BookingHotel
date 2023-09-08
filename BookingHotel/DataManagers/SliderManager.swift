@@ -123,7 +123,6 @@ extension SliderManager {
         collectionView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
     }
     
-    
     // MARK: Конфигурируем слайдер
     
     func configureSlider(for cell: MainTableViewCell) {
@@ -136,4 +135,5 @@ extension SliderManager {
         
         cell.collectionView.reloadData()
     }
+    
 }
