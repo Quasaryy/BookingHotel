@@ -24,7 +24,7 @@ class SliderManager: NSObject, UICollectionViewDataSource, UICollectionViewDeleg
     // Делагат
     weak var delegate: SliderManagerDelegate?
     
-    // Текущая коллекция изображений, используемоя слайдером
+    // Текущая коллекция изображений для слайдера
     weak var currentCollectionView: UICollectionView?
     
     // Элемент управления UIPageControl для отображения текущей страницы слайдера
@@ -45,6 +45,17 @@ extension SliderManager {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "СollectionViewMainCell", for: indexPath) as! CollectionViewCell
+        
+        // Закругление углов для первой и последней ячейки
+        if indexPath.row == 0 {
+            cell.imageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        } else if indexPath.row == imageUrls.count - 1 {
+            cell.imageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        } else {
+            cell.imageView.layer.maskedCorners = []
+        }
+        
+        UtilityManager.shared.cornerRadius(for: cell.imageView, radius: 15)
         
         // Проверка наличия URL-адресов
         guard !imageUrls.isEmpty else {
@@ -84,13 +95,13 @@ extension SliderManager {
     // Метод вызывается при окончании декелерации скролла, обновляя индикатор текущей страницы в UIPageControl.
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard let collectionView = scrollView as? UICollectionView else { return }
-
+        
         // Получаем ширину одной страницы (или ячейки) в collectionView
         let pageWidth = collectionView.frame.size.width
-
+        
         // Вычисляем текущую страницу на основе горизонтального смещения collectionView делённое на ширину страницы.
         let currentPage = Int(collectionView.contentOffset.x / pageWidth)
-
+        
         // Находим pageControl и устанавливаем текущую страницу
         currentPageControl?.currentPage = currentPage
     }
@@ -111,7 +122,7 @@ extension SliderManager {
         // Устанавливаем новую позицию прокрутки для коллекции, создавая CGPoint с новым значением x и текущим значением y (которое остается 0, так как прокрутка горизонтальная)
         collectionView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
     }
-
+    
     
     // MARK: Конфигурируем слайдер
     
