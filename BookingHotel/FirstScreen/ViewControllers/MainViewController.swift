@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     var dataModelHotel = Hotel.shared
     
     // Для последующего использования для белого фона под таблицей при её оттягивании вниз
-    let whiteView = UIView()
+    private let whiteView = UIView()
     
     // Урл для URLSession
     private let url = "https://run.mocky.io/v3/35e0d18e-2521-4f1b-a575-f0fe366f66e3"
@@ -35,10 +35,7 @@ class MainViewController: UIViewController {
         // Установка делегатов для управления поведением таблицы
         tableView.delegate = self
         tableView.dataSource = self
-        
-        // Настройка внешнего вида таблицы
-        tableView.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
-        
+                
         // Настройка закргуления кнопки
         UtilityManager.shared.cornerRadius(for: blueButton, radius: 15)
         
@@ -79,8 +76,8 @@ class MainViewController: UIViewController {
      // MARK: - Navigation
      
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         guard let secondTableViewController = segue.destination as? SecondTableViewController else { return }
-         secondTableViewController.navigationTitle = dataModelHotel.name
+         guard let secondViewController = segue.destination as? SecondViewController else { return }
+         secondViewController.navigationTitle = dataModelHotel.name
      }
      
     

@@ -121,7 +121,6 @@
                     <constraint firstItem="ikK-Ns-v1H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="3td-7S-7KM"/>
                     <constraint firstItem="hih-0j-9Ah" firstAttribute="top" secondItem="Mkv-aS-CZu" secondAttribute="bottom" constant="8" id="AWr-Cp-eix"/>
                     <constraint firstItem="ikK-Ns-v1H" firstAttribute="bottom" secondItem="C0b-Ki-Z3m" secondAttribute="bottom" constant="8" id="BHH-KA-lQC"/>
-                    <constraint firstItem="C0b-Ki-Z3m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="CtD-9y-fnt"/>
                     <constraint firstItem="Mkv-aS-CZu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="GHO-b0-vQi"/>
                     <constraint firstItem="ikK-Ns-v1H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IBN-I2-xL4"/>
                     <constraint firstAttribute="bottom" secondItem="aY2-Cn-ADN" secondAttribute="bottom" constant="19" id="Kn9-MM-f2o"/>
@@ -129,7 +128,6 @@
                     <constraint firstItem="b1s-mU-vgF" firstAttribute="top" secondItem="hih-0j-9Ah" secondAttribute="bottom" constant="8" id="PG6-FD-C2G"/>
                     <constraint firstItem="b1s-mU-vgF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="RNg-Iv-0g1"/>
                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="b1s-mU-vgF" secondAttribute="trailing" constant="16" id="RRD-hb-QqG"/>
-                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="C0b-Ki-Z3m" secondAttribute="trailing" constant="16" id="YQ4-Ty-OSe"/>
                     <constraint firstItem="C0b-Ki-Z3m" firstAttribute="centerX" secondItem="ikK-Ns-v1H" secondAttribute="centerX" id="Z8q-M9-VBf"/>
                     <constraint firstItem="HQ0-sw-JGp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hY4-aY-0JE"/>
                     <constraint firstAttribute="trailing" secondItem="ikK-Ns-v1H" secondAttribute="trailing" constant="16" id="kbK-Tf-f10"/>

@@ -11,6 +11,15 @@ protocol SliderManagerDelegate: AnyObject {
     func imageUrls(for sliderManager: SliderManager) -> [String]
 }
 
+protocol  SliderImageViewCell {
+    var imageView: UIImageView! { get }
+}
+
+protocol ConfigurableCell {
+    var collectionView: UICollectionView! { get set }
+    var pageControl: UIPageControl! { get set }
+}
+
 class SliderManager: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Properties
@@ -44,7 +53,9 @@ extension SliderManager {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "СollectionViewMainCell", for: indexPath) as! CollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "СollectionViewCell", for: indexPath) as? SliderImageViewCell else {
+                fatalError("Не удалось создать ячейку, соответствующую SliderCellProtocol")
+            }
         
         // Закругление углов для первой и последней ячейки
         if indexPath.row == 0 {
@@ -59,7 +70,7 @@ extension SliderManager {
         
         // Проверка наличия URL-адресов
         guard !imageUrls.isEmpty else {
-            return cell
+            return cell as! UICollectionViewCell
         }
         
         // Загрузка и установка изображения из URL
@@ -80,7 +91,7 @@ extension SliderManager {
             }.resume()
         }
         
-        return cell
+        return cell as! UICollectionViewCell
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -125,15 +136,15 @@ extension SliderManager {
     
     // MARK: Конфигурируем слайдер
     
-    func configureSlider(for cell: MainTableViewCell) {
-        cell.collectionView.dataSource = self
-        cell.collectionView.delegate = self
-        cell.pageControl.addTarget(self, action: #selector(changePage(sender:)), for: .valueChanged)
-        
-        self.currentCollectionView = cell.collectionView
-        self.currentPageControl = cell.pageControl
-        
-        cell.collectionView.reloadData()
-    }
-    
+    func configureSlider<T: ConfigurableCell>(for cell: T) {
+            cell.collectionView.dataSource = self
+            cell.collectionView.delegate = self
+            cell.pageControl.addTarget(self, action: #selector(changePage(sender:)), for: .valueChanged)
+            
+            self.currentCollectionView = cell.collectionView
+            self.currentPageControl = cell.pageControl
+            
+            cell.collectionView.reloadData()
+        }
+
 }

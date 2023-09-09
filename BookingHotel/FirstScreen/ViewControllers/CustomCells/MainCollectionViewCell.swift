@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class MainCollectionViewCell: UICollectionViewCell, SliderImageViewCell {
     
     // MARK: - IB Outlets
     
@@ -15,6 +15,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
     // MARK: - awakeFromNib
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

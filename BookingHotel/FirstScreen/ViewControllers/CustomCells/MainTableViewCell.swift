@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTableViewCell: UITableViewCell, SliderManagerDelegate {
+class MainTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableCell {
     
     // MARK: - Properties
     
@@ -49,8 +49,8 @@ class MainTableViewCell: UITableViewCell, SliderManagerDelegate {
         UtilityManager.shared.cornerRadius(for: viewWithPagination, radius: 5)
         
         // Регистрация XIB для collectionView
-        let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "СollectionViewMainCell")
+        let nib = UINib(nibName: "MainCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "СollectionViewCell")
         
         // Округление углов collectionView
         UtilityManager.shared.cornerRadius(for: collectionView, radius: 15)
