@@ -84,13 +84,11 @@ class MainTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableCel
 
 // MARK:  - Methods
 
-
 extension MainTableViewCell {
     
     // MARK: Конфигурируем ячейку
     
     func configCell(dataModel: Hotel) {
-        selectionStyle = .none
         ratingText.text = dataModel.ratingName
         ratingNumber.text = String(dataModel.rating)
         hotelName.text = dataModel.name

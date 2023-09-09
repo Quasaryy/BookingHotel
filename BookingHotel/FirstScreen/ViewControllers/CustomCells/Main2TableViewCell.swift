@@ -43,7 +43,6 @@ extension Main2TableViewCell {
     // MARK: Конфигурируем ячейку
     
     func configCell(dataModel: Hotel) {
-        selectionStyle = .none
         DynamicCreatingViewManager.shared.configLabelsWithData(with: dataModel, verticalStackView: verticalStackView, customCell: self)
         hotelDescription.text = dataModel.aboutTheHotel.description
     }

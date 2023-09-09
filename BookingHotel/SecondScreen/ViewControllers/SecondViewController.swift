@@ -46,6 +46,13 @@ class SecondViewController: UIViewController {
         
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        let additionalPadding: CGFloat = -70 // Замените на нужное значение
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom + additionalPadding, right: 0)
+    }
+    
     
     /*
      // MARK: - Navigation
@@ -80,7 +87,7 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
             
             
             // Настройка кастомной ячейки
-            //mainCell.configCell(dataModel: dataModelHotel)
+            roomsCell.configCell(dataModel: dataModelRooms, indexPath: indexPath)
             
             return roomsCell
             

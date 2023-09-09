@@ -7,12 +7,15 @@
 
 import UIKit
 
-class SecondTableViewCell: UITableViewCell {
+class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableCell {
     
     // MARK: - Properties
     
     // Массив URL строк для загрузки изображений для слайдера
     var imageUrls: [String] = []
+    
+    // Создаем отдельный экземпляр слайдера
+    let slider = SliderManager()
     
     // MARK: - IB Outlets
     
@@ -50,4 +53,32 @@ class SecondTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+// MARK:  - Methods
+
+extension SecondTableViewCell {
+    
+    // MARK: Конфигурируем ячейку
+    
+    func configCell(dataModel: Rooms, indexPath: IndexPath) {
+        
+        // Устанавливаем картинки для слайдера
+        self.imageUrls = dataModel.rooms[indexPath.section].imageUrls
+        
+        // Обновляем делегат и источник данных для collectionView
+        slider.delegate = self
+        slider.imageUrls = dataModel.rooms[indexPath.section].imageUrls
+        slider.configureSlider(for: self)
+        
+        pageControl.numberOfPages = imageUrls.count // Обновляем количество страниц для pageControl
+        collectionView.reloadData() // Перезагружаем данные коллекции
+    }
+    
+    
+    // MARK: Slider Manager Delegate
+    
+    func imageUrls(for sliderManager: SliderManager) -> [String] {
+        return self.imageUrls
+    }
 }
