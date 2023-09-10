@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
         // Установка делегатов для управления поведением таблицы
         tableView.delegate = self
         tableView.dataSource = self
-                
+        
         // Настройка закргуления кнопки
         UtilityManager.shared.cornerRadius(for: blueButton, radius: 15)
         
@@ -64,6 +64,10 @@ class MainViewController: UIViewController {
         
         // Обновляем ширину whiteView, чтобы она соответствовала ширине tableView, чтобы при оттягивании таблици вниз на больших экранах не появлялась серая полоса справа
         whiteView.frame.size.width = tableView.bounds.width
+        
+        // Устанавливаем дополнительный отступ снизу для tableView
+        let additionalPadding: CGFloat = -29
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom + additionalPadding, right: 0)
     }
     
     // MARK - IB Actions
@@ -73,13 +77,13 @@ class MainViewController: UIViewController {
         UtilityManager.shared.changeBackButtonTextAndColor(for: self)
     }
     
-     // MARK: - Navigation
-     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         guard let secondViewController = segue.destination as? SecondViewController else { return }
-         secondViewController.navigationTitle = dataModelHotel.name
-     }
-     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let secondViewController = segue.destination as? SecondViewController else { return }
+        secondViewController.navigationTitle = dataModelHotel.name
+    }
+    
     
 }
 
@@ -125,10 +129,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UIView()
-        footerView.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
-        
-        return footerView
+        let view = UIView()
+        return view
     }
     
 }

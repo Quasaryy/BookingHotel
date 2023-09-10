@@ -46,12 +46,6 @@ class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableC
         // Настройка вида ячейки
         TableViewManager.shared.setupViewAppearance(customCell: self)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
 }
 
@@ -81,4 +75,5 @@ extension SecondTableViewCell {
     func imageUrls(for sliderManager: SliderManager) -> [String] {
         return self.imageUrls
     }
+    
 }

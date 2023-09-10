@@ -11,6 +11,7 @@ class SecondViewController: UIViewController {
     
     // MARK: - Properties
     
+    // Получаем название отеля из предыдущего контроллера
     var navigationTitle: String?
     
     // Синглтон модели данных для хранения информации об отеле, хотя для структуры синглтон не нужен
@@ -21,6 +22,7 @@ class SecondViewController: UIViewController {
     
     // MARK: - IB Outlets
     
+    // Связывание элементов интерфейса с переменными
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - viewDidLoad
@@ -31,15 +33,17 @@ class SecondViewController: UIViewController {
         // Установка делегатов для управления поведением таблицы
         tableView.delegate = self
         tableView.dataSource = self
-                
+        
         // Настройка навигационной панели
         UtilityManager.shared.setupNavigationBar(for: self)
         
         // Регистрация XIB для ячеек таблицы
         tableView.register(UINib(nibName: "SecondTableViewCell", bundle: nil), forCellReuseIdentifier: "RoomsCell")
         
+        // Устанавливаем заголовок в качестве названия отеля
         navigationItem.title = navigationTitle
         
+        // Запрос данных с удаленного сервера для модели данных
         NetworkManager.shared.getDataFromRemoteServer(urlString: url, tableView: tableView, from: self) { rooms in
             self.dataModelRooms = rooms
         }
@@ -48,10 +52,13 @@ class SecondViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
-        let additionalPadding: CGFloat = -70 // Замените на нужное значение
+        
+        // Устанавливаем дополнительный отступ снизу для tableView
+        let additionalPadding: CGFloat = -33
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom + additionalPadding, right: 0)
     }
+    
+    
     
     
     /*
@@ -81,27 +88,24 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-            
-            // Регистрируем ячейку и кастим как кастомную
-            let roomsCell = tableView.dequeueReusableCell(withIdentifier: "RoomsCell", for: indexPath) as! SecondTableViewCell
-            
-            
-            // Настройка кастомной ячейки
-            roomsCell.configCell(dataModel: dataModelRooms, indexPath: indexPath)
-            
-            return roomsCell
-            
+        // Регистрируем ячейку и кастим как кастомную
+        let roomsCell = tableView.dequeueReusableCell(withIdentifier: "RoomsCell", for: indexPath) as! SecondTableViewCell
+        
+        // Настройка кастомной ячейки
+        roomsCell.configCell(dataModel: dataModelRooms, indexPath: indexPath)
+        
+        return roomsCell
     }
     
+    // Задаем высоту футера для последней секции, чтобы создать отступ
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 8
     }
     
+    // Добавляем view для футера, чтобы он был видимым
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UIView()
-        footerView.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
-        
-        return footerView
+        let view = UIView()
+        return view
     }
     
 }

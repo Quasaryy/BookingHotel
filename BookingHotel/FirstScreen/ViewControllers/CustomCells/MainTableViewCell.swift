@@ -108,10 +108,10 @@ extension MainTableViewCell {
         collectionView.reloadData() // Перезагружаем данные коллекции
     }
     
-    
     // MARK: Slider Manager Delegate
     
     func imageUrls(for sliderManager: SliderManager) -> [String] {
         return self.imageUrls
     }
+    
 }
