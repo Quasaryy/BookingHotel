@@ -56,7 +56,6 @@ class MainViewController: UIViewController {
         
         // Чтобы при оттягивании таблицы вниз, пользователь видел белый фон, а не фон таблицы
         TableViewManager.shared.wniteBackgroundWnenPullingTable(view: whiteView, tableView: tableView)
-        
     }
     
     override func viewDidLayoutSubviews() {

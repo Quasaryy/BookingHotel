@@ -1,29 +1,27 @@
 //
-//  SecondViewController.swift
+//  ThirdViewController.swift
 //  BookingHotel
 //
-//  Created by Yury on 09/09/2023.
+//  Created by Yury on 10/09/2023.
 //
 
 import UIKit
 
-class SecondViewController: UIViewController {
-    
+class ThirdViewController: UIViewController {
+
     // MARK: - Properties
-    
-    // Получаем название отеля из предыдущего контроллера
-    var navigationTitle: String?
-    
+        
     // Синглтон модели данных для хранения информации об отеле, хотя для структуры синглтон не нужен
-    var dataModelRooms = Rooms.shared
+    var dataModelCustomers = Customers.shared
     
     // Урл для URLSession
-    private let url = "https://run.mocky.io/v3/f9a38183-6f95-43aa-853a-9c83cbb05ecd"
+    private let url = "https://run.mocky.io/v3/e8868481-743f-4eb2-a0d7-2bc4012275c8"
         
     // MARK: - IB Outlets
     
     // Связывание элементов интерфейса с переменными
     @IBOutlet weak var tableView: UITableView!
+    
     
     // MARK: - viewDidLoad
     
@@ -38,33 +36,22 @@ class SecondViewController: UIViewController {
         UtilityManager.shared.setupNavigationBar(for: self)
         
         // Регистрация XIB для ячеек таблицы
-        tableView.register(UINib(nibName: "SecondTableViewCell", bundle: nil), forCellReuseIdentifier: "RoomsCell")
-        
-        // Устанавливаем заголовок в качестве названия отеля
-        navigationItem.title = navigationTitle
+        tableView.register(UINib(nibName: "ThirdTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomersCell")
         
         // Запрос данных с удаленного сервера для модели данных
-        NetworkManager.shared.getDataFromRemoteServer(urlString: url, tableView: tableView, from: self) { rooms in
-            self.dataModelRooms = rooms
+        NetworkManager.shared.getDataFromRemoteServer(urlString: url, tableView: tableView, from: self) { customers in
+            self.dataModelCustomers = customers
         }
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        // Устанавливаем дополнительный отступ снизу для tableView
-        TableViewManager.shared.additionalPadding(for: -33, tableView: tableView, view: view)
-    }
-    
-}
 
+}
 
 // MARK: - Table View
 
-extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
+extension ThirdViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return dataModelRooms.rooms.count
+        return 8
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,12 +61,12 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Регистрируем ячейку и кастим как кастомную
-        let roomsCell = tableView.dequeueReusableCell(withIdentifier: "RoomsCell", for: indexPath) as! SecondTableViewCell
+        let customersCell = tableView.dequeueReusableCell(withIdentifier: "CustomersCell", for: indexPath) as! ThirdTableViewCell
         
         // Настройка кастомной ячейки
-        roomsCell.configCell(dataModel: dataModelRooms, indexPath: indexPath, delegate: self)
+        //customersCell.configCell(dataModel: dataModelCustomers, indexPath: indexPath, delegate: self)
         
-        return roomsCell
+        return customersCell
     }
     
     // Задаем высоту футера для последней секции, чтобы создать отступ
@@ -95,10 +82,10 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension SecondViewController: SecondTableViewCellDelegate {
+extension ThirdViewController: SecondTableViewCellDelegate {
     
     func chooseRoomButtonTapped(cell: SecondTableViewCell) {
-            performSegue(withIdentifier: "ToCustomerScreen", sender: nil)
+            performSegue(withIdentifier: "ToFinalScreen", sender: nil)
         }
     
     func changeBackButtonTextAndColor() {

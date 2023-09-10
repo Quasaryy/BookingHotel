@@ -71,7 +71,6 @@ class SecondTableViewCell: UITableViewCell {
         
         // Устанавливаем белый цвет фона для UICollectionView
         collectionView.backgroundColor = .white
-
     }
     
     // MARK: - IB Actions

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2135AAD2AAE4A60005268A6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2135AAC2AAE4A60005268A6 /* ThirdViewController.swift */; };
+		D2135AB22AAE4D1B005268A6 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2135AB02AAE4D1B005268A6 /* ThirdTableViewCell.swift */; };
+		D2135AB32AAE4D1B005268A6 /* ThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2135AB12AAE4D1B005268A6 /* ThirdTableViewCell.xib */; };
+		D2135AB72AAE4DBD005268A6 /* Customers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2135AB62AAE4DBD005268A6 /* Customers.swift */; };
 		D2215B6F2AA7856E00424CF7 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2215B6E2AA7856E00424CF7 /* SF-Pro-Display-Semibold.otf */; };
 		D22D92802AA71BF2004EA4E2 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22D927E2AA71BF2004EA4E2 /* MainCollectionViewCell.swift */; };
 		D22D92812AA71BF2004EA4E2 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D22D927F2AA71BF2004EA4E2 /* MainCollectionViewCell.xib */; };
@@ -41,6 +45,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2135AAC2AAE4A60005268A6 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		D2135AB02AAE4D1B005268A6 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
+		D2135AB12AAE4D1B005268A6 /* ThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdTableViewCell.xib; sourceTree = "<group>"; };
+		D2135AB62AAE4DBD005268A6 /* Customers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customers.swift; sourceTree = "<group>"; };
 		D2215B6E2AA7856E00424CF7 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		D22D927E2AA71BF2004EA4E2 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		D22D927F2AA71BF2004EA4E2 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -87,6 +95,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2135AAE2AAE4A71005268A6 /* ThirdScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D2135AAF2AAE4A83005268A6 /* ViewControllers */,
+			);
+			path = ThirdScreen;
+			sourceTree = "<group>";
+		};
+		D2135AAF2AAE4A83005268A6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2135AAC2AAE4A60005268A6 /* ThirdViewController.swift */,
+				D2135AB42AAE4D23005268A6 /* CustomCells */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D2135AB42AAE4D23005268A6 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				D2135AB02AAE4D1B005268A6 /* ThirdTableViewCell.swift */,
+				D2135AB52AAE4D32005268A6 /* Xib */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		D2135AB52AAE4D32005268A6 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				D2135AB12AAE4D1B005268A6 /* ThirdTableViewCell.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
 		D2326CE42AA64342009B35FD = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +155,7 @@
 				D2326D082AA644AE009B35FD /* Layouts */,
 				D2A3C6F52AAA93B4002D08AC /* FirstScreen */,
 				D28363CB2AAC77900031DDAF /* SecondScreen */,
+				D2135AAE2AAE4A71005268A6 /* ThirdScreen */,
 				D2F03C872AA8FD7200360AA3 /* Extensions */,
 				D2E6EA962AA7707D002413FA /* Fonts */,
 				D2326CFE2AA64343009B35FD /* Info.plist */,
@@ -166,6 +209,7 @@
 			children = (
 				D26F84032AA7F19600D1F229 /* AboutHotel.swift */,
 				D2B62D9F2AABA3B3003E7E42 /* Rooms.swift */,
+				D2135AB62AAE4DBD005268A6 /* Customers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +353,7 @@
 				D2326CFD2AA64343009B35FD /* LaunchScreen.storyboard in Resources */,
 				D2326CFA2AA64343009B35FD /* Assets.xcassets in Resources */,
 				D2326D142AA64FA3009B35FD /* MainTableViewCell.xib in Resources */,
+				D2135AB32AAE4D1B005268A6 /* ThirdTableViewCell.xib in Resources */,
 				D2326CF82AA64342009B35FD /* Main.storyboard in Resources */,
 				D2AA2E382AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf in Resources */,
 				D241AB942AACFD5B007BE1BC /* SecondCollectionViewCell.xib in Resources */,
@@ -328,6 +373,8 @@
 				D26EFF042AAB1A5F00E05F4A /* DynamicCreatingViewManager.swift in Sources */,
 				D2326CF12AA64342009B35FD /* AppDelegate.swift in Sources */,
 				D2326D0C2AA64514009B35FD /* NetworkManager.swift in Sources */,
+				D2135AB22AAE4D1B005268A6 /* ThirdTableViewCell.swift in Sources */,
+				D2135AB72AAE4DBD005268A6 /* Customers.swift in Sources */,
 				D26F84042AA7F19600D1F229 /* AboutHotel.swift in Sources */,
 				D28363CE2AAC7C8F0031DDAF /* SecondTableViewCell.swift in Sources */,
 				D26EFF022AAB133800E05F4A /* AnimationManager.swift in Sources */,
@@ -335,6 +382,7 @@
 				D26F84072AA8654C00D1F229 /* Logger.swift in Sources */,
 				D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */,
 				D2F03C862AA8E72B00360AA3 /* String+extension.swift in Sources */,
+				D2135AAD2AAE4A60005268A6 /* ThirdViewController.swift in Sources */,
 				D2326CF32AA64342009B35FD /* SceneDelegate.swift in Sources */,
 				D26EFF062AAB1DA700E05F4A /* TableViewManager.swift in Sources */,
 				D241AB932AACFD5B007BE1BC /* SecondCollectionViewCell.swift in Sources */,

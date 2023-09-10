@@ -35,6 +35,7 @@ extension UtilityManager {
         appearance.shadowColor = .clear
         appearance.backgroundColor = .white
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
         viewController.navigationController?.navigationBar.standardAppearance = appearance
         viewController.navigationController?.navigationBar.scrollEdgeAppearance = appearance
         guard let font = UIFont(name: "SFProDisplay-Medium", size: 18) else { return }
