@@ -87,6 +87,9 @@ extension SliderManager {
                     }
                 } else {
                     Logger.log("Не удалось загрузить изображение")
+                    DispatchQueue.main.async {
+                        cell.imageView.image = UIImage(named: "noImage")
+                    }
                 }
             }.resume()
         }

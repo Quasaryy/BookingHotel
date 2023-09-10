@@ -80,4 +80,10 @@ extension TableViewManager {
         ])
     }
     
+    // Устанавливаем дополнительный отступ снизу для tableView
+    func additionalPadding(for number: CGFloat, tableView: UITableView, view: UIView) {
+        let additionalPadding: CGFloat = number
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom + additionalPadding, right: 0)
+    }
+    
 }

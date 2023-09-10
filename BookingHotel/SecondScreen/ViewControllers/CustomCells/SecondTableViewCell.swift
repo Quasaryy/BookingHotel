@@ -20,6 +20,9 @@ class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableC
     // MARK: - IB Outlets
     
     // Аутлеты для различных UI элементов
+    @IBOutlet weak var chooseRoom: UIButton!
+    @IBOutlet weak var includedInPrice: UILabel!
+    @IBOutlet weak var minimalPrice: UILabel!
     @IBOutlet weak var moreAboutRoomButton: UIButton!
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var viewWithPagination: UIView!
@@ -32,6 +35,9 @@ class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableC
     // Метод вызывается после загрузки вью из XIB/Storyboard
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        // Настройка закругления кнопки
+        UtilityManager.shared.cornerRadius(for: chooseRoom, radius: 15)
         
         // Настройка вида ячейки
         TableViewManager.shared.setupViewAppearance(customCell: self)
@@ -52,6 +58,15 @@ class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableC
         UtilityManager.shared.cornerRadius(for: moreAboutRoomButton, radius: 5)
     }
     
+    // MARK: - IB Actions
+    
+    @IBAction func aboutRoomButtonTapped(_ sender: UIButton) {
+        Logger.log("Кнопка \"Подробнее о номере\" была нажата, но ничего не происходит согласно тех заданию")
+    }
+    
+    @IBAction func chooseRoomButtonTapped(_ sender: UIButton) {
+        
+    }
 }
 
 // MARK:  - Methods
@@ -63,6 +78,11 @@ extension SecondTableViewCell {
     func configCell(dataModel: Rooms, indexPath: IndexPath) {
         
         roomDescription.text = dataModel.rooms[indexPath.section].name
+        
+        minimalPrice.text = UtilityManager.shared.formatMinimalPrice(dataModel.rooms[indexPath.section].price)
+        
+        includedInPrice.text = dataModel.rooms[indexPath.section].pricePer
+                                                                     
         DynamicCreatingViewManager.shared.configLabelsWithData(with: dataModel.rooms[indexPath.section].peculiarities, verticalStackView: verticalStackView, customCell: self)
         
         // Устанавливаем картинки для слайдера

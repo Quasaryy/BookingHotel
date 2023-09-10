@@ -54,8 +54,7 @@ class SecondViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         // Устанавливаем дополнительный отступ снизу для tableView
-        let additionalPadding: CGFloat = -33
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom + additionalPadding, right: 0)
+        TableViewManager.shared.additionalPadding(for: -33, tableView: tableView, view: view)
     }
     
     

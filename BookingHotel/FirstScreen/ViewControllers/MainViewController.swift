@@ -66,8 +66,7 @@ class MainViewController: UIViewController {
         whiteView.frame.size.width = tableView.bounds.width
         
         // Устанавливаем дополнительный отступ снизу для tableView
-        let additionalPadding: CGFloat = -29
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: view.safeAreaInsets.bottom + additionalPadding, right: 0)
+        TableViewManager.shared.additionalPadding(for: -29, tableView: tableView, view: view)
     }
     
     // MARK - IB Actions
