@@ -123,7 +123,7 @@ extension SliderManager {
     // MARK: Page Control
     
     // Метод для изменения страницы при нажатии на UIPageControl
-    @objc func changePage(sender: UIPageControl) {
+    @objc func pageControlDidChange(sender: UIPageControl) {
         guard let collectionView = currentCollectionView else { return }
         changePage(sender: sender, collectionView: collectionView)
     }
@@ -142,7 +142,7 @@ extension SliderManager {
     func configureSlider<T: ConfigurableCell>(for cell: T) {
             cell.collectionView.dataSource = self
             cell.collectionView.delegate = self
-            cell.pageControl.addTarget(self, action: #selector(changePage(sender:)), for: .valueChanged)
+            cell.pageControl.addTarget(self, action: #selector(pageControlDidChange(sender:)), for: .valueChanged)
             
             self.currentCollectionView = cell.collectionView
             self.currentPageControl = cell.pageControl
