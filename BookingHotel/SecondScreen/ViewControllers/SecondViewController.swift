@@ -19,7 +19,7 @@ class SecondViewController: UIViewController {
     
     // Урл для URLSession
     private let url = "https://run.mocky.io/v3/f9a38183-6f95-43aa-853a-9c83cbb05ecd"
-    
+        
     // MARK: - IB Outlets
     
     // Связывание элементов интерфейса с переменными
@@ -57,19 +57,6 @@ class SecondViewController: UIViewController {
         TableViewManager.shared.additionalPadding(for: -33, tableView: tableView, view: view)
     }
     
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 
@@ -91,7 +78,7 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
         let roomsCell = tableView.dequeueReusableCell(withIdentifier: "RoomsCell", for: indexPath) as! SecondTableViewCell
         
         // Настройка кастомной ячейки
-        roomsCell.configCell(dataModel: dataModelRooms, indexPath: indexPath)
+        roomsCell.configCell(dataModel: dataModelRooms, indexPath: indexPath, delegate: self)
         
         return roomsCell
     }
@@ -106,5 +93,17 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
         let view = UIView()
         return view
     }
+    
+}
+
+extension SecondViewController: SecondTableViewCellDelegate {
+    
+    func chooseRoomButtonTapped(cell: SecondTableViewCell) {
+            performSegue(withIdentifier: "ToCustomerScreen", sender: nil)
+        }
+    
+    func changeBackButtonTextAndColor() {
+            UtilityManager.shared.changeBackButtonTextAndColor(for: self)
+        }
     
 }

@@ -1,5 +1,5 @@
 //
-//  CollectionViewCell.swift
+//  MainCollectionViewCell.swift
 //  BookingHotel
 //
 //  Created by Yury on 05/09/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainCollectionViewCell: UICollectionViewCell, SliderImageViewCell {
+class MainCollectionViewCell: UICollectionViewCell {
     
     // MARK: - IB Outlets
     
@@ -21,3 +21,7 @@ class MainCollectionViewCell: UICollectionViewCell, SliderImageViewCell {
     }
     
 }
+
+// MARK: - Slider Delegate
+
+extension MainCollectionViewCell: SliderImageViewCell {}

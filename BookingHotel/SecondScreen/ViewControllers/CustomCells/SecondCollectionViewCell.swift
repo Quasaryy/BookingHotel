@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondCollectionViewCell: UICollectionViewCell, SliderImageViewCell {
+class SecondCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IB Outlets
     
@@ -22,3 +22,7 @@ class SecondCollectionViewCell: UICollectionViewCell, SliderImageViewCell {
     }
 
 }
+
+// MARK: - Slider Delegate
+
+extension SecondCollectionViewCell: SliderImageViewCell {}

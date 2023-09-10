@@ -127,11 +127,28 @@
                     <navigationItem key="navigationItem" id="8UC-jS-5d7"/>
                     <connections>
                         <outlet property="tableView" destination="OK2-Di-6uS" id="9pH-R2-QS7"/>
+                        <segue destination="KVu-4T-3OG" kind="show" identifier="ToCustomerScreen" id="RdS-EG-mCL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsb-EV-eaJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3055.7251908396947" y="-52.112676056338032"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iWh-P6-cHn">
+            <objects>
+                <viewController id="KVu-4T-3OG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dib-Nl-TZi">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Brn-H0-SkY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mxW-GE-jAv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FH4-ha-WdJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3924" y="-52"/>
         </scene>
         <!--Nested Table View Controller-->
         <scene sceneID="cXr-zS-Dmy">

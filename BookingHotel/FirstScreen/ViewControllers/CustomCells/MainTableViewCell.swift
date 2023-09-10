@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableCell {
+class MainTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
@@ -108,8 +108,13 @@ extension MainTableViewCell {
         collectionView.reloadData() // Перезагружаем данные коллекции
     }
     
-    // MARK: Slider Manager Delegate
+}
+
+// MARK: - Slider Manager Delegate
+
+extension MainTableViewCell: SliderManagerDelegate, ConfigurableCell {
     
+    // Метод возвращает массив URL-адресов, которые используются для отображения изображений в слайдере
     func imageUrls(for sliderManager: SliderManager) -> [String] {
         return self.imageUrls
     }

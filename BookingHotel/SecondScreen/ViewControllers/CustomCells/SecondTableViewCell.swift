@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  SecondTableViewCell.swift
 //  BookingHotel
 //
 //  Created by Yury on 09/09/2023.
@@ -7,7 +7,12 @@
 
 import UIKit
 
-class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableCell {
+protocol SecondTableViewCellDelegate: AnyObject {
+    func chooseRoomButtonTapped(cell: SecondTableViewCell)
+    func changeBackButtonTextAndColor()
+}
+
+class SecondTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
@@ -16,6 +21,9 @@ class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableC
     
     // Создаем отдельный экземпляр слайдера
     let slider = SliderManager()
+    
+    // Делегат
+    weak var delegate: SecondTableViewCellDelegate?
     
     // MARK: - IB Outlets
     
@@ -55,7 +63,12 @@ class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableC
         // Настройка вида ячейки
         TableViewManager.shared.setupViewAppearance(customCell: self)
         
+        // Закргуляем кнопку moreAboutRoomButton
         UtilityManager.shared.cornerRadius(for: moreAboutRoomButton, radius: 5)
+        
+        // установка target-action для кнопки chooseRoomButtonTapped
+        chooseRoom.addTarget(self, action: #selector(chooseRoomButtonAction), for: .touchUpInside)
+
     }
     
     // MARK: - IB Actions
@@ -65,7 +78,7 @@ class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableC
     }
     
     @IBAction func chooseRoomButtonTapped(_ sender: UIButton) {
-        
+        delegate?.chooseRoomButtonTapped(cell: self)
     }
 }
 
@@ -73,16 +86,19 @@ class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableC
 
 extension SecondTableViewCell {
     
+    // Для таргета кнопки
+    @objc func chooseRoomButtonAction() {
+        delegate?.changeBackButtonTextAndColor()
+    }
+    
     // MARK: Конфигурируем ячейку
     
-    func configCell(dataModel: Rooms, indexPath: IndexPath) {
+    func configCell(dataModel: Rooms, indexPath: IndexPath, delegate: SecondTableViewCellDelegate) {
         
+        self.delegate = delegate
         roomDescription.text = dataModel.rooms[indexPath.section].name
-        
         minimalPrice.text = UtilityManager.shared.formatMinimalPrice(dataModel.rooms[indexPath.section].price)
-        
         includedInPrice.text = dataModel.rooms[indexPath.section].pricePer
-                                                                     
         DynamicCreatingViewManager.shared.configLabelsWithData(with: dataModel.rooms[indexPath.section].peculiarities, verticalStackView: verticalStackView, customCell: self)
         
         // Устанавливаем картинки для слайдера
@@ -97,9 +113,13 @@ extension SecondTableViewCell {
         collectionView.reloadData() // Перезагружаем данные коллекции
     }
     
-    
-    // MARK: Slider Manager Delegate
-    
+}
+
+// MARK: - Slider Manager Delegate
+
+extension SecondTableViewCell: SliderManagerDelegate, ConfigurableCell {
+        
+    // Метод возвращает массив URL-адресов, которые используются для отображения изображений в слайдере
     func imageUrls(for sliderManager: SliderManager) -> [String] {
         return self.imageUrls
     }

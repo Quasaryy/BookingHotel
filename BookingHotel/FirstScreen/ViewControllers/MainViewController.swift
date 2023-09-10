@@ -69,10 +69,11 @@ class MainViewController: UIViewController {
         TableViewManager.shared.additionalPadding(for: -29, tableView: tableView, view: view)
     }
     
-    // MARK - IB Actions
+    // MARK: - IB Actions
     
     @IBAction func blueButtonTapped(_ sender: UIButton) {
         
+        // Настраиваем кнопку назад
         UtilityManager.shared.changeBackButtonTextAndColor(for: self)
     }
     
@@ -82,7 +83,6 @@ class MainViewController: UIViewController {
         guard let secondViewController = segue.destination as? SecondViewController else { return }
         secondViewController.navigationTitle = dataModelHotel.name
     }
-    
     
 }
 

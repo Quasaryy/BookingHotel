@@ -27,7 +27,6 @@ class NestedTableViewController: UITableViewController {
     
     // MARK: - Table view
     
-    // Обрабатываем выбор ячейки таблицы, меняя фоновый цвет при нажатии и выводя сообщение в лог
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // Выводим сообщение в лог при нажатии на ячейку
