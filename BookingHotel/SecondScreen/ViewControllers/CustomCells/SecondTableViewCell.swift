@@ -20,8 +20,11 @@ class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableC
     // MARK: - IB Outlets
     
     // Аутлеты для различных UI элементов
+    @IBOutlet weak var moreAboutRoomButton: UIButton!
+    @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var viewWithPagination: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var verticalStackView: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - awakeFromNib
@@ -45,6 +48,8 @@ class SecondTableViewCell: UITableViewCell, SliderManagerDelegate, ConfigurableC
         
         // Настройка вида ячейки
         TableViewManager.shared.setupViewAppearance(customCell: self)
+        
+        UtilityManager.shared.cornerRadius(for: moreAboutRoomButton, radius: 5)
     }
     
 }
@@ -56,6 +61,9 @@ extension SecondTableViewCell {
     // MARK: Конфигурируем ячейку
     
     func configCell(dataModel: Rooms, indexPath: IndexPath) {
+        
+        roomDescription.text = dataModel.rooms[indexPath.section].name
+        DynamicCreatingViewManager.shared.configLabelsWithData(with: dataModel.rooms[indexPath.section].peculiarities, verticalStackView: verticalStackView, customCell: self)
         
         // Устанавливаем картинки для слайдера
         self.imageUrls = dataModel.rooms[indexPath.section].imageUrls

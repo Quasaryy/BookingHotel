@@ -32,7 +32,8 @@ extension DynamicCreatingViewManager {
     
     // MARK: Создание лейблов
     
-    func configLabelsWithData(with dataModel: Hotel, verticalStackView: UIStackView, customCell: UITableViewCell) {
+    func configLabelsWithData(with peculiarities: [String], verticalStackView: UIStackView, customCell: UITableViewCell) {
+
         // Удаление всех текущих subviews в verticalStackView
         for arrangedSubview in verticalStackView.arrangedSubviews {
             verticalStackView.removeArrangedSubview(arrangedSubview)
@@ -47,7 +48,7 @@ extension DynamicCreatingViewManager {
         var remainingWidth = customCell.frame.width - 2 * horizontalPadding
         
         // Итерация по каждому элементу данных (предположим, что это строки)
-        for text in dataModel.aboutTheHotel.peculiarities {
+        for text in peculiarities {
             
             // Создание новой вью и лейбла
             let containerView = UIView()

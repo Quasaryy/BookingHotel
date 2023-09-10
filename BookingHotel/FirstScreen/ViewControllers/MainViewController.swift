@@ -118,7 +118,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let mainSecondCell = tableView.dequeueReusableCell(withIdentifier: "MainSecondCell", for: indexPath) as! Main2TableViewCell
             
             // Настройка кастомной ячейки
-            mainSecondCell.configCell(dataModel: dataModelHotel)
+            mainSecondCell.configCell(dataModel: dataModelHotel, indexPath: indexPath)
             
             return mainSecondCell
         }

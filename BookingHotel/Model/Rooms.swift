@@ -7,7 +7,9 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - Rooms
+
+// Структура, представляющая данные номеров
 struct Rooms: Codable {
     let rooms: [Room]
     
@@ -15,6 +17,8 @@ struct Rooms: Codable {
 }
 
 // MARK: - Room
+
+// Структура для хранения детальной информации о номерах
 struct Room: Codable {
     let id: Int
     let name: String
@@ -23,6 +27,7 @@ struct Room: Codable {
     let peculiarities: [String]
     let imageUrls: [String]
 
+    // Перечисление для задания ключей декодирования, чтобы переделать некоторые snake_case константы в camelCase формат
     enum CodingKeys: String, CodingKey {
         case id, name, price
         case pricePer = "price_per"
