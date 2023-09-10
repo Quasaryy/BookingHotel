@@ -60,19 +60,19 @@
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-aS-CZu">
-                        <rect key="frame" x="16" y="278" width="86" height="29"/>
+                        <rect key="frame" x="16" y="278" width="86.666666666666671" height="29"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Xhj-VO-pdl">
                                 <rect key="frame" x="0.0" y="7" width="15" height="15"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLN-AZ-59H">
-                                <rect key="frame" x="18" y="5.3333333333333144" width="9" height="18.666666666666668"/>
+                                <rect key="frame" x="18" y="5" width="10" height="19.333333333333332"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                                 <color key="textColor" red="1" green="0.6588235294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оценка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3K-YU-9ht">
-                                <rect key="frame" x="30" y="5.3333333333333144" width="56" height="18.666666666666668"/>
+                                <rect key="frame" x="30.999999999999996" y="5" width="55.666666666666657" height="19.333333333333332"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                                 <color key="textColor" red="1" green="0.6588235294" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -84,25 +84,25 @@
                         </constraints>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название Отеля" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hih-0j-9Ah">
-                        <rect key="frame" x="16" y="315" width="168.33333333333334" height="46.333333333333314"/>
+                        <rect key="frame" x="16" y="315" width="164.33333333333334" height="45.666666666666686"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQ0-sw-JGp">
-                        <rect key="frame" x="16" y="402.33333333333331" width="70.666666666666671" height="35.666666666666686"/>
+                        <rect key="frame" x="16" y="401.66666666666669" width="73" height="36.333333333333314"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="30"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="что включено в цену" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY2-Cn-ADN">
-                        <rect key="frame" x="94.666666666666671" y="416.33333333333331" width="155.33333333333331" height="18.666666666666686"/>
+                        <rect key="frame" x="96.999999999999986" y="415.66666666666669" width="145.66666666666663" height="19.333333333333314"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                         <color key="textColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1s-mU-vgF">
-                        <rect key="frame" x="16" y="369.33333333333331" width="408" height="17"/>
+                        <rect key="frame" x="16" y="368.66666666666669" width="408" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="76W-c7-VgU"/>
                         </constraints>

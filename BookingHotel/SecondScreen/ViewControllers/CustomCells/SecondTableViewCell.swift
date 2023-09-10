@@ -68,6 +68,9 @@ class SecondTableViewCell: UITableViewCell {
         
         // установка target-action для кнопки chooseRoomButtonTapped
         chooseRoom.addTarget(self, action: #selector(chooseRoomButtonAction), for: .touchUpInside)
+        
+        // Устанавливаем белый цвет фона для UICollectionView
+        collectionView.backgroundColor = .white
 
     }
     

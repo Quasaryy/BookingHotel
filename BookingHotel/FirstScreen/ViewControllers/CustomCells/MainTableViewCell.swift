@@ -60,6 +60,10 @@ class MainTableViewCell: UITableViewCell {
         
         // Устанавливаем созданный CAShapeLayer как маску для текущего слоя.
         self.layer.mask = maskLayer
+        
+        // Устанавливаем белый цвет фона для UICollectionView
+        collectionView.backgroundColor = .white
+
     }
     
     // MARK: - layoutSubviews
