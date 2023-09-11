@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-// MARK: - Properties
-
 class UtilityManager {
     
     // MARK: - Properties
