@@ -130,6 +130,7 @@
                     <navigationItem key="navigationItem" id="8UC-jS-5d7"/>
                     <connections>
                         <outlet property="tableView" destination="OK2-Di-6uS" id="9pH-R2-QS7"/>
+                        <outlet property="topConstrantForTableView" destination="mJ0-qp-PaH" id="RpS-3q-Va5"/>
                         <segue destination="qva-cR-fsy" kind="show" identifier="ToCustomerScreen" id="9D6-YS-Ud0"/>
                     </connections>
                 </viewController>
@@ -730,7 +731,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HI-Ol-gXe" userLabel="View With Button">
                                                 <rect key="frame" x="0.0" y="1392.3333333333333" width="393" height="88"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpR-vy-I3b">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpR-vy-I3b">
                                                         <rect key="frame" x="16" y="12" width="361" height="48"/>
                                                         <color key="backgroundColor" red="0.050980392156862744" green="0.44705882352941173" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -738,9 +739,12 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Оплатить"/>
+                                                        <state key="normal" title="Оплатить">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="payButtonTapped:" destination="qva-cR-fsy" eventType="touchUpInside" id="tnA-j2-iuQ"/>
+                                                            <segue destination="Ksx-h1-FPx" kind="show" id="zsi-lJ-p6U"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -848,6 +852,113 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvf-Bh-XA7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3913.740458015267" y="210.56338028169014"/>
+        </scene>
+        <!--Заказ оплачен-->
+        <scene sceneID="Vz5-ou-aWX">
+            <objects>
+                <viewController id="Ksx-h1-FPx" customClass="FinalViewController" customModule="BookingHotel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1bA-Ct-RNX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZR-4a-deC" userLabel="Top White View">
+                                <rect key="frame" x="0.0" y="103" width="393" height="8"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="mYz-t8-zaw"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="8" id="tHX-yp-xUO"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lto-d9-p30" userLabel="View With Image">
+                                <rect key="frame" x="149.66666666666666" y="233" width="94" height="94"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partyPopper" translatesAutoresizingMaskIntoConstraints="NO" id="KaO-Sf-ojA">
+                                        <rect key="frame" x="25" y="25" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="TXL-cN-rL5"/>
+                                            <constraint firstAttribute="height" constant="44" id="bNf-w9-9bQ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="KaO-Sf-ojA" firstAttribute="centerY" secondItem="Lto-d9-p30" secondAttribute="centerY" id="8kG-vE-A49"/>
+                                    <constraint firstAttribute="height" constant="94" id="9K3-Pj-9Kr"/>
+                                    <constraint firstItem="KaO-Sf-ojA" firstAttribute="centerX" secondItem="Lto-d9-p30" secondAttribute="centerX" id="MNx-rt-d36"/>
+                                    <constraint firstAttribute="width" constant="94" id="xId-Lg-ZOQ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш заказ принят в работу" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51w-kw-kTR">
+                                <rect key="frame" x="62.333333333333343" y="360" width="268.66666666666663" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ox7-T7-Zhg" userLabel="View With Button">
+                                <rect key="frame" x="0.0" y="764" width="393" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgs-Mb-ZXw">
+                                        <rect key="frame" x="16" y="12" width="361" height="48"/>
+                                        <color key="backgroundColor" red="0.050980392159999999" green="0.44705882349999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="WJn-lf-pCX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Супер!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="payButtonTapped:" destination="qva-cR-fsy" eventType="touchUpInside" id="EXZ-4m-xOg"/>
+                                            <action selector="superButtonTapped:" destination="Ksx-h1-FPx" eventType="touchUpInside" id="ekh-tO-lxb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zgs-Mb-ZXw" secondAttribute="trailing" constant="16" id="BaA-YU-sW1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="88" id="IVu-r2-VAp"/>
+                                    <constraint firstItem="zgs-Mb-ZXw" firstAttribute="leading" secondItem="Ox7-T7-Zhg" secondAttribute="leading" constant="16" id="L4m-cv-ose"/>
+                                    <constraint firstAttribute="height" constant="88" id="bRz-hN-Nol"/>
+                                    <constraint firstItem="zgs-Mb-ZXw" firstAttribute="top" secondItem="Ox7-T7-Zhg" secondAttribute="top" constant="12" id="hvG-RK-hLW"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подтверждение заказа" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Fd-J5-qOD">
+                                <rect key="frame" x="23" y="409.33333333333331" width="347" height="19.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                <color key="textColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="O8c-KP-VVm"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZZR-4a-deC" firstAttribute="top" secondItem="O8c-KP-VVm" secondAttribute="top" id="IpP-UU-va8"/>
+                            <constraint firstAttribute="bottom" secondItem="Ox7-T7-Zhg" secondAttribute="bottom" id="Jzd-YX-t5F"/>
+                            <constraint firstItem="ZZR-4a-deC" firstAttribute="trailing" secondItem="O8c-KP-VVm" secondAttribute="trailing" id="K7h-QC-ZTy"/>
+                            <constraint firstItem="Lto-d9-p30" firstAttribute="top" secondItem="ZZR-4a-deC" secondAttribute="bottom" constant="122" id="NKm-xL-0vC"/>
+                            <constraint firstItem="51w-kw-kTR" firstAttribute="top" secondItem="Lto-d9-p30" secondAttribute="bottom" constant="33" id="YVo-8C-339"/>
+                            <constraint firstItem="ZZR-4a-deC" firstAttribute="leading" secondItem="O8c-KP-VVm" secondAttribute="leading" id="ZwA-D1-A5I"/>
+                            <constraint firstItem="9Fd-J5-qOD" firstAttribute="leading" secondItem="O8c-KP-VVm" secondAttribute="leading" constant="23" id="a0t-E2-ztR"/>
+                            <constraint firstItem="9Fd-J5-qOD" firstAttribute="top" secondItem="51w-kw-kTR" secondAttribute="bottom" constant="23" id="dyh-4v-S6P"/>
+                            <constraint firstItem="O8c-KP-VVm" firstAttribute="trailing" secondItem="9Fd-J5-qOD" secondAttribute="trailing" constant="23" id="e1s-FR-6LF"/>
+                            <constraint firstItem="Ox7-T7-Zhg" firstAttribute="trailing" secondItem="O8c-KP-VVm" secondAttribute="trailing" id="h3B-UN-3ob"/>
+                            <constraint firstItem="Ox7-T7-Zhg" firstAttribute="leading" secondItem="O8c-KP-VVm" secondAttribute="leading" id="jHo-Oa-fCt"/>
+                            <constraint firstItem="Lto-d9-p30" firstAttribute="centerX" secondItem="1bA-Ct-RNX" secondAttribute="centerX" id="nFJ-uW-7cA"/>
+                            <constraint firstItem="51w-kw-kTR" firstAttribute="centerX" secondItem="1bA-Ct-RNX" secondAttribute="centerX" id="xuJ-ix-gfz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Заказ оплачен" id="llC-x2-zcr"/>
+                    <connections>
+                        <outlet property="bottomViewWithButton" destination="Ox7-T7-Zhg" id="NLk-Xe-ZNa"/>
+                        <outlet property="orderConfirmation" destination="9Fd-J5-qOD" id="Ciu-xA-CuR"/>
+                        <outlet property="superButton" destination="zgs-Mb-ZXw" id="zIr-1g-kON"/>
+                        <outlet property="viewWithImage" destination="Lto-d9-p30" id="VBp-OP-aMl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bDX-Rd-b67" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4739.6946564885493" y="-52.112676056338032"/>
         </scene>
         <!--Nested Table View Controller-->
         <scene sceneID="cXr-zS-Dmy">
@@ -1084,6 +1195,7 @@
         <image name="downArrow" width="14" height="8"/>
         <image name="emoji-happy" width="24" height="24"/>
         <image name="left" width="24" height="24"/>
+        <image name="partyPopper" width="44" height="44"/>
         <image name="plus" width="24" height="24"/>
         <image name="star" width="15" height="15"/>
         <image name="tick-square" width="24" height="24"/>

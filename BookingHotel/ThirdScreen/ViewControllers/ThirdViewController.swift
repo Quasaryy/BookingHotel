@@ -123,7 +123,7 @@ class ThirdViewController: UIViewController {
     }
     
     @IBAction func payButtonTapped(_ sender: UIButton) {
-        
+        UtilityManager.shared.changeBackButtonTextAndColor(for: self)
     }
     
     /*

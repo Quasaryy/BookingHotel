@@ -102,4 +102,15 @@ extension UtilityManager {
         }
     }
     
+    // Генерация случайного числа из 6 цифр
+    private func generateRandomSixDigitNumber() -> Int {
+        let randomNumber = Int.random(in: 100000..<1000000)
+        return randomNumber
+    }
+    
+    // Текст для подтверждения заказа
+    func orderConfirmation() -> String {
+        return "Подтверждение заказа №\(generateRandomSixDigitNumber()) может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление."
+    }
+    
 }

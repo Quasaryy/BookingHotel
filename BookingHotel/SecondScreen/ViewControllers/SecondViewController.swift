@@ -24,6 +24,7 @@ class SecondViewController: UIViewController {
     
     // Связывание элементов интерфейса с переменными
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topConstrantForTableView: NSLayoutConstraint!
     
     // MARK: - viewDidLoad
     
@@ -105,4 +106,18 @@ extension SecondViewController: SecondTableViewCellDelegate {
             UtilityManager.shared.changeBackButtonTextAndColor(for: self)
         }
     
+}
+
+// MARK: - Scroll view delegate
+
+extension SecondViewController {
+    
+    // Метод делегата скролл вью чтобы убрать серую полоску сверху при скроллинге талицы вверх
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 0 {
+            topConstrantForTableView.constant = 0
+        } else {
+            topConstrantForTableView.constant = 8
+        }
+    }
 }
