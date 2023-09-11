@@ -20,6 +20,10 @@ class ThirdViewController: UIViewController {
     // MARK: - IB Outlets
     
     // Аутлеты для различных UI элементов
+    @IBOutlet weak var stackViewForView4: UIStackView!
+    @IBOutlet weak var stackViewForView5: UIStackView!
+    @IBOutlet weak var view5HeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var view4HeightConstraint: NSLayoutConstraint!
     @IBOutlet var textFields: [UITextField]!
     @IBOutlet var views: [UIView]!
     @IBOutlet weak var stackViewWithStar: UIStackView!
@@ -73,17 +77,33 @@ class ThirdViewController: UIViewController {
         
         // Настраиваем блок с оценкой отеля
         UtilityManager.shared.hotelLevel(stackView: stackViewWithStar)
+        
+        stackViewForView5.isHidden = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: IB Actions
+    
+    // Сворачивание и разворачивание секции
+    @IBAction func upOrDownArrowButtonTapped(_ sender: UIButton) {
+        switch sender.tag {
+            case 4:
+                UtilityManager.shared.changeSizeforView(constraint: view4HeightConstraint, stackView: stackViewForView4, sender: sender, in: self.view)
+            case 5:
+                UtilityManager.shared.changeSizeforView(constraint: view5HeightConstraint, stackView: stackViewForView5, sender: sender, in: self.view)
+            default:
+                break
+            }
     }
-    */
-
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

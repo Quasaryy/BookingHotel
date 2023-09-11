@@ -15,7 +15,7 @@ class MainTableViewCell: UITableViewCell {
     var imageUrls: [String] = []
     
     // Создаем новый объект CAShapeLayer, который будет служить маской для слоя
-    let maskLayer = CAShapeLayer()
+    private let maskLayer = CAShapeLayer()
     
     // MARK: - IB Outlets
     

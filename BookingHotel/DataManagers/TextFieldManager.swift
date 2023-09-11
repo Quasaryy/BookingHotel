@@ -13,20 +13,23 @@ class TextFieldManager: NSObject {
     // MARK: - Properties
     
     // Размер плейсхолдера
-    let sizeSmallPlaceholder: CGFloat = 12
-    let sizeNormalPlaceHolder: CGFloat = 17
+    private let sizeSmallPlaceholder: CGFloat = 12
+    private let sizeNormalPlaceHolder: CGFloat = 17
     
     // Высота текстовго поля
-    let textFieldHeight: CGFloat = 52
+    private let textFieldHeight: CGFloat = 52
     
     // Смешение текста от левого края
-    let leftPadding: CGFloat = 16
+    private let leftPadding: CGFloat = 16
     
     // Позиция маленького плейсхолдера
-    let placeholderPosotion: CGFloat = 8
+    private let placeholderPosotion: CGFloat = 10
     
     // Позиция текста
-    let textPosition: CGFloat = -8
+    private let textPosition: CGFloat = -8
+    
+    // Настройка позиции плейсхолдера по умолчанию
+    private let placeholderAdjustment: CGFloat = 1.0
     
     // Синглтон экземпляр класса, чтобы избежать множественных экземпляров этого класса в разных частях приложения
     static var shared = TextFieldManager()
@@ -75,8 +78,8 @@ extension TextFieldManager: UITextFieldDelegate {
             placeholderLabel.text = textField.placeholder
             placeholderLabel.font = UIFont(name: "SFProDisplay-Regular", size: sizeNormalPlaceHolder)
             placeholderLabel.textColor = UIColor(red: 169/255, green: 171/255, blue: 183/255, alpha: 1)
-            placeholderLabel.frame.size = CGSize(width: textField.frame.width - 32, height: 20)
-            placeholderLabel.frame.origin = CGPoint(x: leftPadding, y: (textField.frame.height - sizeSmallPlaceholder) / 2)
+            placeholderLabel.frame.size = CGSize(width: textField.frame.width - 32, height: 17)
+            placeholderLabel.frame.origin = CGPoint(x: leftPadding, y: ((textField.frame.height - sizeNormalPlaceHolder) / 2) - placeholderAdjustment)
             
             if let placeholder = textField.placeholder {
                 let attributes: [NSAttributedString.Key: Any] = [

@@ -15,6 +15,10 @@ class UtilityManager {
     // Синглтон экземпляр класса, чтобы избежать множественных экземпляров этого класса в разных частях приложения
     static var shared = UtilityManager()
     
+    // Высота констрейнта для развернутой вью
+    private let expandedViewHeight: CGFloat = 430.0
+    private let collapsedViewHeight: CGFloat = 58.0
+    
     // MARK: - Init
     
     // Закрытый инициализатор, чтобы предотвратить создание новых экземпляров класса
@@ -75,6 +79,23 @@ extension UtilityManager {
         stackViewWithStar.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         stackViewWithStar.isLayoutMarginsRelativeArrangement = true
         UtilityManager.shared.cornerRadius(for: stackViewWithStar, radius: 5)
+    }
+    
+    // Метод изменения размера вью
+    func changeSizeforView(constraint: NSLayoutConstraint, stackView: UIStackView, sender: UIButton, in view: UIView) {
+        if constraint.constant == collapsedViewHeight {
+            stackView.isHidden = false
+            constraint.constant = expandedViewHeight
+            sender.setImage(UIImage(named: "upArrow"), for: .normal)
+        } else {
+            stackView.isHidden = true
+            constraint.constant = collapsedViewHeight
+            sender.setImage(UIImage(named: "downArrow"), for: .normal)
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            view.layoutIfNeeded()
+        }
     }
     
 }
