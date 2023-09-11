@@ -105,16 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				D27EF0D82AAF0D3E006233DB /* ThirdViewController.swift */,
-				D2135AB42AAE4D23005268A6 /* CustomCells */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		D2135AB42AAE4D23005268A6 /* CustomCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		D2326CE42AA64342009B35FD = {

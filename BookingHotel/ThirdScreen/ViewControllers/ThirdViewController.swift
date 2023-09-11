@@ -20,7 +20,14 @@ class ThirdViewController: UIViewController {
     // MARK: - IB Outlets
     
     // Аутлеты для различных UI элементов
+    @IBOutlet var buttonsUpDownPlus: [UIButton]!
+    @IBOutlet weak var totalPrice: UILabel!
+    @IBOutlet weak var servicePrice: UILabel!
+    @IBOutlet weak var fuelPrice: UILabel!
+    @IBOutlet weak var tourPrice: UILabel!
     @IBOutlet weak var stackViewForView4: UIStackView!
+    @IBOutlet weak var viewWithButton: UIView!
+    @IBOutlet weak var payButtom: UIButton!
     @IBOutlet weak var stackViewForView5: UIStackView!
     @IBOutlet weak var view5HeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var view4HeightConstraint: NSLayoutConstraint!
@@ -63,6 +70,14 @@ class ThirdViewController: UIViewController {
                 self.foodKind.text = self.dataModelCustomers.nutrition
                 self.howMuchNights.text = String(self.dataModelCustomers.numberOfNights)
                 self.dates.text = "\(self.dataModelCustomers.tourDateStart) - \(self.dataModelCustomers.tourDateStop)"
+                self.fuelPrice.text = String(self.dataModelCustomers.fuelCharge)
+                self.servicePrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.serviceCharge, withPrefix: false)
+                self.fuelPrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.fuelCharge, withPrefix: false)
+                self.tourPrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.tourPrice, withPrefix: false)
+                self.totalPrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.tourPrice + self.dataModelCustomers.fuelCharge + self.dataModelCustomers.serviceCharge, withPrefix: false)
+                if let totalPrice = self.totalPrice.text {
+                    self.payButtom.setTitle("Оплатить \(totalPrice)", for: .normal)
+                }
                 
             }
         }
@@ -72,13 +87,25 @@ class ThirdViewController: UIViewController {
             UtilityManager.shared.cornerRadius(for: view, radius: 15)
         }
         
+        // Закругляем кнопки свернуть, развернуть, добавить
+        for button in buttonsUpDownPlus {
+            UtilityManager.shared.cornerRadius(for: button, radius: 6)
+        }
+        
+        // Закругляем кнопку оплатить
+        UtilityManager.shared.cornerRadius(for: payButtom, radius: 15)
+        
         // Настроиваем текстовые поля
         TextFieldManager.shared.textFiledsConfig(for: textFields, radius: 10)
         
         // Настраиваем блок с оценкой отеля
         UtilityManager.shared.hotelLevel(stackView: stackViewWithStar)
         
+        // Скрываем стек свернуой секции
         stackViewForView5.isHidden = true
+        
+        // Задаем бордер для последней секции
+        UtilityManager.shared.configureBordersForBottomView(view: viewWithButton)
     }
     
     // MARK: IB Actions
@@ -92,9 +119,12 @@ class ThirdViewController: UIViewController {
                 UtilityManager.shared.changeSizeforView(constraint: view5HeightConstraint, stackView: stackViewForView5, sender: sender, in: self.view)
             default:
                 break
-            }
+        }
     }
     
+    @IBAction func payButtonTapped(_ sender: UIButton) {
+        
+    }
     
     /*
      // MARK: - Navigation

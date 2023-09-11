@@ -51,12 +51,16 @@ extension UtilityManager {
     }
     
     // Метод для форматирования минимальной цены с добавлением разделителя тысяч
-    func formatMinimalPrice(_ minimalPrice: Int) -> String {
+    func formatMinimalPrice(_ minimalPrice: Int, withPrefix: Bool = true) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.groupingSeparator = " "
         if let formattedNumber = formatter.string(from: NSNumber(value: minimalPrice)) {
-            return "от \(formattedNumber) ₽"
+            if withPrefix {
+                return "от \(formattedNumber) ₽"
+            } else {
+                return "\(formattedNumber) ₽"
+            }
         } else {
             return "Цена не доступна"
         }

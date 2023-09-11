@@ -15,6 +15,9 @@
         <array key="SF-Pro-Display-Regular.otf">
             <string>SFProDisplay-Regular</string>
         </array>
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Отель-->
@@ -155,7 +158,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sI8-05-boo">
                                         <rect key="frame" x="0.0" y="16" width="393" height="1480.3333333333333"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nld-Fs-0fF" userLabel="View1">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nld-Fs-0fF" userLabel="View About Hotel">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="120.33333333333333"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="uKE-SL-grq" userLabel="Stack View With Star">
@@ -214,7 +217,7 @@
                                                     <constraint firstItem="uKE-SL-grq" firstAttribute="top" secondItem="nld-Fs-0fF" secondAttribute="top" constant="16" id="z9W-I2-v2r"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpm-xf-hgd" userLabel="View2">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpm-xf-hgd" userLabel="View Tour Details">
                                                 <rect key="frame" x="0.0" y="128.33333333333337" width="393" height="280"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="eVK-si-oqB">
@@ -351,7 +354,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="eVK-si-oqB" secondAttribute="trailing" constant="16" id="f59-se-cQ8"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fu4-pE-5cg" userLabel="View3">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fu4-pE-5cg" userLabel="View About Customer">
                                                 <rect key="frame" x="0.0" y="416.33333333333337" width="393" height="234"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Информация о покупателе" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgl-u8-fCx">
@@ -406,7 +409,7 @@
                                                     <constraint firstItem="b6D-mf-uXs" firstAttribute="top" secondItem="zNX-or-Ta8" secondAttribute="bottom" constant="8" id="wOu-gR-eXK"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVg-4b-Qa3" userLabel="View4">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVg-4b-Qa3" userLabel="View First Customer">
                                                 <rect key="frame" x="0.0" y="658.33333333333337" width="393" height="430.00000000000011"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Первый турист" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7e-TS-4T2">
@@ -415,8 +418,9 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQV-Mw-j2l" userLabel="Up Arrow Button view4">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQV-Mw-j2l" userLabel="Up Arrow Button">
                                                         <rect key="frame" x="345" y="13" width="32" height="32"/>
+                                                        <color key="backgroundColor" red="0.050980392156862744" green="0.44705882352941173" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="32" id="BXt-9h-IMK"/>
                                                             <constraint firstAttribute="height" constant="32" id="cFw-Rk-bqQ"/>
@@ -506,7 +510,7 @@
                                                     <constraint firstItem="3v5-OH-NKP" firstAttribute="leading" secondItem="kVg-4b-Qa3" secondAttribute="leading" constant="16" id="zrm-6r-TFB"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VC7-PM-4oI" userLabel="View5">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VC7-PM-4oI" userLabel="View Second Customer">
                                                 <rect key="frame" x="0.0" y="1096.3333333333333" width="393" height="58"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Второй турист" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coK-Xl-x0p">
@@ -515,8 +519,9 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA3-EQ-a49" userLabel="Down Arrow Button view5">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA3-EQ-a49" userLabel="Down Arrow Button">
                                                         <rect key="frame" x="345" y="13" width="32" height="32"/>
+                                                        <color key="backgroundColor" red="0.050980392156862744" green="0.44705882352941173" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="32" id="Y3J-bZ-X5M"/>
                                                             <constraint firstAttribute="height" constant="32" id="ltk-TQ-SuO"/>
@@ -606,25 +611,145 @@
                                                     <constraint firstItem="coK-Xl-x0p" firstAttribute="top" secondItem="VC7-PM-4oI" secondAttribute="top" constant="16" id="kUv-bw-pXb"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUQ-6K-U3n" userLabel="View6">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUQ-6K-U3n" userLabel="View Add Customer">
                                                 <rect key="frame" x="0.0" y="1162.3333333333333" width="393" height="58"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавить туриста" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufx-nM-Osj">
+                                                        <rect key="frame" x="16" y="15.999999999999998" width="181.66666666666666" height="26.333333333333321"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="22"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fI7-rt-yrt" userLabel="Plus Buttom">
+                                                        <rect key="frame" x="345" y="13" width="32" height="32"/>
+                                                        <color key="backgroundColor" red="0.050980392156862744" green="0.44705882352941173" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="32" id="UIB-yV-qBs"/>
+                                                            <constraint firstAttribute="height" constant="32" id="W08-ag-oXj"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="" image="plus"/>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="fI7-rt-yrt" secondAttribute="trailing" constant="16" id="14o-v0-z0d"/>
+                                                    <constraint firstItem="Ufx-nM-Osj" firstAttribute="top" secondItem="OUQ-6K-U3n" secondAttribute="top" constant="16" id="F7F-1u-hok"/>
+                                                    <constraint firstItem="Ufx-nM-Osj" firstAttribute="leading" secondItem="OUQ-6K-U3n" secondAttribute="leading" constant="16" id="Glw-Tn-y1f"/>
+                                                    <constraint firstItem="fI7-rt-yrt" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Ufx-nM-Osj" secondAttribute="trailing" constant="200" id="U2u-H9-ZPL"/>
+                                                    <constraint firstItem="fI7-rt-yrt" firstAttribute="top" secondItem="OUQ-6K-U3n" secondAttribute="top" constant="13" id="ctY-uN-3GS"/>
                                                     <constraint firstAttribute="height" constant="58" id="ru8-0q-P2O"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbR-Fc-yvN" userLabel="View7">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbR-Fc-yvN" userLabel="View With Tototal Price">
                                                 <rect key="frame" x="0.0" y="1228.3333333333333" width="393" height="156"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gxo-SG-5Yx">
+                                                        <rect key="frame" x="16" y="16" width="361" height="124"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WWt-hZ-TYS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="361" height="25"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тур" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xo-ze-XeZ">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="26.666666666666668" height="25"/>
+                                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                                                        <color key="textColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена тура" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTd-ns-vG7">
+                                                                        <rect key="frame" x="288.33333333333331" y="0.0" width="72.666666666666686" height="25"/>
+                                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="z39-B7-gQy">
+                                                                <rect key="frame" x="0.0" y="33" width="361" height="25"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Топливный сбор" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5l-kw-ZLk">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="117.66666666666667" height="25"/>
+                                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                                                        <color key="textColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена топливного сбора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kph-7m-NDc">
+                                                                        <rect key="frame" x="192" y="0.0" width="169" height="25"/>
+                                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="jWZ-8L-20y">
+                                                                <rect key="frame" x="0.0" y="66" width="361" height="25"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сервисный сбор" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfu-pJ-6qc">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="118.66666666666667" height="25"/>
+                                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                                                        <color key="textColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена сервисного сбора" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cn-YV-bhB">
+                                                                        <rect key="frame" x="191.66666666666663" y="0.0" width="169.33333333333337" height="25"/>
+                                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kll-X8-d1c">
+                                                                <rect key="frame" x="0.0" y="99" width="361" height="25"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="К оплате" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OW3-SH-e7K">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="63.333333333333336" height="25"/>
+                                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                                                        <color key="textColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Всего" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4y-Tx-J28">
+                                                                        <rect key="frame" x="317.33333333333331" y="0.0" width="43.666666666666686" height="25"/>
+                                                                        <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="16"/>
+                                                                        <color key="textColor" red="0.050980392156862744" green="0.44705882352941173" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="Gxo-SG-5Yx" firstAttribute="top" secondItem="fbR-Fc-yvN" secondAttribute="top" constant="16" id="1iB-iQ-Ccc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Gxo-SG-5Yx" secondAttribute="trailing" constant="16" id="W4m-yc-VIj"/>
                                                     <constraint firstAttribute="height" constant="156" id="cXE-BM-q1N"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Gxo-SG-5Yx" secondAttribute="bottom" constant="16" id="l8F-R3-8j3"/>
+                                                    <constraint firstItem="Gxo-SG-5Yx" firstAttribute="leading" secondItem="fbR-Fc-yvN" secondAttribute="leading" constant="16" id="lgg-eZ-jdd"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HI-Ol-gXe" userLabel="View8">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HI-Ol-gXe" userLabel="View With Button">
                                                 <rect key="frame" x="0.0" y="1392.3333333333333" width="393" height="88"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpR-vy-I3b">
+                                                        <rect key="frame" x="16" y="12" width="361" height="48"/>
+                                                        <color key="backgroundColor" red="0.050980392156862744" green="0.44705882352941173" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="PGy-5U-Gpi"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Оплатить"/>
+                                                        <connections>
+                                                            <action selector="payButtonTapped:" destination="qva-cR-fsy" eventType="touchUpInside" id="tnA-j2-iuQ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="vpR-vy-I3b" firstAttribute="top" secondItem="3HI-Ol-gXe" secondAttribute="top" constant="12" id="BiG-vQ-SeE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vpR-vy-I3b" secondAttribute="trailing" constant="16" id="IjJ-LR-zRe"/>
                                                     <constraint firstAttribute="height" constant="88" id="gss-2A-Ay1"/>
+                                                    <constraint firstItem="vpR-vy-I3b" firstAttribute="leading" secondItem="3HI-Ol-gXe" secondAttribute="leading" constant="16" id="nG5-2b-acz"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -677,21 +802,21 @@
                         <outlet property="flyFrom" destination="RpJ-14-lrP" id="4JM-3c-xRK"/>
                         <outlet property="flyTo" destination="aes-u3-9kL" id="zXo-cK-A0p"/>
                         <outlet property="foodKind" destination="xS4-38-XpP" id="92q-Bh-Qw5"/>
+                        <outlet property="fuelPrice" destination="Kph-7m-NDc" id="b6N-5o-ghF"/>
                         <outlet property="hotelAdress" destination="TOw-kq-OdJ" id="5Dx-Yn-udw"/>
                         <outlet property="hotelGrade" destination="bxF-nl-yf6" id="ELU-i5-5kK"/>
                         <outlet property="hotelGradeNumber" destination="gUX-Nf-plY" id="Big-hz-rnI"/>
                         <outlet property="howMuchNights" destination="ruq-hG-SUH" id="9Tp-5h-njc"/>
+                        <outlet property="payButtom" destination="vpR-vy-I3b" id="Doa-Pp-Aa2"/>
+                        <outlet property="servicePrice" destination="2cn-YV-bhB" id="EuW-R7-9uL"/>
                         <outlet property="stackViewForView4" destination="3v5-OH-NKP" id="fSL-ve-gh0"/>
                         <outlet property="stackViewForView5" destination="gmq-PC-0uN" id="TRH-PD-Sc8"/>
                         <outlet property="stackViewWithStar" destination="uKE-SL-grq" id="MvW-sr-dFh"/>
+                        <outlet property="totalPrice" destination="X4y-Tx-J28" id="pxb-pj-QKM"/>
+                        <outlet property="tourPrice" destination="PTd-ns-vG7" id="BJw-aZ-BIk"/>
                         <outlet property="view4HeightConstraint" destination="Lk1-lU-fHO" id="bvH-b7-7My"/>
                         <outlet property="view5HeightConstraint" destination="buF-QZ-unh" id="gSV-o3-MMc"/>
-                        <outletCollection property="views" destination="nld-Fs-0fF" collectionClass="NSMutableArray" id="NAa-C8-zbQ"/>
-                        <outletCollection property="views" destination="wpm-xf-hgd" collectionClass="NSMutableArray" id="tuD-6m-9ep"/>
-                        <outletCollection property="views" destination="Fu4-pE-5cg" collectionClass="NSMutableArray" id="4cg-aB-Jsf"/>
-                        <outletCollection property="views" destination="kVg-4b-Qa3" collectionClass="NSMutableArray" id="2Vd-Oa-Xxh"/>
-                        <outletCollection property="views" destination="OUQ-6K-U3n" collectionClass="NSMutableArray" id="Kqp-Lc-5q7"/>
-                        <outletCollection property="views" destination="fbR-Fc-yvN" collectionClass="NSMutableArray" id="SSs-FI-8LP"/>
+                        <outlet property="viewWithButton" destination="3HI-Ol-gXe" id="p4b-62-GjP"/>
                         <outletCollection property="hotelName" destination="TVv-vi-1Oy" collectionClass="NSMutableArray" id="tAE-Ml-jqG"/>
                         <outletCollection property="hotelName" destination="645-hL-pl2" collectionClass="NSMutableArray" id="S75-xk-Bte"/>
                         <outletCollection property="textFields" destination="lhH-tW-q4S" collectionClass="NSMutableArray" id="OAg-eq-Jxb"/>
@@ -702,13 +827,22 @@
                         <outletCollection property="textFields" destination="4IL-V5-j4C" collectionClass="NSMutableArray" id="JeU-zO-nGS"/>
                         <outletCollection property="textFields" destination="iSo-OH-b4v" collectionClass="NSMutableArray" id="0Ww-lX-Zdl"/>
                         <outletCollection property="textFields" destination="u5L-d0-qVC" collectionClass="NSMutableArray" id="Zwe-Ui-oF0"/>
-                        <outletCollection property="views" destination="VC7-PM-4oI" collectionClass="NSMutableArray" id="zJP-SB-a8p"/>
                         <outletCollection property="textFields" destination="yMs-AK-sEK" collectionClass="NSMutableArray" id="XPK-fa-A6U"/>
                         <outletCollection property="textFields" destination="FNT-mN-mos" collectionClass="NSMutableArray" id="16R-4L-VGr"/>
                         <outletCollection property="textFields" destination="35s-iY-CN4" collectionClass="NSMutableArray" id="NV8-N1-lhf"/>
                         <outletCollection property="textFields" destination="hNg-Dj-0gl" collectionClass="NSMutableArray" id="BJZ-Cs-9ju"/>
                         <outletCollection property="textFields" destination="nU0-jY-YXN" collectionClass="NSMutableArray" id="0n1-oG-pAS"/>
                         <outletCollection property="textFields" destination="tMy-s1-XrT" collectionClass="NSMutableArray" id="89T-0o-Fip"/>
+                        <outletCollection property="views" destination="nld-Fs-0fF" collectionClass="NSMutableArray" id="9cB-Av-Z2d"/>
+                        <outletCollection property="views" destination="wpm-xf-hgd" collectionClass="NSMutableArray" id="8Ps-Q1-7qC"/>
+                        <outletCollection property="views" destination="Fu4-pE-5cg" collectionClass="NSMutableArray" id="2mR-vN-tfT"/>
+                        <outletCollection property="views" destination="kVg-4b-Qa3" collectionClass="NSMutableArray" id="GaZ-Uu-De7"/>
+                        <outletCollection property="views" destination="VC7-PM-4oI" collectionClass="NSMutableArray" id="mjq-YA-yNH"/>
+                        <outletCollection property="views" destination="OUQ-6K-U3n" collectionClass="NSMutableArray" id="lsF-3S-nC2"/>
+                        <outletCollection property="views" destination="fbR-Fc-yvN" collectionClass="NSMutableArray" id="4Ti-gX-HAd"/>
+                        <outletCollection property="buttonsUpDownPlus" destination="fA3-EQ-a49" collectionClass="NSMutableArray" id="29n-UX-avp"/>
+                        <outletCollection property="buttonsUpDownPlus" destination="eQV-Mw-j2l" collectionClass="NSMutableArray" id="shh-dr-1tE"/>
+                        <outletCollection property="buttonsUpDownPlus" destination="fI7-rt-yrt" collectionClass="NSMutableArray" id="gV1-pg-4Qh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvf-Bh-XA7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -947,12 +1081,13 @@
     </scenes>
     <resources>
         <image name="close-square" width="24" height="24"/>
-        <image name="downArrow" width="32" height="32"/>
+        <image name="downArrow" width="14" height="8"/>
         <image name="emoji-happy" width="24" height="24"/>
         <image name="left" width="24" height="24"/>
+        <image name="plus" width="24" height="24"/>
         <image name="star" width="15" height="15"/>
         <image name="tick-square" width="24" height="24"/>
-        <image name="upArrow" width="32" height="32"/>
+        <image name="upArrow" width="14" height="8"/>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
