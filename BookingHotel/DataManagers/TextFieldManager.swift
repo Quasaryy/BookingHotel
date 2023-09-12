@@ -84,6 +84,18 @@ extension TextFieldManager: UITextFieldDelegate {
                 textField.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 249/255, alpha: 1)
             }
         }
+        
+        // Проверка на полноту ввода номера телефона и изменение цвета
+        if textField.placeholder == "Номер телефона" {
+            let phoneNumber = textField.text ?? ""
+            
+            // Проверяем, содержит ли номер телефона звездочки
+            if phoneNumber.contains("*") {
+                textField.backgroundColor = UIColor(red: 235/255, green: 87/255, blue: 87/255, alpha: 0.15)
+            } else {
+                textField.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 249/255, alpha: 1)
+            }
+        }
     }
     
     // Настройка текстовых полей

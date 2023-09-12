@@ -147,7 +147,7 @@ class ThirdViewController: UIViewController {
         // Проверяем, есть ли незаполненные поля
         if hasEmptyField {
             // Показываем уведомление что не все поля заполнены
-            UtilityManager.shared.showAlert(from: self, title: "Не все поля заполнены", message: "Проверьте все поля помеченные красным, возможно вы забыли заполнить данные для второго туриста")
+            UtilityManager.shared.showAlert(from: self, title: "Не все поля заполнены или заполнены не корректно", message: "Проверьте все поля помеченные красным, возможно вы забыли заполнить данные для второго туриста")
         } else {
             // Нет незаполненных полей, выполняем переход по сегвею
             UtilityManager.shared.changeBackButtonTextAndColor(for: self)
