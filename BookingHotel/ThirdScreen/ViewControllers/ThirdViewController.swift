@@ -18,8 +18,8 @@ class ThirdViewController: UIViewController {
     private let url = "https://run.mocky.io/v3/e8868481-743f-4eb2-a0d7-2bc4012275c8"
     
     // MARK: - IB Outlets
-    
     // Аутлеты для различных UI элементов
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var buttonsUpDownPlus: [UIButton]!
     @IBOutlet weak var totalPrice: UILabel!
     @IBOutlet weak var servicePrice: UILabel!
@@ -106,6 +106,13 @@ class ThirdViewController: UIViewController {
         
         // Задаем бордер для последней секции
         UtilityManager.shared.configureBordersForBottomView(view: viewWithButton)
+        
+        // Вызываем метод для настройки скрытия клавиатуры при тапе вне текстого поля
+        TextFieldManager.shared.setupGestureToHideKeyboard(viewController: self)
+        
+        // Вызываем метод для настройки скрытия клавиатуры при скролле
+        ScrollViewManager.shared.setupToHideKeyboardOnScroll(scrollView: scrollView, viewController: self)
+        
     }
     
     // MARK: IB Actions
@@ -123,17 +130,30 @@ class ThirdViewController: UIViewController {
     }
     
     @IBAction func payButtonTapped(_ sender: UIButton) {
-        UtilityManager.shared.changeBackButtonTextAndColor(for: self)
+        // Переменная для отслеживания, есть ли незаполненные поля
+        var hasEmptyField = false
+        
+        // Отсортируем поля перед проверкой
+        textFields.sort { $0.frame.origin.y < $1.frame.origin.y }
+        
+        for textField in textFields {
+            if textField.text?.isEmpty ?? true {
+                // Помечаем, что есть незаполненное поле
+                hasEmptyField = true
+                textField.backgroundColor = UIColor(red: 235/255, green: 87/255, blue: 87/255, alpha: 0.15)
+            }
+        }
+        
+        // Проверяем, есть ли незаполненные поля
+        if hasEmptyField {
+            // Показываем уведомление что не все поля заполнены
+            UtilityManager.shared.showAlert(from: self, title: "Не все поля заполнены", message: "Проверьте все поля помеченные красным, возможно вы забыли заполнить данные для второго туриста")
+        } else {
+            // Нет незаполненных полей, выполняем переход по сегвею
+            UtilityManager.shared.changeBackButtonTextAndColor(for: self)
+            performSegue(withIdentifier: "ToFinalScreen", sender: self)
+        }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
+

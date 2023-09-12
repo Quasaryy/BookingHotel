@@ -20,6 +20,7 @@
 		D2326D0E2AA64D42009B35FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2326D0D2AA64D42009B35FD /* MainViewController.swift */; };
 		D2326D132AA64FA3009B35FD /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2326D112AA64FA3009B35FD /* MainTableViewCell.swift */; };
 		D2326D142AA64FA3009B35FD /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */; };
+		D23DF7A72AB0B3CA00242755 /* ScrollViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23DF7A62AB0B3CA00242755 /* ScrollViewManager.swift */; };
 		D241AB932AACFD5B007BE1BC /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AB912AACFD5B007BE1BC /* SecondCollectionViewCell.swift */; };
 		D241AB942AACFD5B007BE1BC /* SecondCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D241AB922AACFD5B007BE1BC /* SecondCollectionViewCell.xib */; };
 		D252B05F2AAF62F1003A7A4C /* TextFieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252B05E2AAF62F1003A7A4C /* TextFieldManager.swift */; };
@@ -60,6 +61,7 @@
 		D2326D0D2AA64D42009B35FD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D2326D112AA64FA3009B35FD /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		D2326D122AA64FA3009B35FD /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		D23DF7A62AB0B3CA00242755 /* ScrollViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewManager.swift; sourceTree = "<group>"; };
 		D241AB912AACFD5B007BE1BC /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		D241AB922AACFD5B007BE1BC /* SecondCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondCollectionViewCell.xib; sourceTree = "<group>"; };
 		D252B05E2AAF62F1003A7A4C /* TextFieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldManager.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				D26EFF012AAB133800E05F4A /* AnimationManager.swift */,
 				D26EFF032AAB1A5F00E05F4A /* DynamicCreatingViewManager.swift */,
 				D26EFF092AAB359200E05F4A /* SliderManager.swift */,
+				D23DF7A62AB0B3CA00242755 /* ScrollViewManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				D26EFF022AAB133800E05F4A /* AnimationManager.swift in Sources */,
 				D22D92802AA71BF2004EA4E2 /* MainCollectionViewCell.swift in Sources */,
 				D27EF0D92AAF0D3E006233DB /* ThirdViewController.swift in Sources */,
+				D23DF7A72AB0B3CA00242755 /* ScrollViewManager.swift in Sources */,
 				D26F84072AA8654C00D1F229 /* Logger.swift in Sources */,
 				D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */,
 				D2F03C862AA8E72B00360AA3 /* String+extension.swift in Sources */,

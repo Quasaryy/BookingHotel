@@ -112,10 +112,10 @@ extension SecondViewController: SecondTableViewCellDelegate {
 
 extension SecondViewController {
     
-    // Метод делегата скролл вью чтобы убрать серую полоску сверху при скроллинге талицы вверх
+    // Метод делегата скролл вью чтобы убрать серую полоску сверху при скроллинге талицы вверх и сделать прсто бордер
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y > 0 {
-            topConstrantForTableView.constant = 0
+            topConstrantForTableView.constant = 1
         } else {
             topConstrantForTableView.constant = 8
         }

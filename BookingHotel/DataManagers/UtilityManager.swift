@@ -113,4 +113,15 @@ extension UtilityManager {
         return "Подтверждение заказа №\(generateRandomSixDigitNumber()) может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление."
     }
     
+    // Алерт контроллер
+    func showAlert(from viewController: UIViewController?, title: String, message: String) {
+            guard let viewController = viewController else {
+                return // Если передан nil, просто выходим из метода
+            }
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let buttonOK = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(buttonOK)
+            viewController.present(alert, animated: true)
+        }
+    
 }

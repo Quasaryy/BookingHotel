@@ -372,7 +372,7 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6D-mf-uXs">
                                                         <rect key="frame" x="16" y="184.33333333333326" width="361" height="33.666666666666657"/>
@@ -389,7 +389,7 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="light"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -443,7 +443,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7d-zz-2hT">
                                                                 <rect key="frame" x="0.0" y="60" width="361" height="52"/>
@@ -453,7 +453,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Дата рождения" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xoi-go-bbD">
                                                                 <rect key="frame" x="0.0" y="120" width="361" height="52"/>
@@ -463,7 +463,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Гражданство" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4IL-V5-j4C">
                                                                 <rect key="frame" x="0.0" y="180" width="361" height="52"/>
@@ -473,7 +473,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Номер загранпаспорта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iSo-OH-b4v">
                                                                 <rect key="frame" x="0.0" y="240.00000000000011" width="361" height="52"/>
@@ -483,7 +483,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Срок действия загранпаспорта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u5L-d0-qVC">
                                                                 <rect key="frame" x="0.0" y="300.00000000000011" width="361" height="52"/>
@@ -493,7 +493,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -544,7 +544,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FNT-mN-mos" userLabel="Фамилия второго туриста">
                                                                 <rect key="frame" x="0.0" y="60" width="361" height="52"/>
@@ -554,7 +554,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Дата рождения" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35s-iY-CN4" userLabel="Дата рождения второго туриста">
                                                                 <rect key="frame" x="0.0" y="120" width="361" height="52"/>
@@ -564,7 +564,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Гражданство" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-Dj-0gl" userLabel="Гражданство второго туриста">
                                                                 <rect key="frame" x="0.0" y="180" width="361" height="52"/>
@@ -574,7 +574,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Номер загранпаспорта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nU0-jY-YXN" userLabel="Номер загранпаспорта второго туриста">
                                                                 <rect key="frame" x="0.0" y="240" width="361" height="52"/>
@@ -584,7 +584,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Срок действия загранпаспорта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMy-s1-XrT" userLabel="Срок действия загранпаспорта второго туриста">
                                                                 <rect key="frame" x="0.0" y="300" width="361" height="52"/>
@@ -594,7 +594,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -744,7 +744,6 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="payButtonTapped:" destination="qva-cR-fsy" eventType="touchUpInside" id="tnA-j2-iuQ"/>
-                                                            <segue destination="Ksx-h1-FPx" kind="show" id="zsi-lJ-p6U"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -812,6 +811,7 @@
                         <outlet property="hotelGradeNumber" destination="gUX-Nf-plY" id="Big-hz-rnI"/>
                         <outlet property="howMuchNights" destination="ruq-hG-SUH" id="9Tp-5h-njc"/>
                         <outlet property="payButtom" destination="vpR-vy-I3b" id="Doa-Pp-Aa2"/>
+                        <outlet property="scrollView" destination="9Fr-fr-qiW" id="OQN-a6-zRt"/>
                         <outlet property="servicePrice" destination="2cn-YV-bhB" id="EuW-R7-9uL"/>
                         <outlet property="stackViewForView4" destination="3v5-OH-NKP" id="fSL-ve-gh0"/>
                         <outlet property="stackViewForView5" destination="gmq-PC-0uN" id="TRH-PD-Sc8"/>
@@ -847,6 +847,7 @@
                         <outletCollection property="buttonsUpDownPlus" destination="fA3-EQ-a49" collectionClass="NSMutableArray" id="29n-UX-avp"/>
                         <outletCollection property="buttonsUpDownPlus" destination="eQV-Mw-j2l" collectionClass="NSMutableArray" id="shh-dr-1tE"/>
                         <outletCollection property="buttonsUpDownPlus" destination="fI7-rt-yrt" collectionClass="NSMutableArray" id="gV1-pg-4Qh"/>
+                        <segue destination="Ksx-h1-FPx" kind="show" identifier="ToFinalScreen" id="4kC-H5-pjg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvf-Bh-XA7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
