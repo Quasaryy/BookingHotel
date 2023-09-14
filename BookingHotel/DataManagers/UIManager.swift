@@ -57,6 +57,20 @@ extension UIManager {
     
     // MARK: Четвертый экран
     
+    func setupFourthScreenUI(superButton: UIButton, bottomViewWithButton: UIView, viewWithImage: UIView, orderConfirmation: UILabel) {
+        
+            // Закругляем кнопку Super!
+            UtilityManager.shared.cornerRadius(for: superButton, radius: 15)
+            
+            // Задаем бордер для нижнего вью
+            UtilityManager.shared.configureBordersForBottomView(view: bottomViewWithButton)
+            
+            // Делаем круг из вью с поздравительным изображением
+            viewWithImage.layer.cornerRadius = viewWithImage.frame.size.width / 2
+            
+            // Текст для подтверждения заказа
+            orderConfirmation.text = UtilityManager.shared.orderConfirmation()
+        }
     
     
     // MARK: Первый экран

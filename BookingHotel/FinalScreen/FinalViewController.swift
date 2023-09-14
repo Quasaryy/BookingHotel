@@ -21,20 +21,16 @@ class FinalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Закругляем кнопку Super!
-        UtilityManager.shared.cornerRadius(for: superButton, radius: 15)
-
-        // Задаем бордер для нижнего вью
-        UtilityManager.shared.configureBordersForBottomView(view: bottomViewWithButton)
         
-        // Делаем круг из вью с поздравительным изображением
-        viewWithImage.layer.cornerRadius = viewWithImage.frame.size.width / 2
-        
-        // Текст для подтверждения заказа
-        orderConfirmation.text = UtilityManager.shared.orderConfirmation()
+        // Первоначальная настройка UI
+        UIManager.shared.setupFourthScreenUI(
+            superButton: superButton,
+            bottomViewWithButton: bottomViewWithButton,
+            viewWithImage: viewWithImage,
+            orderConfirmation: orderConfirmation
+        )
     }
-
+    
     // Возвращаеся на стартовый экран
     @IBAction func superButtonTapped(_ sender: UIButton) {
         navigationController?.popToRootViewController(animated: true)
