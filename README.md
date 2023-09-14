@@ -1,5 +1,5 @@
 # BookingHotel
-Tech Stack: Layout from Figma, MVC, GCD, UIKit, URLSession, TableView, CollectionView, ScrollView, Slider with page control, Custom Navigatiom bar, Filling text fields by mask, checking text field for right email etc.
+Tech Stack: Layout from Figma, MVC, GCD, UIKit, Core Animation, URLSession, TableView, CollectionView, ScrollView, Slider with page control, Custom Navigatiom bar, Filling text fields by mask, checking text field for right email etc.
 
 ## Видео
 [![Watch the video](https://img.youtube.com/vi/rn5XewMEbSs/maxresdefault.jpg)](https://youtu.be/rn5XewMEbSs)
