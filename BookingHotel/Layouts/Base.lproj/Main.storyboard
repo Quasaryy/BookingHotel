@@ -1953,10 +1953,10 @@
             </objects>
             <point key="canvasLocation" x="2278.6259541984732" y="634.50704225352115"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="YmV-Yg-M1o">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EIl-h8-adC" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EIl-h8-adC" customClass="CustomNavigationController" customModule="BookingHotel" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oxz-LG-Ewp">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
