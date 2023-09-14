@@ -17,10 +17,10 @@ class SecondTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     // Массив URL строк для загрузки изображений для слайдера
-    var imageUrls: [String] = []
+    private var imageUrls: [String] = []
     
     // Создаем отдельный экземпляр слайдера
-    let slider = SliderManager()
+    private let slider = SliderManager()
     
     // Делегат
     weak var delegate: SecondTableViewCellDelegate?

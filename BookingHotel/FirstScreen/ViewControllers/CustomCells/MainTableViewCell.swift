@@ -12,7 +12,7 @@ class MainTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     // Массив URL строк для загрузки изображений для слайдера
-    var imageUrls: [String] = []
+    private var imageUrls: [String] = []
     
     // Создаем новый объект CAShapeLayer, который будет служить маской для слоя
     private let maskLayer = CAShapeLayer()

@@ -12,25 +12,28 @@ class ThirdViewController: UIViewController {
     // MARK: - Propertis
     
     // Синглтон модели данных для хранения информации об отеле, хотя для структуры синглтон не нужен
-    var dataModelCustomers  = Customers.shared
+    private var dataModelCustomers  = Customers.shared
     
     // Урл для URLSession
     private let url = "https://run.mocky.io/v3/e8868481-743f-4eb2-a0d7-2bc4012275c8"
     
+    // Переменная для отслеживания текущего индекса скрытого вью
+    private var currentViewIndex = 4
+    
+    
     // MARK: - IB Outlets
     // Аутлеты для различных UI элементов
+    @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var buttonsUpDownPlus: [UIButton]!
     @IBOutlet weak var totalPrice: UILabel!
     @IBOutlet weak var servicePrice: UILabel!
     @IBOutlet weak var fuelPrice: UILabel!
     @IBOutlet weak var tourPrice: UILabel!
-    @IBOutlet weak var stackViewForView4: UIStackView!
     @IBOutlet weak var viewWithButton: UIView!
     @IBOutlet weak var payButtom: UIButton!
-    @IBOutlet weak var stackViewForView5: UIStackView!
-    @IBOutlet weak var view5HeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var view4HeightConstraint: NSLayoutConstraint!
+    @IBOutlet var stacksInViews: [UIStackView]!
+    @IBOutlet var viewConstaraints: [NSLayoutConstraint]!
     @IBOutlet var textFields: [UITextField]!
     @IBOutlet var views: [UIView]!
     @IBOutlet weak var stackViewWithStar: UIStackView!
@@ -101,9 +104,6 @@ class ThirdViewController: UIViewController {
         // Настраиваем блок с оценкой отеля
         UtilityManager.shared.hotelLevel(stackView: stackViewWithStar)
         
-        // Скрываем стек свернуой секции
-        stackViewForView5.isHidden = true
-        
         // Задаем бордер для последней секции
         UtilityManager.shared.configureBordersForBottomView(view: viewWithButton)
         
@@ -115,45 +115,24 @@ class ThirdViewController: UIViewController {
         
     }
     
-    // MARK: IB Actions
+    // MARK: - IB Actions
+    
+    // Создание нового клиента
+    @IBAction func addNewCustomer(_ sender: UIButton) {
+        ActionManager.shared.addNewCustomer(currentViewIndex: &currentViewIndex, mainStackView: mainStackView, controller: self)
+    }
     
     // Сворачивание и разворачивание секции
     @IBAction func upOrDownArrowButtonTapped(_ sender: UIButton) {
-        switch sender.tag {
-            case 4:
-                UtilityManager.shared.changeSizeforView(constraint: view4HeightConstraint, stackView: stackViewForView4, sender: sender, in: self.view)
-            case 5:
-                UtilityManager.shared.changeSizeforView(constraint: view5HeightConstraint, stackView: stackViewForView5, sender: sender, in: self.view)
-            default:
-                break
-        }
+        let tagOffset = 20
+            ActionManager.shared.toggleSectionVisibility(sender: sender, constraints: viewConstaraints, stackViews: stacksInViews, in: self.view, withTag: tagOffset)
     }
     
+    // Кнопка оплатить
     @IBAction func payButtonTapped(_ sender: UIButton) {
-        // Переменная для отслеживания, есть ли незаполненные поля
-        var hasEmptyField = false
-        
-        // Отсортируем поля перед проверкой
-        textFields.sort { $0.frame.origin.y < $1.frame.origin.y }
-        
-        for textField in textFields {
-            if textField.text?.isEmpty ?? true {
-                // Помечаем, что есть незаполненное поле
-                hasEmptyField = true
-                textField.backgroundColor = UIColor(red: 235/255, green: 87/255, blue: 87/255, alpha: 0.15)
-            }
+            ActionManager.shared.payButtonAction(sender: sender, textFields: textFields, views: views, viewConstaraints: viewConstaraints, stacksInViews: stacksInViews, buttonsUpDownPlus: buttonsUpDownPlus, scrollView: scrollView, mainStackView: mainStackView, controller: self, performSegue: { [weak self] in
+                self?.performSegue(withIdentifier: "ToFinalScreen", sender: self)
+            })
         }
-        
-        // Проверяем, есть ли незаполненные поля
-        if hasEmptyField {
-            // Показываем уведомление что не все поля заполнены
-            UtilityManager.shared.showAlert(from: self, title: "Не все поля заполнены или заполнены не корректно", message: "Проверьте все поля помеченные красным, возможно вы забыли заполнить данные для второго туриста")
-        } else {
-            // Нет незаполненных полей, выполняем переход по сегвею
-            UtilityManager.shared.changeBackButtonTextAndColor(for: self)
-            performSegue(withIdentifier: "ToFinalScreen", sender: self)
-        }
-    }
     
 }
-

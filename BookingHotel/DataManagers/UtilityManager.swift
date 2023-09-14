@@ -86,22 +86,34 @@ extension UtilityManager {
     }
     
     // Метод изменения размера вью
-    func changeSizeforView(constraint: NSLayoutConstraint, stackView: UIStackView, sender: UIButton, in view: UIView) {
+    func changeSizeforView(constraints: [NSLayoutConstraint], stackViews: [UIStackView], sender: UIButton, in view: UIView, isCollapsible: Bool = true, shouldChangeImage: Bool = true, withTag tag: Int) {
+        guard let stackView = stackViews.first(where: { $0.tag == tag }) else {
+            return
+        }
+
+        guard let constraint = constraints.first(where: { $0.identifier == "\(tag)" }) else {
+            return
+        }
+
         if constraint.constant == collapsedViewHeight {
             stackView.isHidden = false
             constraint.constant = expandedViewHeight
-            sender.setImage(UIImage(named: "upArrow"), for: .normal)
-        } else {
+            if shouldChangeImage {
+                sender.setImage(UIImage(named: "upArrow"), for: .normal)
+            }
+        } else if isCollapsible {
             stackView.isHidden = true
             constraint.constant = collapsedViewHeight
-            sender.setImage(UIImage(named: "downArrow"), for: .normal)
+            if shouldChangeImage {
+                sender.setImage(UIImage(named: "downArrow"), for: .normal)
+            }
         }
-        
+
         UIView.animate(withDuration: 0.3) {
             view.layoutIfNeeded()
         }
     }
-    
+
     // Генерация случайного числа из 6 цифр
     private func generateRandomSixDigitNumber() -> Int {
         let randomNumber = Int.random(in: 100000..<1000000)
@@ -119,6 +131,7 @@ extension UtilityManager {
                 return // Если передан nil, просто выходим из метода
             }
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.overrideUserInterfaceStyle = .light // Устанавливаем светлый стиль
             let buttonOK = UIAlertAction(title: "OK", style: .default)
             alert.addAction(buttonOK)
             viewController.present(alert, animated: true)

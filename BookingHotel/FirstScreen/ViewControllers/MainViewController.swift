@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     // MARK: - Properties
     
     // Синглтон модели данных для хранения информации об отеле, хотя для структуры синглтон не нужен
-    var dataModelHotel = Hotel.shared
+    private var dataModelHotel = Hotel.shared
     
     // Для последующего использования для белого фона под таблицей при её оттягивании вниз
     private let whiteView = UIView()

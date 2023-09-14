@@ -15,7 +15,7 @@ class SecondViewController: UIViewController {
     var navigationTitle: String?
     
     // Синглтон модели данных для хранения информации об отеле, хотя для структуры синглтон не нужен
-    var dataModelRooms = Rooms.shared
+    private var dataModelRooms = Rooms.shared
     
     // Урл для URLSession
     private let url = "https://run.mocky.io/v3/f9a38183-6f95-43aa-853a-9c83cbb05ecd"

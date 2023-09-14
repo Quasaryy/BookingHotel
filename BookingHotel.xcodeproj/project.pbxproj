@@ -34,6 +34,7 @@
 		D26F84022AA7D74600D1F229 /* Main2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26F84002AA7D74600D1F229 /* Main2TableViewCell.xib */; };
 		D26F84042AA7F19600D1F229 /* AboutHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F84032AA7F19600D1F229 /* AboutHotel.swift */; };
 		D26F84072AA8654C00D1F229 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F84062AA8654C00D1F229 /* Logger.swift */; };
+		D277951B2AB28B930096180C /* ActionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D277951A2AB28B930096180C /* ActionManager.swift */; };
 		D27EF0D92AAF0D3E006233DB /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27EF0D82AAF0D3E006233DB /* ThirdViewController.swift */; };
 		D28363C92AAC776F0031DDAF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28363C82AAC776F0031DDAF /* SecondViewController.swift */; };
 		D28363CE2AAC7C8F0031DDAF /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28363CC2AAC7C8F0031DDAF /* SecondTableViewCell.swift */; };
@@ -75,6 +76,7 @@
 		D26F84002AA7D74600D1F229 /* Main2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main2TableViewCell.xib; sourceTree = "<group>"; };
 		D26F84032AA7F19600D1F229 /* AboutHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHotel.swift; sourceTree = "<group>"; };
 		D26F84062AA8654C00D1F229 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		D277951A2AB28B930096180C /* ActionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManager.swift; sourceTree = "<group>"; };
 		D27EF0D82AAF0D3E006233DB /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		D28363C82AAC776F0031DDAF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D28363CC2AAC7C8F0031DDAF /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				D26EFF012AAB133800E05F4A /* AnimationManager.swift */,
 				D26EFF032AAB1A5F00E05F4A /* DynamicCreatingViewManager.swift */,
 				D26EFF092AAB359200E05F4A /* SliderManager.swift */,
+				D277951A2AB28B930096180C /* ActionManager.swift */,
 				D23DF7A62AB0B3CA00242755 /* ScrollViewManager.swift */,
 			);
 			path = DataManagers;
@@ -375,6 +378,7 @@
 				D22D92802AA71BF2004EA4E2 /* MainCollectionViewCell.swift in Sources */,
 				D27EF0D92AAF0D3E006233DB /* ThirdViewController.swift in Sources */,
 				D23DF7A72AB0B3CA00242755 /* ScrollViewManager.swift in Sources */,
+				D277951B2AB28B930096180C /* ActionManager.swift in Sources */,
 				D26F84072AA8654C00D1F229 /* Logger.swift in Sources */,
 				D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */,
 				D2F03C862AA8E72B00360AA3 /* String+extension.swift in Sources */,
