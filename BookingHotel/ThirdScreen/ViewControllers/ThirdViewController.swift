@@ -61,58 +61,11 @@ class ThirdViewController: UIViewController {
             
             // Присваиваем из модели данные аутлетам
             DispatchQueue.main.async {
-                for hotel in self.hotelName {
-                    hotel.text = self.dataModelCustomers.hotelName
-                }
-                self.hotelAdress.setTitle(self.dataModelCustomers.hotelAdress, for: .normal)
-                self.flyFrom.text = self.dataModelCustomers.departure
-                self.flyTo.text = self.dataModelCustomers.arrivalCountry
-                self.hotelGrade.text  = self.dataModelCustomers.ratingName
-                self.hotelGradeNumber.text =  String(self.dataModelCustomers.horating)
-                self.aboutRoom.text = self.dataModelCustomers.room
-                self.foodKind.text = self.dataModelCustomers.nutrition
-                self.howMuchNights.text = String(self.dataModelCustomers.numberOfNights)
-                self.dates.text = "\(self.dataModelCustomers.tourDateStart) - \(self.dataModelCustomers.tourDateStop)"
-                self.fuelPrice.text = String(self.dataModelCustomers.fuelCharge)
-                self.servicePrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.serviceCharge, withPrefix: false)
-                self.fuelPrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.fuelCharge, withPrefix: false)
-                self.tourPrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.tourPrice, withPrefix: false)
-                self.totalPrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.tourPrice + self.dataModelCustomers.fuelCharge + self.dataModelCustomers.serviceCharge, withPrefix: false)
-                if let totalPrice = self.totalPrice.text {
-                    self.payButtom.setTitle("Оплатить \(totalPrice)", for: .normal)
-                }
-                
+                self.updateUIWithModelData()
             }
         }
         
-        // Закругляем вьюхи
-        for view in views {
-            UtilityManager.shared.cornerRadius(for: view, radius: 15)
-        }
-        
-        // Закругляем кнопки свернуть, развернуть, добавить
-        for button in buttonsUpDownPlus {
-            UtilityManager.shared.cornerRadius(for: button, radius: 6)
-        }
-        
-        // Закругляем кнопку оплатить
-        UtilityManager.shared.cornerRadius(for: payButtom, radius: 15)
-        
-        // Настроиваем текстовые поля
-        TextFieldManager.shared.textFiledsConfig(for: textFields, radius: 10)
-        
-        // Настраиваем блок с оценкой отеля
-        UtilityManager.shared.hotelLevel(stackView: stackViewWithStar)
-        
-        // Задаем бордер для последней секции
-        UtilityManager.shared.configureBordersForBottomView(view: viewWithButton)
-        
-        // Вызываем метод для настройки скрытия клавиатуры при тапе вне текстого поля
-        TextFieldManager.shared.setupGestureToHideKeyboard(viewController: self)
-        
-        // Вызываем метод для настройки скрытия клавиатуры при скролле
-        ScrollViewManager.shared.setupToHideKeyboardOnScroll(scrollView: scrollView, viewController: self)
-        
+        setupUI()
     }
     
     // MARK: - IB Actions
@@ -134,5 +87,46 @@ class ThirdViewController: UIViewController {
                 self?.performSegue(withIdentifier: "ToFinalScreen", sender: self)
             })
         }
+    
+}
+
+// MARK: - Private methods
+
+extension ThirdViewController {
+    
+    // Первоначальная настройка UI
+    private func setupUI() {
+        UIManager.shared.setupViewElements(views: views)
+        UIManager.shared.setupButtons(buttons: buttonsUpDownPlus, radius: 6)
+        UIManager.shared.setupButtons(buttons: [payButtom], radius: 15)
+        UIManager.shared.setupTextFields(textFields: textFields, radius: 10)
+        UIManager.shared.setupStackViewWithStar(stackView: stackViewWithStar)
+        UIManager.shared.setupViewWithBorder(view: viewWithButton)
+        UIManager.shared.setupKeyboardHiding(viewController: self, scrollView: scrollView)
+    }
+
+    // Присваиваем из модели данные аутлетам
+    private func updateUIWithModelData() {
+        for hotel in self.hotelName {
+            hotel.text = self.dataModelCustomers.hotelName
+        }
+        self.hotelAdress.setTitle(self.dataModelCustomers.hotelAdress, for: .normal)
+        self.flyFrom.text = self.dataModelCustomers.departure
+        self.flyTo.text = self.dataModelCustomers.arrivalCountry
+        self.hotelGrade.text  = self.dataModelCustomers.ratingName
+        self.hotelGradeNumber.text =  String(self.dataModelCustomers.horating)
+        self.aboutRoom.text = self.dataModelCustomers.room
+        self.foodKind.text = self.dataModelCustomers.nutrition
+        self.howMuchNights.text = String(self.dataModelCustomers.numberOfNights)
+        self.dates.text = "\(self.dataModelCustomers.tourDateStart) - \(self.dataModelCustomers.tourDateStop)"
+        self.fuelPrice.text = String(self.dataModelCustomers.fuelCharge)
+        self.servicePrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.serviceCharge, withPrefix: false)
+        self.fuelPrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.fuelCharge, withPrefix: false)
+        self.tourPrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.tourPrice, withPrefix: false)
+        self.totalPrice.text = UtilityManager.shared.formatMinimalPrice(self.dataModelCustomers.tourPrice + self.dataModelCustomers.fuelCharge + self.dataModelCustomers.serviceCharge, withPrefix: false)
+        if let totalPrice = self.totalPrice.text {
+            self.payButtom.setTitle("Оплатить \(totalPrice)", for: .normal)
+        }
+    }
     
 }
