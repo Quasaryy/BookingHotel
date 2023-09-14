@@ -65,6 +65,7 @@ class ThirdViewController: UIViewController {
             }
         }
         
+        // Первоначальная настройка UI
         setupUI()
     }
     

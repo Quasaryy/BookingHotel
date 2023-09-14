@@ -31,23 +31,16 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Установка делегатов для управления поведением таблицы
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        // Настройка навигационной панели
-        UtilityManager.shared.setupNavigationBar(for: self)
-        
-        // Регистрация XIB для ячеек таблицы
-        tableView.register(UINib(nibName: "SecondTableViewCell", bundle: nil), forCellReuseIdentifier: "RoomsCell")
-        
-        // Устанавливаем заголовок в качестве названия отеля
-        navigationItem.title = navigationTitle
-        
-        // Запрос данных с удаленного сервера для модели данных
-        NetworkManager.shared.getDataFromRemoteServer(urlString: url, tableView: tableView, from: self) { rooms in
-            self.dataModelRooms = rooms
+        // Первоначальная настройка UI
+        UIManager.shared.setupSecondScreenUI(
+            viewController: self,
+            tableView: tableView,
+            navigationTitle: navigationTitle ?? "Default Title",
+            url: url
+        ) { [weak self] rooms in
+            self?.dataModelRooms = rooms
         }
+        
     }
     
     override func viewDidLayoutSubviews() {

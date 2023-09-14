@@ -79,6 +79,31 @@ extension UIManager {
     
     // MARK: Второй экран
     
-    
+    func setupSecondScreenUI(
+            viewController: UIViewController,
+            tableView: UITableView,
+            navigationTitle: String,
+            url: String,
+            completion: @escaping (Rooms) -> Void
+        ) {
+            // Установка делегатов для управления поведением таблицы
+            tableView.delegate = viewController as? UITableViewDelegate
+            tableView.dataSource = viewController as? UITableViewDataSource
+            
+            // Настройка навигационной панели
+            UtilityManager.shared.setupNavigationBar(for: viewController)
+            
+            // Регистрация XIB для ячеек таблицы
+            tableView.register(UINib(nibName: "SecondTableViewCell", bundle: nil), forCellReuseIdentifier: "RoomsCell")
+            
+            // Устанавливаем заголовок в качестве названия отеля
+            viewController.navigationItem.title = navigationTitle
+            
+            // Запрос данных с удаленного сервера для модели данных
+            NetworkManager.shared.getDataFromRemoteServer(urlString: url, tableView: tableView, from: viewController) { roomsData in
+                completion(roomsData)
+            }
+    }
+
     
 }
