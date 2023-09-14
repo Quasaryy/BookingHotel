@@ -42,33 +42,17 @@ class SecondTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Настройка закругления кнопки
-        UtilityManager.shared.cornerRadius(for: chooseRoom, radius: 15)
-        
-        // Настройка вида ячейки
-        TableViewManager.shared.setupViewAppearance(customCell: self)
-        
-        // Регистрация XIB для collectionView
-        let nib = UINib(nibName: "SecondCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "СollectionViewCell")
-        
-        // Настройка закругления view для пагинации
-        UtilityManager.shared.cornerRadius(for: viewWithPagination, radius: 5)
-        
-        // Округление углов collectionView
-        UtilityManager.shared.cornerRadius(for: collectionView, radius: 15)
-        
-        // Настройка вида ячейки
-        TableViewManager.shared.setupViewAppearance(customCell: self)
-        
-        // Закргуляем кнопку moreAboutRoomButton
-        UtilityManager.shared.cornerRadius(for: moreAboutRoomButton, radius: 5)
+        // Первоначальная настройка UI
+        UIManager.shared.setupCustomCellForSecondScreen(
+            chooseRoomButton: chooseRoom,
+            viewWithPagination: viewWithPagination,
+            collectionView: collectionView,
+            moreAboutRoomButton: moreAboutRoomButton,
+            cell: self
+        )
         
         // установка target-action для кнопки chooseRoomButtonTapped
         chooseRoom.addTarget(self, action: #selector(chooseRoomButtonAction), for: .touchUpInside)
-        
-        // Устанавливаем белый цвет фона для UICollectionView
-        collectionView.backgroundColor = .white
     }
     
     // MARK: - IB Actions

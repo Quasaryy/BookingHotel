@@ -88,7 +88,7 @@ extension MainTableViewCell {
     
     // Метод для первоначальной настройка UI
     private func setupUI() {
-        UIManager.shared.setupCustomCellAppearance(customCell: self, shouldApplyCornerRadius: false)
+        UIManager.shared.setupFirstCustomCellForFirstScreen(customCell: self, shouldApplyCornerRadius: false)
         UIManager.shared.setupCustomCellStackView(stackView: stackViewWithStar)
         UIManager.shared.setupViewWithPaginationCornerRadius(for: viewWithPagination)
         UIManager.shared.setupCollectionViewCornerRadius(for: collectionView)

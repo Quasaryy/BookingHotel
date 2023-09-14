@@ -26,61 +26,6 @@ class UIManager {
 
 extension UIManager {
     
-    // MARK: - Третий экран
-    
-    // Закругление вьюх
-    func setupViewElements(views: [UIView]) {
-        for view in views {
-            UtilityManager.shared.cornerRadius(for: view, radius: 15)
-        }
-    }
-    
-    // Закругление кнопок в секциях
-    func setupButtons(buttons: [UIButton], radius: CGFloat) {
-        for button in buttons {
-            UtilityManager.shared.cornerRadius(for: button, radius: radius)
-        }
-    }
-    
-    // Настройка текстовых полей
-    func setupTextFields(textFields: [UITextField], radius: CGFloat) {
-        TextFieldManager.shared.textFiledsConfig(for: textFields, radius: radius)
-    }
-    
-    // Настройка стека с оценкой отеля
-    func setupStackViewWithStar(stackView: UIStackView) {
-        UtilityManager.shared.hotelLevel(stackView: stackView)
-    }
-    
-    // Добавляем бордер к нижней вью с кнопкой
-    func setupViewWithBorder(view: UIView) {
-        UtilityManager.shared.configureBordersForBottomView(view: view)
-    }
-    
-    // Настройка поведение клавиатуры
-    func setupKeyboardHiding(viewController: UIViewController, scrollView: UIScrollView) {
-        TextFieldManager.shared.setupGestureToHideKeyboard(viewController: viewController)
-        ScrollViewManager.shared.setupToHideKeyboardOnScroll(scrollView: scrollView, viewController: viewController)
-    }
-    
-    // MARK: - Четвертый экран
-    
-    func setupFourthScreenUI(superButton: UIButton, bottomViewWithButton: UIView, viewWithImage: UIView, orderConfirmation: UILabel) {
-        
-        // Закругляем кнопку Super!
-        UtilityManager.shared.cornerRadius(for: superButton, radius: 15)
-        
-        // Задаем бордер для нижнего вью
-        UtilityManager.shared.configureBordersForBottomView(view: bottomViewWithButton)
-        
-        // Делаем круг из вью с поздравительным изображением
-        viewWithImage.layer.cornerRadius = viewWithImage.frame.size.width / 2
-        
-        // Текст для подтверждения заказа
-        orderConfirmation.text = UtilityManager.shared.orderConfirmation()
-    }
-    
-    
     // MARK: - Первый экран
     
     func setupFirstScreenUI(
@@ -122,7 +67,7 @@ extension UIManager {
     // MARK: Первая кастомная ячейка
     
     // Метод для настройки вида ячейки
-    func setupCustomCellAppearance(customCell: MainTableViewCell, shouldApplyCornerRadius: Bool) {
+    func setupFirstCustomCellForFirstScreen(customCell: MainTableViewCell, shouldApplyCornerRadius: Bool) {
         TableViewManager.shared.setupViewAppearance(customCell: customCell, shouldApplyCornerRadius: shouldApplyCornerRadius)
     }
     
@@ -204,6 +149,92 @@ extension UIManager {
         NetworkManager.shared.getDataFromRemoteServer(urlString: url, tableView: tableView, from: viewController) { roomsData in
             completion(roomsData)
         }
+    }
+    
+    // MARK: Кастомная ячейка
+    
+    func setupCustomCellForSecondScreen(
+        chooseRoomButton: UIButton,
+        viewWithPagination: UIView,
+        collectionView: UICollectionView,
+        moreAboutRoomButton: UIButton,
+        cell: UITableViewCell
+    ) {
+        // Настройка закругления кнопки
+        UtilityManager.shared.cornerRadius(for: chooseRoomButton, radius: 15)
+        
+        // Настройка вида ячейки
+        TableViewManager.shared.setupViewAppearance(customCell: cell)
+        
+        // Регистрация XIB для collectionView
+        let nib = UINib(nibName: "SecondCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "СollectionViewCell")
+        
+        // Настройка закругления view для пагинации
+        UtilityManager.shared.cornerRadius(for: viewWithPagination, radius: 5)
+        
+        // Округление углов collectionView
+        UtilityManager.shared.cornerRadius(for: collectionView, radius: 15)
+        
+        // Закругление кнопки moreAboutRoomButton
+        UtilityManager.shared.cornerRadius(for: moreAboutRoomButton, radius: 5)
+        
+        // Устанавливаем белый цвет фона для UICollectionView
+        collectionView.backgroundColor = .white
+    }
+    
+    // MARK: - Третий экран
+    
+    // Закругление вьюх
+    func setupViewElements(views: [UIView]) {
+        for view in views {
+            UtilityManager.shared.cornerRadius(for: view, radius: 15)
+        }
+    }
+    
+    // Закругление кнопок в секциях
+    func setupButtons(buttons: [UIButton], radius: CGFloat) {
+        for button in buttons {
+            UtilityManager.shared.cornerRadius(for: button, radius: radius)
+        }
+    }
+    
+    // Настройка текстовых полей
+    func setupTextFields(textFields: [UITextField], radius: CGFloat) {
+        TextFieldManager.shared.textFiledsConfig(for: textFields, radius: radius)
+    }
+    
+    // Настройка стека с оценкой отеля
+    func setupStackViewWithStar(stackView: UIStackView) {
+        UtilityManager.shared.hotelLevel(stackView: stackView)
+    }
+    
+    // Добавляем бордер к нижней вью с кнопкой
+    func setupViewWithBorder(view: UIView) {
+        UtilityManager.shared.configureBordersForBottomView(view: view)
+    }
+    
+    // Настройка поведение клавиатуры
+    func setupKeyboardHiding(viewController: UIViewController, scrollView: UIScrollView) {
+        TextFieldManager.shared.setupGestureToHideKeyboard(viewController: viewController)
+        ScrollViewManager.shared.setupToHideKeyboardOnScroll(scrollView: scrollView, viewController: viewController)
+    }
+    
+    // MARK: - Четвертый экран
+    
+    func setupFourthScreenUI(superButton: UIButton, bottomViewWithButton: UIView, viewWithImage: UIView, orderConfirmation: UILabel) {
+        
+        // Закругляем кнопку Super!
+        UtilityManager.shared.cornerRadius(for: superButton, radius: 15)
+        
+        // Задаем бордер для нижнего вью
+        UtilityManager.shared.configureBordersForBottomView(view: bottomViewWithButton)
+        
+        // Делаем круг из вью с поздравительным изображением
+        viewWithImage.layer.cornerRadius = viewWithImage.frame.size.width / 2
+        
+        // Текст для подтверждения заказа
+        orderConfirmation.text = UtilityManager.shared.orderConfirmation()
     }
     
 }
