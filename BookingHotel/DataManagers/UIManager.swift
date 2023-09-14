@@ -26,7 +26,7 @@ class UIManager {
 
 extension UIManager {
     
-    // MARK: Третий экран
+    // MARK: - Третий экран
     
     // Закругление вьюх
     func setupViewElements(views: [UIView]) {
@@ -63,7 +63,7 @@ extension UIManager {
         ScrollViewManager.shared.setupToHideKeyboardOnScroll(scrollView: scrollView, viewController: viewController)
     }
     
-    // MARK: Четвертый экран
+    // MARK: - Четвертый экран
     
     func setupFourthScreenUI(superButton: UIButton, bottomViewWithButton: UIView, viewWithImage: UIView, orderConfirmation: UILabel) {
         
@@ -81,7 +81,7 @@ extension UIManager {
     }
     
     
-    // MARK: Первый экран
+    // MARK: - Первый экран
     
     func setupFirstScreenUI(
         viewController: UIViewController,
@@ -119,8 +119,66 @@ extension UIManager {
         TableViewManager.shared.whiteBackgroundWhenPullingTable(view: whiteView, tableView: tableView)
     }
     
+    // MARK: Первая кастомная ячейка
     
-    // MARK: Второй экран
+    // Метод для настройки вида ячейки
+    func setupCustomCellAppearance(customCell: MainTableViewCell, shouldApplyCornerRadius: Bool) {
+        TableViewManager.shared.setupViewAppearance(customCell: customCell, shouldApplyCornerRadius: shouldApplyCornerRadius)
+    }
+    
+    // Метод для настройки stackView
+    func setupCustomCellStackView(stackView: UIStackView) {
+        UtilityManager.shared.hotelLevel(stackView: stackView)
+    }
+    
+    // Метод для настройки закругления углов viewWithPagination
+    func setupViewWithPaginationCornerRadius(for view: UIView) {
+        UtilityManager.shared.cornerRadius(for: view, radius: 5)
+    }
+    
+    // Метод для настройки закругления углов collectionView
+    func setupCollectionViewCornerRadius(for view: UIView) {
+        UtilityManager.shared.cornerRadius(for: view, radius: 15)
+    }
+    
+    // Метод для регистрации XIB для collectionView
+    func registerCustomCellNibs(collectionView: UICollectionView) {
+        let nib = UINib(nibName: "MainCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "СollectionViewCell")
+    }
+    
+    // Метод для настройки фона collectionView
+    func setupCustomCellCollectionViewBackgroundColor(collectionView: UICollectionView, color: UIColor) {
+        collectionView.backgroundColor = color
+    }
+    
+    // Метод для настройки слайдера
+    func setupSliderForCustomCell(cell: MainTableViewCell, imageUrls: [String]) {
+        SliderManager.shared.delegate = cell
+        SliderManager.shared.imageUrls = imageUrls
+        SliderManager.shared.configureSlider(for: cell)
+    }
+    
+    // Метод для настройки PageControl
+    func setupPageControlForCustomCell(pageControl: UIPageControl, numberOfPages: Int) {
+        pageControl.numberOfPages = numberOfPages
+    }
+    
+    // MARK: Вторая кастомная чейка
+    
+    // Настройка вложенного контроллера таблицы
+    func setupNestedTableViewControllerInCell(for cell: UITableViewCell) {
+        guard let checkedCell = cell as? Main2TableViewCell else { return }
+        TableViewManager.shared.setupNestedTableViewControllerInCell(for: checkedCell as Main2TableViewCell)
+    }
+    
+    // Настройка внешнего вида ячейки
+    func setupViewAppearance(customCell: UITableViewCell) {
+        TableViewManager.shared.setupViewAppearance(customCell: customCell)
+    }
+    
+    
+    // MARK: - Второй экран
     
     func setupSecondScreenUI(
         viewController: UIViewController,

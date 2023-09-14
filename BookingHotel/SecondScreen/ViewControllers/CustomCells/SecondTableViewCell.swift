@@ -27,7 +27,6 @@ class SecondTableViewCell: UITableViewCell {
     
     // MARK: - IB Outlets
     
-    // Аутлеты для различных UI элементов
     @IBOutlet weak var chooseRoom: UIButton!
     @IBOutlet weak var includedInPrice: UILabel!
     @IBOutlet weak var minimalPrice: UILabel!
@@ -40,7 +39,6 @@ class SecondTableViewCell: UITableViewCell {
     
     // MARK: - awakeFromNib
     
-    // Метод вызывается после загрузки вью из XIB/Storyboard
     override func awakeFromNib() {
         super.awakeFromNib()
         

@@ -22,7 +22,6 @@ class SecondViewController: UIViewController {
         
     // MARK: - IB Outlets
     
-    // Связывание элементов интерфейса с переменными
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var topConstrantForTableView: NSLayoutConstraint!
     

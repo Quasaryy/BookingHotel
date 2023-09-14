@@ -19,7 +19,6 @@ class MainTableViewCell: UITableViewCell {
     
     // MARK: - IB Outlets
     
-    // Аутлеты для различных UI элементов
     @IBOutlet weak var hotelAdress: UIButton!
     @IBOutlet weak var priceFor: UILabel!
     @IBOutlet weak var minimalPrice: UILabel!
@@ -34,35 +33,11 @@ class MainTableViewCell: UITableViewCell {
     
     // MARK: - awakeFromNib
     
-    // Метод вызывается после загрузки вью из XIB/Storyboard
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Установка делегата и источника данных для collectionView
-        SliderManager.shared.delegate = self
-        SliderManager.shared.configureSlider(for: self)
-        
-        // Настройка вида стек вью с оценкой отеля
-        UtilityManager.shared.hotelLevel(stackView: stackViewWithStar)
-        
-        // Настройка закругления view для пагинации
-        UtilityManager.shared.cornerRadius(for: viewWithPagination, radius: 5)
-        
-        // Регистрация XIB для collectionView
-        let nib = UINib(nibName: "MainCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "СollectionViewCell")
-        
-        // Округление углов collectionView
-        UtilityManager.shared.cornerRadius(for: collectionView, radius: 15)
-        
-        // Настройка вида ячейки
-        TableViewManager.shared.setupViewAppearance(customCell: self, shouldApplyCornerRadius: false)
-        
-        // Устанавливаем созданный CAShapeLayer как маску для текущего слоя.
-        self.layer.mask = maskLayer
-        
-        // Устанавливаем белый цвет фона для UICollectionView
-        collectionView.backgroundColor = .white
+        // Первоначальная настройка UI
+        setupUI()
     }
     
     // MARK: - layoutSubviews
@@ -109,6 +84,16 @@ extension MainTableViewCell {
         
         pageControl.numberOfPages = imageUrls.count // Обновляем количество страниц для pageControl
         collectionView.reloadData() // Перезагружаем данные коллекции
+    }
+    
+    // Метод для первоначальной настройка UI
+    private func setupUI() {
+        UIManager.shared.setupCustomCellAppearance(customCell: self, shouldApplyCornerRadius: false)
+        UIManager.shared.setupCustomCellStackView(stackView: stackViewWithStar)
+        UIManager.shared.setupViewWithPaginationCornerRadius(for: viewWithPagination)
+        UIManager.shared.setupCollectionViewCornerRadius(for: collectionView)
+        UIManager.shared.registerCustomCellNibs(collectionView: collectionView)
+        UIManager.shared.setupCustomCellCollectionViewBackgroundColor(collectionView: collectionView, color: .white)
     }
     
 }

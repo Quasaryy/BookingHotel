@@ -22,7 +22,6 @@ class MainViewController: UIViewController {
     
     // MARK: - IB Outlets
     
-    // Связывание элементов интерфейса с переменными
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomViewWithButton: UIView!
     @IBOutlet weak var blueButton: UIButton!

@@ -16,22 +16,17 @@ class Main2TableViewCell: UITableViewCell {
     
     // MARK: - IB Outlets
     
-    // Ссылки на элементы интерфейса, созданные в Interface Builder
     @IBOutlet weak var hotelDescription: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var verticalStackView: UIStackView!
     
     // MARK: - awakeFromNib
     
-    // Метод вызывается после загрузки вью из XIB/Storyboard
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Настройка вложенного контроллера таблицы
-        TableViewManager.shared.setupNestedTableViewControllerInCell(for: self)
-        
-        // Настройка внешнего вида ячейки
-        TableViewManager.shared.setupViewAppearance(customCell: self)
+        // Первоначальная настройка UI
+        setupUI()
     }
     
 }
@@ -39,13 +34,19 @@ class Main2TableViewCell: UITableViewCell {
 // MARK: - Methods
 
 extension Main2TableViewCell {
-        
+    
     // MARK: Конфигурируем ячейку
     
     func configCell(dataModel: Hotel, indexPath: IndexPath) {
         DynamicCreatingViewManager.shared.configLabelsWithData(with: dataModel.aboutTheHotel.peculiarities, verticalStackView: verticalStackView, customCell: self)
-
+        
         hotelDescription.text = dataModel.aboutTheHotel.description
+    }
+    
+    // Метод для первоначальной настройка UI
+    private func setupUI() {
+        UIManager.shared.setupNestedTableViewControllerInCell(for: self)
+        UIManager.shared.setupViewAppearance(customCell: self)
     }
     
 }

@@ -22,7 +22,6 @@ class ThirdViewController: UIViewController {
     
     
     // MARK: - IB Outlets
-    // Аутлеты для различных UI элементов
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var buttonsUpDownPlus: [UIButton]!
