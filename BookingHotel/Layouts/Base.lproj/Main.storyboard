@@ -153,11 +153,11 @@
                                     <constraint firstAttribute="height" constant="8" id="Z4A-QF-R1k"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fr-fr-qiW">
-                                <rect key="frame" x="0.0" y="103" width="393" height="1530"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="9Fr-fr-qiW">
+                                <rect key="frame" x="0.0" y="111" width="393" height="1522"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sI8-05-boo">
-                                        <rect key="frame" x="0.0" y="16" width="393" height="1414.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="8" width="393" height="1414.3333333333333"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nld-Fs-0fF" userLabel="View About Hotel">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="120.33333333333333"/>
@@ -1488,8 +1488,8 @@
                                     <constraint firstItem="I43-JS-x3R" firstAttribute="bottom" secondItem="sI8-05-boo" secondAttribute="bottom" id="4i7-Hh-4ea"/>
                                     <constraint firstItem="I43-JS-x3R" firstAttribute="trailing" secondItem="sI8-05-boo" secondAttribute="trailing" id="A0Q-ZW-qbA"/>
                                     <constraint firstItem="sI8-05-boo" firstAttribute="centerX" secondItem="9Fr-fr-qiW" secondAttribute="centerX" id="BS4-6z-meH"/>
+                                    <constraint firstItem="sI8-05-boo" firstAttribute="top" secondItem="I43-JS-x3R" secondAttribute="top" constant="8" id="LJV-9f-njq"/>
                                     <constraint firstItem="sI8-05-boo" firstAttribute="leading" secondItem="PeV-oj-hlT" secondAttribute="leading" id="jGF-pd-8bL"/>
-                                    <constraint firstItem="sI8-05-boo" firstAttribute="centerY" secondItem="I43-JS-x3R" secondAttribute="centerY" constant="8" id="n6G-J1-yr7"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="I43-JS-x3R"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="PeV-oj-hlT"/>
@@ -1499,11 +1499,11 @@
                         <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="oV2-F1-pDW" secondAttribute="trailing" id="276-Bx-dmj"/>
-                            <constraint firstItem="9Fr-fr-qiW" firstAttribute="top" secondItem="oV2-F1-pDW" secondAttribute="bottomMargin" id="2DK-Hf-llC"/>
+                            <constraint firstItem="9Fr-fr-qiW" firstAttribute="top" secondItem="oV2-F1-pDW" secondAttribute="bottomMargin" constant="8" id="2DK-Hf-llC"/>
                             <constraint firstAttribute="bottom" secondItem="9Fr-fr-qiW" secondAttribute="bottom" constant="-33" id="F9d-1f-Zbo"/>
                             <constraint firstItem="oV2-F1-pDW" firstAttribute="top" secondItem="Mae-cD-PPG" secondAttribute="top" id="FN1-ed-XqZ"/>
+                            <constraint firstItem="9Fr-fr-qiW" firstAttribute="trailing" secondItem="IaW-N4-Tgn" secondAttribute="trailing" id="GlP-vu-MY0"/>
                             <constraint firstItem="oV2-F1-pDW" firstAttribute="leading" secondItem="IaW-N4-Tgn" secondAttribute="leading" id="TaB-Ih-dH3"/>
-                            <constraint firstItem="9Fr-fr-qiW" firstAttribute="centerX" secondItem="oV2-F1-pDW" secondAttribute="centerX" id="WxH-OR-541"/>
                             <constraint firstItem="9Fr-fr-qiW" firstAttribute="leading" secondItem="IaW-N4-Tgn" secondAttribute="leading" id="ew8-gP-2FE"/>
                         </constraints>
                     </view>
