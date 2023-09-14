@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Первоначальная настройка UI
         UIManager.shared.setupFirstScreenUI(
             viewController: self,
             tableView: tableView,
