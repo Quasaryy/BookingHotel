@@ -36,6 +36,7 @@
 		D26F84072AA8654C00D1F229 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F84062AA8654C00D1F229 /* Logger.swift */; };
 		D277951B2AB28B930096180C /* ActionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D277951A2AB28B930096180C /* ActionManager.swift */; };
 		D277951D2AB2F9C10096180C /* UIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D277951C2AB2F9C10096180C /* UIManager.swift */; };
+		D277951F2AB3199C0096180C /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D277951E2AB3199C0096180C /* UIViewController+extension.swift */; };
 		D27EF0D92AAF0D3E006233DB /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27EF0D82AAF0D3E006233DB /* ThirdViewController.swift */; };
 		D28363C92AAC776F0031DDAF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28363C82AAC776F0031DDAF /* SecondViewController.swift */; };
 		D28363CE2AAC7C8F0031DDAF /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28363CC2AAC7C8F0031DDAF /* SecondTableViewCell.swift */; };
@@ -79,6 +80,7 @@
 		D26F84062AA8654C00D1F229 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D277951A2AB28B930096180C /* ActionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManager.swift; sourceTree = "<group>"; };
 		D277951C2AB2F9C10096180C /* UIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIManager.swift; sourceTree = "<group>"; };
+		D277951E2AB3199C0096180C /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		D27EF0D82AAF0D3E006233DB /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		D28363C82AAC776F0031DDAF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D28363CC2AAC7C8F0031DDAF /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				D2F03C852AA8E72B00360AA3 /* String+extension.swift */,
+				D277951E2AB3199C0096180C /* UIViewController+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				D26F84072AA8654C00D1F229 /* Logger.swift in Sources */,
 				D26F84012AA7D74600D1F229 /* Main2TableViewCell.swift in Sources */,
 				D2F03C862AA8E72B00360AA3 /* String+extension.swift in Sources */,
+				D277951F2AB3199C0096180C /* UIViewController+extension.swift in Sources */,
 				D256053E2AAFBE93006C2498 /* FinalViewController.swift in Sources */,
 				D2326CF32AA64342009B35FD /* SceneDelegate.swift in Sources */,
 				D26EFF062AAB1DA700E05F4A /* TableViewManager.swift in Sources */,

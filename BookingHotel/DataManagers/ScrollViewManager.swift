@@ -15,10 +15,8 @@ class ScrollViewManager: NSObject {
     // Синглтон для доступа к менеджеру
     static let shared = ScrollViewManager()
     
-    // Слабая ссылка на объект UIScrollView
     private weak var scrollView: UIScrollView?
     
-    // Слабая ссылка на объект UIViewController
     private weak var viewController: UIViewController?
     
     // MARK: - Init
@@ -27,7 +25,7 @@ class ScrollViewManager: NSObject {
     private override init() {}
     
     deinit {
-        // Удаляем текущий объект как наблюдателя за всеми уведомлениями, чтобы избежать утечек памяти и не вызывать несуществующие методы после освобождения объекта из памяти
+        // Удаляем текущий объект как наблюдателя за всеми уведомлениями, чтобы избежать утечек памяти
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -52,7 +50,7 @@ extension ScrollViewManager: UIScrollViewDelegate {
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        // При начале перетаскивания содержимого scrollView (dragging) прекращаем редактирование, чтобы скрыть клавиатуру
+        // При начале перетаскивания содержимого scrollView прекращаем редактирование, чтобы скрыть клавиатуру
         viewController?.view.endEditing(true)
     }
     
@@ -75,14 +73,6 @@ extension ScrollViewManager: UIScrollViewDelegate {
         let contentInsets = UIEdgeInsets.zero
         scrollView?.contentInset = contentInsets
         scrollView?.scrollIndicatorInsets = contentInsets
-    }
-    
-}
-
-// Расширение для UIViewController чтобы добавить метод hideKeyboard
-extension UIViewController {
-    @objc func hideKeyboard() {
-        view.endEditing(true)
     }
     
 }
