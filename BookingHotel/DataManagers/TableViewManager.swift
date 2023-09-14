@@ -27,7 +27,7 @@ class TableViewManager {
 extension TableViewManager {
     
     // Чтобы при оттягивании таблицы вниз, пользователь видел белый фон, а не фон таблицы
-    func wniteBackgroundWnenPullingTable(view: UIView, tableView: UITableView) {
+    func whiteBackgroundWhenPullingTable(view: UIView, tableView: UITableView) {
         view.frame = CGRect(x: 0, y: -300, width: tableView.bounds.width, height: 300)
         view.backgroundColor = .white
         tableView.addSubview(view)

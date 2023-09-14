@@ -75,7 +75,42 @@ extension UIManager {
     
     // MARK: Первый экран
     
-    
+    func setupFirstScreenUI(
+        viewController: UIViewController,
+        tableView: UITableView,
+        blueButton: UIButton,
+        bottomViewWithButton: UIView,
+        whiteView: UIView,
+        navigationTitle: String? = nil,
+        url: String,
+        completion: @escaping (Hotel) -> Void
+    ) {
+        // Установка делегатов для управления поведением таблицы
+        tableView.delegate = viewController as? UITableViewDelegate
+        tableView.dataSource = viewController as? UITableViewDataSource
+
+        // Настройка закругления кнопки
+        UtilityManager.shared.cornerRadius(for: blueButton, radius: 15)
+
+        // Настройка границ нижнего вида
+        UtilityManager.shared.configureBordersForBottomView(view: bottomViewWithButton)
+
+        // Настройка навигационной панели
+        UtilityManager.shared.setupNavigationBar(for: viewController)
+
+        // Регистрация XIB для ячеек таблицы
+        tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainCell")
+        tableView.register(UINib(nibName: "Main2TableViewCell", bundle: nil), forCellReuseIdentifier: "MainSecondCell")
+
+        // Запрос данных с удаленного сервера для модели данных
+        NetworkManager.shared.getDataFromRemoteServer(urlString: url, tableView: tableView, from: viewController) { hotelData in
+            completion(hotelData)
+        }
+
+        // Чтобы при оттягивании таблицы вниз, пользователь видел белый фон, а не фон таблицы
+        TableViewManager.shared.whiteBackgroundWhenPullingTable(view: whiteView, tableView: tableView)
+    }
+
     
     // MARK: Второй экран
     

@@ -32,30 +32,17 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Установка делегатов для управления поведением таблицы
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        // Настройка закргуления кнопки
-        UtilityManager.shared.cornerRadius(for: blueButton, radius: 15)
-        
-        // Настройка границ нижнего вида
-        UtilityManager.shared.configureBordersForBottomView(view: bottomViewWithButton)
-        
-        // Настройка навигационной панели
-        UtilityManager.shared.setupNavigationBar(for: self)
-        
-        // Регистрация XIB для ячеек таблицы
-        tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainCell")
-        tableView.register(UINib(nibName: "Main2TableViewCell", bundle: nil), forCellReuseIdentifier: "MainSecondCell")
-        
-        // Запрос данных с удаленного сервера для модели данных
-        NetworkManager.shared.getDataFromRemoteServer(urlString: url, tableView: tableView, from: self) { hotel in
-            self.dataModelHotel = hotel
+        UIManager.shared.setupFirstScreenUI(
+            viewController: self,
+            tableView: tableView,
+            blueButton: blueButton,
+            bottomViewWithButton: bottomViewWithButton,
+            whiteView: whiteView,
+            url: url
+        ) { [weak self] hotelData in
+            self?.dataModelHotel = hotelData
         }
         
-        // Чтобы при оттягивании таблицы вниз, пользователь видел белый фон, а не фон таблицы
-        TableViewManager.shared.wniteBackgroundWnenPullingTable(view: whiteView, tableView: tableView)
     }
     
     override func viewDidLayoutSubviews() {
@@ -103,7 +90,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             
             // Регистрируем ячейку и кастим как кастомную
             let mainCell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! MainTableViewCell
-            
             
             // Настройка кастомной ячейки
             mainCell.configCell(dataModel: dataModelHotel)
