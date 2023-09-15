@@ -51,7 +51,7 @@
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7Qt-uV-e2I" firstAttribute="top" secondItem="cqH-SS-h8Q" secondAttribute="top" constant="-3" id="Q6n-0V-QBw"/>
                             <constraint firstItem="7Qt-uV-e2I" firstAttribute="leading" secondItem="cqH-SS-h8Q" secondAttribute="leading" constant="-25" id="dgR-i4-Y4q"/>

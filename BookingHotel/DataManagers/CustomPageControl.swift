@@ -30,7 +30,7 @@ class CustomPageControl: UIPageControl {
     // Константы, используемые в классе
     private struct Constants {
         static let cornerRadius: CGFloat = 5.0
-        static let containerInset: UIEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        static let containerInset: UIEdgeInsets = UIEdgeInsets(top: 5, left: 9, bottom: 5, right: 9)
         static let maxAlpha: CGFloat = 1
         static let minAlpha: CGFloat = 0.2
      }
