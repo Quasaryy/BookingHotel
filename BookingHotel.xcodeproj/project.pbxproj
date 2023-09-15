@@ -230,8 +230,8 @@
 				D26EFF032AAB1A5F00E05F4A /* DynamicCreatingViewManager.swift */,
 				D26EFF092AAB359200E05F4A /* SliderManager.swift */,
 				D277951A2AB28B930096180C /* ActionManager.swift */,
-				D2FADEA12AB477EC00B45290 /* Custom */,
 				D23DF7A62AB0B3CA00242755 /* ScrollViewManager.swift */,
+				D2FADEA12AB477EC00B45290 /* Custom */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";

@@ -17,7 +17,7 @@ class CustomPageControl: UIPageControl {
         static let containerInset: UIEdgeInsets = UIEdgeInsets(top: 5, left: 9, bottom: 5, right: 9)
         static let maxAlpha: CGFloat = 1
         static let minAlpha: CGFloat = 0.2
-     }
+    }
     
     // MARK: - Properties
     
@@ -26,7 +26,6 @@ class CustomPageControl: UIPageControl {
     private let dotSpacing: CGFloat = 5.0 // Расстояние между точками
     var currentButtonColor: UIColor = .black // Цвет активной кнопки
     private let originalDotColor = UIColor.gray // Цвет кнопок и применение альфа канала к этому цвету
-
     
     // Бекграунд для вью-точек
     private let backgroundView: UIView = {
@@ -61,7 +60,7 @@ class CustomPageControl: UIPageControl {
         super.init(coder: coder)
         setupPageControl()
     }
-
+    
     // MARK: - layoutSubviews
     
     // Распологаем вью-точеки и бекграунд
@@ -130,4 +129,5 @@ extension CustomPageControl {
             dotView.frame.size = CGSize(width: dotSize, height: dotSize) // Установка размера кнопки
         }
     }
+    
 }
