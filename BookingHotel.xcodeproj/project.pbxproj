@@ -230,9 +230,8 @@
 				D26EFF032AAB1A5F00E05F4A /* DynamicCreatingViewManager.swift */,
 				D26EFF092AAB359200E05F4A /* SliderManager.swift */,
 				D277951A2AB28B930096180C /* ActionManager.swift */,
-				D27795222AB39BD30096180C /* CustomPageControl.swift */,
+				D2FADEA12AB477EC00B45290 /* Custom */,
 				D23DF7A62AB0B3CA00242755 /* ScrollViewManager.swift */,
-				D27795202AB395160096180C /* CustomNavigationController.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -298,6 +297,15 @@
 				D277951E2AB3199C0096180C /* UIViewController+extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D2FADEA12AB477EC00B45290 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				D27795222AB39BD30096180C /* CustomPageControl.swift */,
+				D27795202AB395160096180C /* CustomNavigationController.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

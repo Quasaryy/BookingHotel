@@ -9,12 +9,21 @@ import UIKit
 
 class CustomPageControl: UIPageControl {
     
-    // Массив для хранения вью-точек
-    private var dotViews: [UIView] = []
+    // MARK: - Strutc
     
-    // Размер и расстояние между точками
-    private let dotSize: CGFloat = 7.0
-    private let dotSpacing: CGFloat = 5.0
+    // Константы, используемые в классе
+    private struct Constants {
+        static let cornerRadius: CGFloat = 5.0
+        static let containerInset: UIEdgeInsets = UIEdgeInsets(top: 5, left: 9, bottom: 5, right: 9)
+        static let maxAlpha: CGFloat = 1
+        static let minAlpha: CGFloat = 0.2
+     }
+    
+    // MARK: - Properties
+    
+    private var dotViews: [UIView] = [] // Массив для хранения вью-точек
+    private let dotSize: CGFloat = 7.0 // Размер точкек
+    private let dotSpacing: CGFloat = 5.0 // Расстояние между точками
     var currentButtonColor: UIColor = .black // Цвет активной кнопки
     private let originalDotColor = UIColor.gray // Цвет кнопок и применение альфа канала к этому цвету
 
@@ -26,14 +35,6 @@ class CustomPageControl: UIPageControl {
         view.layer.cornerRadius = Constants.cornerRadius
         return view
     }()
-    
-    // Константы, используемые в классе
-    private struct Constants {
-        static let cornerRadius: CGFloat = 5.0
-        static let containerInset: UIEdgeInsets = UIEdgeInsets(top: 5, left: 9, bottom: 5, right: 9)
-        static let maxAlpha: CGFloat = 1
-        static let minAlpha: CGFloat = 0.2
-     }
     
     // Переопределение числа страниц
     override var numberOfPages: Int {
@@ -49,6 +50,8 @@ class CustomPageControl: UIPageControl {
         }
     }
     
+    // MARK: - Intit
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupPageControl()
@@ -58,6 +61,34 @@ class CustomPageControl: UIPageControl {
         super.init(coder: coder)
         setupPageControl()
     }
+
+    // MARK: - layoutSubviews
+    
+    // Распологаем вью-точеки и бекграунд
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let totalWidth = CGFloat(numberOfPages) * dotSize + CGFloat(max(0, numberOfPages - 1)) * dotSpacing
+        let startX = (bounds.width - totalWidth) / 2
+        
+        backgroundView.frame = CGRect(x: startX - Constants.containerInset.left,
+                                      y: (bounds.height - dotSize) / 2 - Constants.containerInset.top,
+                                      width: totalWidth + Constants.containerInset.left + Constants.containerInset.right,
+                                      height: dotSize + Constants.containerInset.top + Constants.containerInset.bottom)
+        
+        for (index, dotView) in dotViews.enumerated() {
+            let x = startX + CGFloat(index) * (dotSize + dotSpacing)
+            dotView.frame = CGRect(x: x - (startX - Constants.containerInset.left),
+                                   y: Constants.containerInset.top,
+                                   width: dotSize,
+                                   height: dotSize)
+        }
+    }
+}
+
+// MARK: - Methods
+
+extension CustomPageControl {
     
     // Скрываем оригинальный пейдж контрол
     private func setupPageControl() {
@@ -99,26 +130,4 @@ class CustomPageControl: UIPageControl {
             dotView.frame.size = CGSize(width: dotSize, height: dotSize) // Установка размера кнопки
         }
     }
-
-    // Распологаем вью-точеки и бекграунд
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        let totalWidth = CGFloat(numberOfPages) * dotSize + CGFloat(max(0, numberOfPages - 1)) * dotSpacing
-        let startX = (bounds.width - totalWidth) / 2
-        
-        backgroundView.frame = CGRect(x: startX - Constants.containerInset.left,
-                                      y: (bounds.height - dotSize) / 2 - Constants.containerInset.top,
-                                      width: totalWidth + Constants.containerInset.left + Constants.containerInset.right,
-                                      height: dotSize + Constants.containerInset.top + Constants.containerInset.bottom)
-        
-        for (index, dotView) in dotViews.enumerated() {
-            let x = startX + CGFloat(index) * (dotSize + dotSpacing)
-            dotView.frame = CGRect(x: x - (startX - Constants.containerInset.left),
-                                   y: Constants.containerInset.top,
-                                   width: dotSize,
-                                   height: dotSize)
-        }
-    }
 }
-
