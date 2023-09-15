@@ -33,7 +33,7 @@ class SecondTableViewCell: UITableViewCell {
     @IBOutlet weak var moreAboutRoomButton: UIButton!
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var viewWithPagination: UIView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var pageControl: CustomPageControl!
     @IBOutlet weak var verticalStackView: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView!
     

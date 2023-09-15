@@ -27,7 +27,8 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingText: UILabel!
     @IBOutlet weak var stackViewWithStar: UIStackView!
     @IBOutlet weak var viewWithPagination: UIView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var pageControl: CustomPageControl!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     

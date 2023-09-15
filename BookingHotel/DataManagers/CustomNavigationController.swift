@@ -16,6 +16,7 @@ class CustomNavigationController: UINavigationController {
 }
 
 extension CustomNavigationController: UINavigationControllerDelegate {
+    
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         guard navigationController.viewControllers.count > 1 else {
             viewController.navigationItem.leftBarButtonItem = nil

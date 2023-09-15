@@ -45,13 +45,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0b-Ki-Z3m">
                         <rect key="frame" x="187.33333333333334" y="234" width="65.666666666666657" height="20"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="2vg-dw-dOY">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="2vg-dw-dOY" customClass="CustomPageControl" customModule="BookingHotel" customModuleProvider="target">
                                 <rect key="frame" x="-25" y="-3" width="115.66666666666667" height="26"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2vg-dw-dOY" secondAttribute="trailing" constant="-25" id="6wt-MZ-Nsc"/>
                             <constraint firstItem="2vg-dw-dOY" firstAttribute="leading" secondItem="C0b-Ki-Z3m" secondAttribute="leading" constant="-25" id="UmU-ao-dUK"/>

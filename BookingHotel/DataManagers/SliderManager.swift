@@ -17,7 +17,7 @@ protocol  SliderImageViewCell {
 
 protocol ConfigurableCell {
     var collectionView: UICollectionView! { get set }
-    var pageControl: UIPageControl! { get set }
+    var pageControl: CustomPageControl! { get set }
 }
 
 class SliderManager: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -37,7 +37,7 @@ class SliderManager: NSObject, UICollectionViewDataSource, UICollectionViewDeleg
     weak var currentCollectionView: UICollectionView?
     
     // Элемент управления UIPageControl для отображения текущей страницы слайдера
-    weak var currentPageControl: UIPageControl?
+    weak var currentPageControl: CustomPageControl?
     
 }
 
@@ -53,8 +53,8 @@ extension SliderManager {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "СollectionViewCell", for: indexPath) as? SliderImageViewCell else {
-                fatalError("Не удалось создать ячейку, соответствующую SliderCellProtocol")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "СollectionViewCell", for: indexPath) as? UICollectionViewCell & SliderImageViewCell else {
+                fatalError("Не удалось создать ячейку, соответствующую протоколу SliderImageViewCell")
             }
         
         // Закругление углов для первой и последней ячейки
@@ -70,7 +70,7 @@ extension SliderManager {
         
         // Проверка наличия URL-адресов
         guard !imageUrls.isEmpty else {
-            return cell as! UICollectionViewCell
+            return cell
         }
         
         // Загрузка и установка изображения из URL
@@ -94,7 +94,7 @@ extension SliderManager {
             }.resume()
         }
         
-        return cell as! UICollectionViewCell
+        return cell
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -143,10 +143,8 @@ extension SliderManager {
             cell.collectionView.dataSource = self
             cell.collectionView.delegate = self
             cell.pageControl.addTarget(self, action: #selector(pageControlDidChange(sender:)), for: .valueChanged)
-            
             self.currentCollectionView = cell.collectionView
             self.currentPageControl = cell.pageControl
-            
             cell.collectionView.reloadData()
         }
 

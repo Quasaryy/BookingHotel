@@ -45,7 +45,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqH-SS-h8Q" userLabel="View With Pagination">
                         <rect key="frame" x="177.66666666666666" y="245" width="66" height="20"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Qt-uV-e2I">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Qt-uV-e2I" customClass="CustomPageControl" customModule="BookingHotel" customModuleProvider="target">
                                 <rect key="frame" x="-25" y="-3" width="116" height="26"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,7 +90,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что ключено в цену" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOa-1L-Hao">
-                        <rect key="frame" x="97" y="453.66666666666669" width="141" height="19.333333333333314"/>
+                        <rect key="frame" x="97.000000000000014" y="453.66666666666669" width="140.33333333333337" height="19.333333333333314"/>
                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                         <color key="textColor" red="0.50980392156862742" green="0.52941176470588236" blue="0.58823529411764708" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -143,7 +143,7 @@
                 <outlet property="includedInPrice" destination="DOa-1L-Hao" id="RdF-9H-pBn"/>
                 <outlet property="minimalPrice" destination="SvF-lT-CnU" id="S4H-1y-iSH"/>
                 <outlet property="moreAboutRoomButton" destination="j3n-jy-NBM" id="Hhr-q2-LSs"/>
-                <outlet property="pageControl" destination="7Qt-uV-e2I" id="PKm-9D-1VR"/>
+                <outlet property="pageControl" destination="7Qt-uV-e2I" id="aWS-oD-kR5"/>
                 <outlet property="roomDescription" destination="eZV-yM-r59" id="v0z-mw-9Fh"/>
                 <outlet property="verticalStackView" destination="1uR-w7-pmN" id="CmC-qu-psv"/>
                 <outlet property="viewWithPagination" destination="cqH-SS-h8Q" id="YC1-Uu-HI8"/>
