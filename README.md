@@ -1,9 +1,6 @@
 # BookingHotel
 Tech Stack: Layout from Figma, MVC, GCD, UIKit, Core Animation, URLSession, TableView, CollectionView, ScrollView, Slider with page control, Custom Navigatiom bar, Filling text fields by mask, checking text field for right email etc.
 
-## Видео
-[![Watch the video](https://img.youtube.com/vi/rn5XewMEbSs/maxresdefault.jpg)](https://youtu.be/rn5XewMEbSs)
-
 ## Перый экран с описанием отеля
 ![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/1.png)
 
@@ -24,3 +21,6 @@ Tech Stack: Layout from Figma, MVC, GCD, UIKit, Core Animation, URLSession, Tabl
 
 ## Подтверждение заказа
 ![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/7.png)
+
+## Видео
+[![Watch the video](https://img.youtube.com/vi/rn5XewMEbSs/maxresdefault.jpg)](https://youtu.be/rn5XewMEbSs)
