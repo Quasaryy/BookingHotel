@@ -122,10 +122,12 @@ extension SliderManager {
     
     // MARK: Page Control
     
-    // Метод для изменения страницы при нажатии на UIPageControl
     @objc func pageControlDidChange(sender: UIPageControl) {
         guard let collectionView = currentCollectionView else { return }
         changePage(sender: sender, collectionView: collectionView)
+        
+        // Устанавливаем currentPage для кастомного pageControl
+        currentPageControl?.currentPage = sender.currentPage
     }
     
     // Метод реагирующий на изменение выбранной страницы в UIPageControl
