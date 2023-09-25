@@ -10,7 +10,7 @@ import UIKit
 
 class NetworkManager {
     
-    //MARK: - Properties
+    // MARK: - Properties
     
     // Синглтон экземпляр класса, чтобы избежать множественных экземпляров этого класса в разных частях приложения
     static let shared = NetworkManager()

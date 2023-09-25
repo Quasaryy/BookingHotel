@@ -61,7 +61,7 @@ class MainTableViewCell: UITableViewCell {
     
 }
 
-// MARK:  - Methods
+// MARK: - Methods
 
 extension MainTableViewCell {
     

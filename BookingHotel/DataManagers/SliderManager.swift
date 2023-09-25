@@ -76,7 +76,7 @@ extension SliderManager {
         // Загрузка и установка изображения из URL
         let urlStr = imageUrls[indexPath.row]
         if let url = URL(string: urlStr) {
-            URLSession.shared.dataTask(with: url) { data, response, error in
+            URLSession.shared.dataTask(with: url) { data, _, error in
                 if let error = error {
                     Logger.log("Ошибка загрузки изображения: \(error.localizedDescription)")
                     return

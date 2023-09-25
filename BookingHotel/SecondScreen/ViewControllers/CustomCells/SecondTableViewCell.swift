@@ -66,7 +66,7 @@ class SecondTableViewCell: UITableViewCell {
     }
 }
 
-// MARK:  - Methods
+// MARK: - Methods
 
 extension SecondTableViewCell {
     
