@@ -79,7 +79,7 @@ extension UtilityManager {
     
     // Настройка вида стек вью с оценкой отеля
     func hotelLevel(stackView stackViewWithStar: UIStackView) {
-        stackViewWithStar.backgroundColor = UIColor(red: 255/255, green: 199/255, blue: 0/255, alpha: 0.2)
+        stackViewWithStar.backgroundColor = UIColor(red: 1, green: 199/255, blue: 0/255, alpha: 0.2)
         stackViewWithStar.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         stackViewWithStar.isLayoutMarginsRelativeArrangement = true
         UtilityManager.shared.cornerRadius(for: stackViewWithStar, radius: 5)
