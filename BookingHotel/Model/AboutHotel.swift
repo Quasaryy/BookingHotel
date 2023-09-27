@@ -12,7 +12,8 @@ import Foundation
 // Структура, представляющая данные отеля
 struct Hotel: Codable {
     let id: Int
-    let name, adress: String
+    let name: String
+    let adress: String
     let minimalPrice: Int
     let priceForIt: String
     let rating: Int
