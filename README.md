@@ -6,7 +6,7 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Quasaryy_BookingHotel&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Quasaryy_BookingHotel)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Quasaryy_BookingHotel&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Quasaryy_BookingHotel)
 
-# Techstack
+# Tech Stack
 Layout from Figma, MVC, GCD, UIKit, Core Animation, URLSession, TableView, CollectionView, ScrollView, Slider with page control, Custom Navigatiom bar, Filling text fields by mask, checking text field for right email, Custom place holders for text fields etc.
 
 # Перый экран с описанием отеля
