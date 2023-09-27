@@ -51,69 +51,49 @@ extension ActionManager {
             }
         }
     
-    // Метод при нажатии кнопки оплатить
-    func payButtonAction(sender: UIButton, textFields: [UITextField], views: [UIView], viewConstaraints: [NSLayoutConstraint], stacksInViews: [UIStackView], buttonsUpDownPlus: [UIButton], scrollView: UIScrollView, mainStackView: UIStackView, controller: UIViewController, performSegue: @escaping () -> Void) {
-
-        // Переменная для отслеживания, есть ли незаполненные поля
+    // MARK: Блок для кнопки оплатить
+    
+    // Функция для проверки, есть ли пустые текстовые поля
+    func checkTextFields(_ textFields: [UITextField], mainStackView: UIStackView) -> Bool {
         var hasEmptyField = false
-        
-        let tagOffset = 21 // Отдельная константа для смещения тега
-
-        // Главная функция, проверяющая текстовые поля
-        func checkTextFields() {
-            for textField in textFields {
-                handleTextField(textField)
-            }
-        }
-
-        // Обработка каждого отдельного текстового поля
-        func handleTextField(_ textField: UITextField) {
-            // Получаем вью, в котором находится текстовое поле
-            guard let parentView = textField.superview else { return }
-            
-            // Проверяем, скрыто ли вью, в котором находится текстовое поле
-            if isViewVisible(parentView) {
-                handleEmptyTextField(textField)
-            }
-        }
-
-        // Проверка, видимо ли данное вью
-        func isViewVisible(_ view: UIView) -> Bool {
-            return !isViewHidden(view, mainStackView: mainStackView)
-        }
-
-        // Обработка пустого текстового поля
-        func handleEmptyTextField(_ textField: UITextField) {
-            // Проверка, пусто ли текстовое поле
-            if textField.text?.isEmpty ?? true {
+        for textField in textFields {
+            guard let parentView = textField.superview else { continue }
+            // Проверяем, является ли видимым родительское вью данного текстового поля
+            if !isViewHidden(parentView, mainStackView: mainStackView),
+               textField.text?.isEmpty ?? true {
                 hasEmptyField = true
-                setTextFieldBackgroundToRed(textField)
+                textField.backgroundColor = UIColor(red: 235/255, green: 87/255, blue: 87/255, alpha: 0.15)
             }
         }
+        return hasEmptyField
+    }
 
-        // Установка фона для текстового поля
-        func setTextFieldBackgroundToRed(_ textField: UITextField) {
-            // Установка цвета фона для пустого текстового поля
-            textField.backgroundColor = UIColor(red: 235/255, green: 87/255, blue: 87/255, alpha: 0.15)
-        }
-
-        // Проверяем, есть ли незаполненные поля
-        checkTextFields()
-        if hasEmptyField {
-            // Показываем уведомление что не все поля заполнены
-            UtilityManager.shared.showAlert(from: controller, title: "Не все поля заполнены", message: "Или заполнены не корректно. Проверьте все поля помеченные красным")
-
-            // Проходимся по всем вью и разворачиваем те вью, что не скрыты
-            for (index, view) in views.enumerated() {
-                if !isViewHidden(view, mainStackView: mainStackView) {
-                    UtilityManager.shared.changeSizeforView(constraints: viewConstaraints, stackViews: stacksInViews, sender: sender, in: controller.view, isCollapsible: false, shouldChangeImage: false, withTag: index + tagOffset)
-                    if let button = buttonsUpDownPlus.first(where: { $0.tag == index + 1 }) {
-                        button.setImage(UIImage(named: "upArrow"), for: .normal)
-                    }
+    // Функция для обработки незаполненных полей и сворачивания/разворачивания соответствующих вью
+    func handleUnfilledFields(in views: [UIView], withConstraints viewConstraints: [NSLayoutConstraint], stacks: [UIStackView], mainStackView: UIStackView, sender: UIButton, controller: UIViewController, buttons: [UIButton], tagOffset: Int) {
+        for (index, view) in views.enumerated() {
+            // Проверяем, является ли видимым данное вью
+            if !isViewHidden(view, mainStackView: mainStackView) {
+                UtilityManager.shared.changeSizeforView(constraints: viewConstraints, stackViews: stacks, sender: sender, in: controller.view, isCollapsible: false, shouldChangeImage: false, withTag: index + tagOffset)
+                if let button = buttons.first(where: { $0.tag == index + 1 }) {
+                    button.setImage(UIImage(named: "upArrow"), for: .normal)
                 }
             }
+        }
+    }
+
+    func payButtonAction(sender: UIButton, textFields: [UITextField], views: [UIView], viewConstraints: [NSLayoutConstraint], stacksInViews: [UIStackView], buttonsUpDownPlus: [UIButton], scrollView: UIScrollView, mainStackView: UIStackView, controller: UIViewController, performSegue: @escaping () -> Void) {
+        let tagOffset = 21
+        
+        // Проверка наличия пустых полей
+        let hasEmptyField = checkTextFields(textFields, mainStackView: mainStackView)
+
+        if hasEmptyField {
+            // Показываем уведомление если есть пустые поля
+            UtilityManager.shared.showAlert(from: controller, title: "Не все поля заполнены", message: "Или заполнены не корректно. Проверьте все поля помеченные красным")
+            // Обрабатываем незаполненные поля
+            handleUnfilledFields(in: views, withConstraints: viewConstraints, stacks: stacksInViews, mainStackView: mainStackView, sender: sender, controller: controller, buttons: buttonsUpDownPlus, tagOffset: tagOffset)
         } else {
-            // Нет незаполненных полей, выполняем переход по сегвею
+            // Если все поля заполнены, выполняем переход
             UtilityManager.shared.changeBackButtonTextAndColor(for: controller)
             performSegue()
         }
@@ -121,7 +101,7 @@ extension ActionManager {
         let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height + 33)
         scrollView.setContentOffset(bottomOffset, animated: true)
     }
-
+    
     private func isViewHidden(_ view: UIView?, mainStackView: UIStackView) -> Bool {
         guard let view = view else { return false }
 
