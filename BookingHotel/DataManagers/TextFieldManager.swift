@@ -209,11 +209,9 @@ extension TextFieldManager: UITextFieldDelegate {
         }
         
         // Если отформатированный текст пустой, устанавливаем позицию курсора в начало
-        if filteredText.isEmpty {
-            if let newPosition = textField.position(from: textField.beginningOfDocument, offset: 4) {
-                textField.selectedTextRange = textField.textRange(from: newPosition, to: newPosition)
-                return
-            }
+        if filteredText.isEmpty, let newPosition = textField.position(from: textField.beginningOfDocument, offset: 4) {
+            textField.selectedTextRange = textField.textRange(from: newPosition, to: newPosition)
+            return
         }
         
         previousText = textField.text
