@@ -1,7 +1,11 @@
 # Code quality
-CodeFactor: [![CodeFactor](https://www.codefactor.io/repository/github/quasaryy/bookinghotel/badge)](https://www.codefactor.io/repository/github/quasaryy/bookinghotel)
+CodeFactor
 
-SonarCloud: [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Quasaryy_BookingHotel&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Quasaryy_BookingHotel)
+[![CodeFactor](https://www.codefactor.io/repository/github/quasaryy/bookinghotel/badge)](https://www.codefactor.io/repository/github/quasaryy/bookinghotel)
+
+SonarCloud
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Quasaryy_BookingHotel&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Quasaryy_BookingHotel)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=Quasaryy_BookingHotel&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=Quasaryy_BookingHotel)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Quasaryy_BookingHotel&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Quasaryy_BookingHotel)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Quasaryy_BookingHotel&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Quasaryy_BookingHotel)
