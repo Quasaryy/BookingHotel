@@ -20,9 +20,10 @@ class DynamicCreatingViewManager {
     private let labelSpacing: CGFloat = 8
     
     // MARK: - Init
-    
-    // Закрытый инициализатор, чтобы предотвратить создание новых экземпляров класса
-    private init() {}
+
+    private init() {
+        // Закрытый инициализатор, чтобы предотвратить создание новых экземпляров класса
+    }
     
 }
 

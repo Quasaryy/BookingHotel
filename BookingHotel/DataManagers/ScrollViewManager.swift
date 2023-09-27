@@ -20,9 +20,10 @@ class ScrollViewManager: NSObject {
     private weak var viewController: UIViewController?
     
     // MARK: - Init
-    
-    // Закрытый инициализатор, чтобы предотвратить создание новых экземпляров класса
-    private override init() {}
+
+    private override init() {
+        // Закрытый инициализатор, чтобы предотвратить создание новых экземпляров класса
+    }
     
     deinit {
         // Удаляем текущий объект как наблюдателя за всеми уведомлениями, чтобы избежать утечек памяти

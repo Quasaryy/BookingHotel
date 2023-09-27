@@ -20,7 +20,8 @@ struct Customers: Codable {
     let tourDateStart: String
     let tourDateStop: String
     let numberOfNights: Int
-    let room, nutrition: String
+    let room: String
+    let nutrition: String
     let tourPrice: Int
     let fuelCharge: Int
     let serviceCharge: Int
