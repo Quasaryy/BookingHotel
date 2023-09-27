@@ -35,7 +35,7 @@ class TextFieldManager: NSObject {
     
     private var previousText: String?
     private let fontNameRegular = "SFProDisplay-Regular"
-    private let placeholderForPhoneNumber = "Номер телефона"
+    private let phoneNumber = "Номер телефона"
     private let maskPhoneNumber = "+7 (***) ***-**-**"
     
     // Синглтон экземпляр класса
@@ -57,7 +57,7 @@ extension TextFieldManager: UITextFieldDelegate {
         }
         
         // Устанавливаем маску для ввода номера телефона, если поле для ввода пустое или nil
-        if textField.placeholder == placeholderForPhoneNumber && (textField.text == nil || textField.text?.isEmpty == true) {
+        if textField.placeholder == phoneNumber && (textField.text == nil || textField.text?.isEmpty == true) {
             textField.text = maskPhoneNumber
         }
     }
@@ -89,7 +89,7 @@ extension TextFieldManager: UITextFieldDelegate {
         }
         
         // Проверка на полноту ввода номера телефона и изменение цвета
-        if textField.placeholder == placeholderForPhoneNumber {
+        if textField.placeholder == phoneNumber {
             let phoneNumber = textField.text ?? ""
             
             // Проверяем, содержит ли номер телефона звездочки
@@ -147,7 +147,7 @@ extension TextFieldManager: UITextFieldDelegate {
             textField.addSubview(placeholderLabel)
             
             // Добавляем обработчик изменений текста для поля с плейсхолдером "Номер телефона"
-            if textField.placeholder == placeholderForPhoneNumber {
+            if textField.placeholder == phoneNumber {
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             }
         }
