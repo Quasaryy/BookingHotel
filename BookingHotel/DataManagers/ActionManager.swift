@@ -16,10 +16,9 @@ class ActionManager {
     
     // MARK: - Init
     
-    private init() {
-        // Закрытый инициализатор, чтобы предотвратить создание новых экземпляров класса
-    }
-
+    // Закрытый инициализатор, чтобы предотвратить создание новых экземпляров класса
+    private init() {}
+    
 }
 
 // MARK: - Methods
@@ -42,16 +41,16 @@ extension ActionManager {
         }
     }
     
-    // Метод для сворачивания и разворачивания секции
-        func toggleSectionVisibility(sender: UIButton, constraints: [NSLayoutConstraint], stackViews: [UIStackView], in view: UIView, withTag tagOffset: Int) {
-            let newTag = sender.tag + tagOffset
-
-            if (1...9).contains(sender.tag) {
-                UtilityManager.shared.changeSizeforView(constraints: constraints, stackViews: stackViews, sender: sender, in: view, withTag: newTag)
-            }
-        }
-    
     // MARK: Блок для кнопки оплатить
+    
+    // Метод для сворачивания и разворачивания секции
+    func toggleSectionVisibility(sender: UIButton, constraints: [NSLayoutConstraint], stackViews: [UIStackView], in view: UIView, withTag tagOffset: Int) {
+        let newTag = sender.tag + tagOffset
+        
+        if (1...9).contains(sender.tag) {
+            UtilityManager.shared.changeSizeforView(constraints: constraints, stackViews: stackViews, sender: sender, in: view, withTag: newTag)
+        }
+    }
     
     // Функция для проверки, есть ли пустые текстовые поля
     func checkTextFields(_ textFields: [UITextField], mainStackView: UIStackView) -> Bool {
@@ -67,7 +66,7 @@ extension ActionManager {
         }
         return hasEmptyField
     }
-
+    
     // Функция для обработки незаполненных полей и сворачивания/разворачивания соответствующих вью
     func handleUnfilledFields(in views: [UIView], withConstraints viewConstraints: [NSLayoutConstraint], stacks: [UIStackView], mainStackView: UIStackView, sender: UIButton, controller: UIViewController, buttons: [UIButton], tagOffset: Int) {
         for (index, view) in views.enumerated() {
@@ -80,13 +79,14 @@ extension ActionManager {
             }
         }
     }
-
+    
+    // Основной метод кнопки оплатить
     func payButtonAction(sender: UIButton, textFields: [UITextField], views: [UIView], viewConstraints: [NSLayoutConstraint], stacksInViews: [UIStackView], buttonsUpDownPlus: [UIButton], scrollView: UIScrollView, mainStackView: UIStackView, controller: UIViewController, performSegue: @escaping () -> Void) {
         let tagOffset = 21
         
         // Проверка наличия пустых полей
         let hasEmptyField = checkTextFields(textFields, mainStackView: mainStackView)
-
+        
         if hasEmptyField {
             // Показываем уведомление если есть пустые поля
             UtilityManager.shared.showAlert(from: controller, title: "Не все поля заполнены", message: "Или заполнены не корректно. Проверьте все поля помеченные красным")
@@ -97,14 +97,14 @@ extension ActionManager {
             UtilityManager.shared.changeBackButtonTextAndColor(for: controller)
             performSegue()
         }
-
+        
         let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height + 33)
         scrollView.setContentOffset(bottomOffset, animated: true)
     }
     
     private func isViewHidden(_ view: UIView?, mainStackView: UIStackView) -> Bool {
         guard let view = view else { return false }
-
+        
         // Перебираем супервью до тех пор, пока не дойдем до нужного вью
         var currentSuperview = view.superview
         while let superview = currentSuperview {
@@ -116,7 +116,7 @@ extension ActionManager {
             }
             currentSuperview = superview.superview
         }
-
+        
         return false
     }
     

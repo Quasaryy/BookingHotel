@@ -21,9 +21,7 @@ class UtilityManager {
     
     // MARK: - Init
     
-    private init() {
-        // Закрытый инициализатор, чтобы предотвратить создание новых экземпляров класса
-    }
+    private init() {}
     
 }
 
