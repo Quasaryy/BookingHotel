@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/quasaryy/bookinghotel/badge)](https://www.codefactor.io/repository/github/quasaryy/bookinghotel)
+
 # BookingHotel
 Tech Stack: Layout from Figma, MVC, GCD, UIKit, Core Animation, URLSession, TableView, CollectionView, ScrollView, Slider with page control, Custom Navigatiom bar, Filling text fields by mask, checking text field for right email etc.
 
