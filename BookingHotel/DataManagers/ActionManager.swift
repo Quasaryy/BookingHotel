@@ -58,20 +58,47 @@ extension ActionManager {
         
         let tagOffset = 21 // Отдельная константа для смещения тега
 
-        for textField in textFields {
-            // Получаем вью, в котором находится текстовое поле
-            if let parentView = textField.superview {
-                // Проверяем, скрыто ли вью, в котором находится текстовое поле
-                if !isViewHidden(parentView, mainStackView: mainStackView) {
-                    if textField.text?.isEmpty ?? true {
-                        hasEmptyField = true
-                        textField.backgroundColor = UIColor(red: 235/255, green: 87/255, blue: 87/255, alpha: 0.15)
-                    }
-                }
+        // Главная функция, проверяющая текстовые поля
+        func checkTextFields() {
+            for textField in textFields {
+                handleTextField(textField)
             }
         }
 
+        // Обработка каждого отдельного текстового поля
+        func handleTextField(_ textField: UITextField) {
+            // Получаем вью, в котором находится текстовое поле
+            guard let parentView = textField.superview else { return }
+            
+            // Проверяем, скрыто ли вью, в котором находится текстовое поле
+            if isViewVisible(parentView) {
+                handleEmptyTextField(textField)
+            }
+        }
+
+        // Проверка, видимо ли данное вью
+        func isViewVisible(_ view: UIView) -> Bool {
+            return !isViewHidden(view, mainStackView: mainStackView)
+        }
+
+        // Обработка пустого текстового поля
+        func handleEmptyTextField(_ textField: UITextField) {
+            // Проверка, пусто ли текстовое поле
+            if textField.text?.isEmpty ?? true {
+                hasEmptyField = true
+                setTextFieldBackgroundToRed(textField)
+            }
+        }
+
+        // Установка фона для текстового поля
+        func setTextFieldBackgroundToRed(_ textField: UITextField) {
+            // Установка цвета фона для пустого текстового поля
+            textField.backgroundColor = UIColor(red: 235/255, green: 87/255, blue: 87/255, alpha: 0.15)
+        }
+
+
         // Проверяем, есть ли незаполненные поля
+        checkTextFields()
         if hasEmptyField {
             // Показываем уведомление что не все поля заполнены
             UtilityManager.shared.showAlert(from: controller, title: "Не все поля заполнены", message: "Или заполнены не корректно. Проверьте все поля помеченные красным")
