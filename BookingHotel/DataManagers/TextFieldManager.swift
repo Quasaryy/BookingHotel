@@ -34,6 +34,9 @@ class TextFieldManager: NSObject {
     private let placeholderAdjustment: CGFloat = 1.0
     
     private var previousText: String?
+    private let fontNameRegular = "SFProDisplay-Regular"
+    private let placeholderForPhoneNumber = "Номер телефона"
+    private let maskPhoneNumber = "+7 (***) ***-**-**"
     
     // Синглтон экземпляр класса
     static var shared = TextFieldManager()
@@ -48,14 +51,14 @@ extension TextFieldManager: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if let placeholderLabel = textField.viewWithTag(100) as? UILabel {
             UIView.animate(withDuration: 0.3) {
-                placeholderLabel.font = UIFont(name: "SFProDisplay-Regular", size: self.sizeSmallPlaceholder)
+                placeholderLabel.font = UIFont(name: self.fontNameRegular, size: self.sizeSmallPlaceholder)
                 placeholderLabel.frame.origin = CGPoint(x: self.leftPadding, y: self.placeholderPosotion)
             }
         }
         
         // Устанавливаем маску для ввода номера телефона, если поле для ввода пустое или nil
-        if textField.placeholder == "Номер телефона" && (textField.text == nil || textField.text?.isEmpty == true) {
-            textField.text = "+7 (***) ***-**-**"
+        if textField.placeholder == placeholderForPhoneNumber && (textField.text == nil || textField.text?.isEmpty == true) {
+            textField.text = maskPhoneNumber
         }
     }
     
@@ -63,7 +66,7 @@ extension TextFieldManager: UITextFieldDelegate {
         if let placeholderLabel = textField.viewWithTag(100) as? UILabel, textField.text?.isEmpty == true {
             // Если текстовое поле пустое после окончания редактирования, возвращаем плейсхолдер на исходную позицию с анимацией
             UIView.animate(withDuration: 0.3) {
-                placeholderLabel.font = UIFont(name: "SFProDisplay-Regular", size: self.sizeNormalPlaceHolder)
+                placeholderLabel.font = UIFont(name: self.fontNameRegular, size: self.sizeNormalPlaceHolder)
                 placeholderLabel.frame.origin = CGPoint(x: self.leftPadding, y: (self.textFieldHeight - self.sizeNormalPlaceHolder) / 2)
             }
             // Удаляем текст из текстового поля
@@ -86,7 +89,7 @@ extension TextFieldManager: UITextFieldDelegate {
         }
         
         // Проверка на полноту ввода номера телефона и изменение цвета
-        if textField.placeholder == "Номер телефона" {
+        if textField.placeholder == placeholderForPhoneNumber {
             let phoneNumber = textField.text ?? ""
             
             // Проверяем, содержит ли номер телефона звездочки
@@ -126,7 +129,7 @@ extension TextFieldManager: UITextFieldDelegate {
             // Настройка и добавление плейсхолдера в текстовое поле
             let placeholderLabel = UILabel()
             placeholderLabel.text = textField.placeholder
-            placeholderLabel.font = UIFont(name: "SFProDisplay-Regular", size: sizeNormalPlaceHolder)
+            placeholderLabel.font = UIFont(name: self.fontNameRegular, size: sizeNormalPlaceHolder)
             placeholderLabel.textColor = UIColor(red: 169/255, green: 171/255, blue: 183/255, alpha: 1)
             placeholderLabel.frame.size = CGSize(width: textField.frame.width - 32, height: 17)
             placeholderLabel.frame.origin = CGPoint(x: leftPadding, y: ((textField.frame.height - sizeNormalPlaceHolder) / 2) - placeholderAdjustment)
@@ -144,7 +147,7 @@ extension TextFieldManager: UITextFieldDelegate {
             textField.addSubview(placeholderLabel)
             
             // Добавляем обработчик изменений текста для поля с плейсхолдером "Номер телефона"
-            if textField.placeholder == "Номер телефона" {
+            if textField.placeholder == placeholderForPhoneNumber {
                 textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
             }
         }
@@ -155,7 +158,7 @@ extension TextFieldManager: UITextFieldDelegate {
     // Метод formattedNumber выполняет форматирование номера телефона согласно маске
     func formattedNumber(number: String) -> String {
         let cleanPhoneNumber = number // Получаем чистый номер телефона без форматирования
-        let mask = "+7 (***) ***-**-**" // Задаем маску для номера телефона
+        let mask = maskPhoneNumber // Задаем маску для номера телефона
         
         var result = "" // Итоговая отформатированная строка номера
         var index = cleanPhoneNumber.startIndex // Индекс для обхода чистого номера
@@ -219,7 +222,7 @@ extension TextFieldManager: UITextFieldDelegate {
     // Функция findCursorPosition находит позицию курсора в тексте с учетом маски
     func findCursorPosition(input: String, cursor: Int) -> Int {
         // Задаем маску для номера телефона
-        let mask = "+7 (***) ***-**-**"
+        let mask = maskPhoneNumber
         
         // Инициализируем переменную cursorPosition для отслеживания позиции курсора
         var cursorPosition = 0
