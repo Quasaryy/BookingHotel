@@ -96,7 +96,6 @@ extension ActionManager {
             textField.backgroundColor = UIColor(red: 235/255, green: 87/255, blue: 87/255, alpha: 0.15)
         }
 
-
         // Проверяем, есть ли незаполненные поля
         checkTextFields()
         if hasEmptyField {
