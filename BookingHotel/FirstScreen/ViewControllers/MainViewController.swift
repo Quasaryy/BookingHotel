@@ -31,19 +31,24 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Первоначальная настройка UI
-        UIManager.shared.setupFirstScreenUI(
+        // Создаем экземпляр структуры FirstScreenUISettings
+        let settings = FirstScreenUISettings(
             viewController: self,
             tableView: tableView,
             blueButton: blueButton,
             bottomViewWithButton: bottomViewWithButton,
             whiteView: whiteView,
-            url: url
-        ) { [weak self] hotelData in
-            self?.dataModelHotel = hotelData
-        }
+            navigationTitle: nil,
+            url: url,
+            completion: { [weak self] hotelData in
+                self?.dataModelHotel = hotelData
+            }
+        )
         
+        // Первоначальная настройка UI
+        UIManager.shared.setupFirstScreenUI(settings: settings)
     }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
