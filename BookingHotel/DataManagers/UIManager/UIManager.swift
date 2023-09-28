@@ -28,31 +28,31 @@ extension UIManager {
     
     // MARK: - Первый экран
     
-    func setupFirstScreenUI(settings: FirstScreenUISettings) {
+    func setupFirstScreenUI(for screen: FirstScreenUISettings) {
         // Установка делегатов для управления поведением таблицы
-        settings.tableView.delegate = settings.viewController as? UITableViewDelegate
-        settings.tableView.dataSource = settings.viewController as? UITableViewDataSource
+        screen.tableView.delegate = screen.viewController as? UITableViewDelegate
+                                        screen.tableView.dataSource = screen.viewController as? UITableViewDataSource
         
         // Настройка закругления кнопки
-        UtilityManager.shared.cornerRadius(for: settings.blueButton, radius: 15)
+        UtilityManager.shared.cornerRadius(for: screen.blueButton, radius: 15)
         
         // Настройка границ нижнего вида
-        UtilityManager.shared.configureBordersForBottomView(view: settings.bottomViewWithButton)
+        UtilityManager.shared.configureBordersForBottomView(view: screen.bottomViewWithButton)
         
         // Настройка навигационной панели
-        UtilityManager.shared.setupNavigationBar(for: settings.viewController)
+        UtilityManager.shared.setupNavigationBar(for: screen.viewController)
         
         // Регистрация XIB для ячеек таблицы
-        settings.tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainCell")
-        settings.tableView.register(UINib(nibName: "Main2TableViewCell", bundle: nil), forCellReuseIdentifier: "MainSecondCell")
+        screen.tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainCell")
+        screen.tableView.register(UINib(nibName: "Main2TableViewCell", bundle: nil), forCellReuseIdentifier: "MainSecondCell")
         
         // Запрос данных с удаленного сервера для модели данных
-        NetworkManager.shared.getDataFromRemoteServer(urlString: settings.url, tableView: settings.tableView, from: settings.viewController) { hotelData in
-            settings.completion(hotelData)
+        NetworkManager.shared.getDataFromRemoteServer(urlString: screen.url, tableView: screen.tableView, from: screen.viewController) { hotelData in
+            screen.completion(hotelData)
         }
         
         // Чтобы при оттягивании таблицы вниз, пользователь видел белый фон, а не фон таблицы
-        TableViewManager.shared.whiteBackgroundWhenPullingTable(view: settings.whiteView, tableView: settings.tableView)
+        TableViewManager.shared.whiteBackgroundWhenPullingTable(view: screen.whiteView, tableView: screen.tableView)
     }
     
     // MARK: Первая кастомная ячейка

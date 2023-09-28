@@ -45,6 +45,7 @@
 		D28363CF2AAC7C8F0031DDAF /* SecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D28363CD2AAC7C8F0031DDAF /* SecondTableViewCell.xib */; };
 		D28746E12AA9CC30003CB32D /* NestedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28746E02AA9CC30003CB32D /* NestedTableViewController.swift */; };
 		D28E47BA2AC4E99700381C77 /* FirstScreenUISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E47B92AC4E99700381C77 /* FirstScreenUISettings.swift */; };
+		D28E47BE2AC4F37E00381C77 /* ActionManagerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E47BD2AC4F37E00381C77 /* ActionManagerSetting.swift */; };
 		D2AA2E382AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */; };
 		D2B62DA02AABA3B3003E7E42 /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B62D9F2AABA3B3003E7E42 /* Rooms.swift */; };
 		D2E6EA982AA77CB6002413FA /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */; };
@@ -92,6 +93,7 @@
 		D28363CD2AAC7C8F0031DDAF /* SecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondTableViewCell.xib; sourceTree = "<group>"; };
 		D28746E02AA9CC30003CB32D /* NestedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTableViewController.swift; sourceTree = "<group>"; };
 		D28E47B92AC4E99700381C77 /* FirstScreenUISettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenUISettings.swift; sourceTree = "<group>"; };
+		D28E47BD2AC4F37E00381C77 /* ActionManagerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManagerSetting.swift; sourceTree = "<group>"; };
 		D2AA2E372AA76FD600E6CCAA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		D2B62D9F2AABA3B3003E7E42 /* Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
 		D2E6EA972AA77CB6002413FA /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
@@ -223,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				D2326D0B2AA64514009B35FD /* NetworkManager.swift */,
-				D277951C2AB2F9C10096180C /* UIManager.swift */,
 				D26F84062AA8654C00D1F229 /* Logger.swift */,
 				D26EFEFF2AAB05D900E05F4A /* UtilityManager.swift */,
 				D252B05E2AAF62F1003A7A4C /* TextFieldManager.swift */,
@@ -231,9 +232,9 @@
 				D26EFF012AAB133800E05F4A /* AnimationManager.swift */,
 				D26EFF032AAB1A5F00E05F4A /* DynamicCreatingViewManager.swift */,
 				D26EFF092AAB359200E05F4A /* SliderManager.swift */,
-				D277951A2AB28B930096180C /* ActionManager.swift */,
+				D28E47BC2AC4F33C00381C77 /* ActionManager */,
 				D23DF7A62AB0B3CA00242755 /* ScrollViewManager.swift */,
-				D28E47B92AC4E99700381C77 /* FirstScreenUISettings.swift */,
+				D28E47BB2AC4EC1100381C77 /* UIManager */,
 				D2FADEA12AB477EC00B45290 /* Custom */,
 			);
 			path = DataManagers;
@@ -273,6 +274,24 @@
 				D241AB922AACFD5B007BE1BC /* SecondCollectionViewCell.xib */,
 			);
 			path = Xib;
+			sourceTree = "<group>";
+		};
+		D28E47BB2AC4EC1100381C77 /* UIManager */ = {
+			isa = PBXGroup;
+			children = (
+				D277951C2AB2F9C10096180C /* UIManager.swift */,
+				D28E47B92AC4E99700381C77 /* FirstScreenUISettings.swift */,
+			);
+			path = UIManager;
+			sourceTree = "<group>";
+		};
+		D28E47BC2AC4F33C00381C77 /* ActionManager */ = {
+			isa = PBXGroup;
+			children = (
+				D277951A2AB28B930096180C /* ActionManager.swift */,
+				D28E47BD2AC4F37E00381C77 /* ActionManagerSetting.swift */,
+			);
+			path = ActionManager;
 			sourceTree = "<group>";
 		};
 		D2A3C6F52AAA93B4002D08AC /* FirstScreen */ = {
@@ -402,6 +421,7 @@
 				D26EFF022AAB133800E05F4A /* AnimationManager.swift in Sources */,
 				D27795212AB395170096180C /* CustomNavigationController.swift in Sources */,
 				D22D92802AA71BF2004EA4E2 /* MainCollectionViewCell.swift in Sources */,
+				D28E47BE2AC4F37E00381C77 /* ActionManagerSetting.swift in Sources */,
 				D27EF0D92AAF0D3E006233DB /* ThirdViewController.swift in Sources */,
 				D23DF7A72AB0B3CA00242755 /* ScrollViewManager.swift in Sources */,
 				D277951D2AB2F9C10096180C /* UIManager.swift in Sources */,
@@ -576,7 +596,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,7 +629,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

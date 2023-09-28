@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
         )
         
         // Первоначальная настройка UI
-        UIManager.shared.setupFirstScreenUI(settings: settings)
+        UIManager.shared.setupFirstScreenUI(for: settings)
     }
 
     

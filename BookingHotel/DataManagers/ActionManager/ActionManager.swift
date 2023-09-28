@@ -81,25 +81,31 @@ extension ActionManager {
     }
     
     // Основной метод кнопки оплатить
-    func payButtonAction(sender: UIButton, textFields: [UITextField], views: [UIView], viewConstraints: [NSLayoutConstraint], stacksInViews: [UIStackView], buttonsUpDownPlus: [UIButton], scrollView: UIScrollView, mainStackView: UIStackView, controller: UIViewController, performSegue: @escaping () -> Void) {
+    func payButtonAction(uiContext: UIContext, actionContext: ActionContext) {
         let tagOffset = 21
         
         // Проверка наличия пустых полей
-        let hasEmptyField = checkTextFields(textFields, mainStackView: mainStackView)
+        let hasEmptyField = checkTextFields(uiContext.textFields, mainStackView: uiContext.mainStackView)
         
         if hasEmptyField {
             // Показываем уведомление если есть пустые поля
-            UtilityManager.shared.showAlert(from: controller, title: "Не все поля заполнены", message: "Или заполнены не корректно. Проверьте все поля помеченные красным")
+            UtilityManager.shared.showAlert(from: actionContext.controller, title: "Не все поля заполнены", message: "Или заполнены не корректно. Проверьте все поля помеченные красным")
             // Обрабатываем незаполненные поля
-            handleUnfilledFields(in: views, withConstraints: viewConstraints, stacks: stacksInViews, mainStackView: mainStackView, sender: sender, controller: controller, buttons: buttonsUpDownPlus, tagOffset: tagOffset)
+            handleUnfilledFields(in: uiContext.views,
+                                 withConstraints: uiContext.viewConstraints,
+                                 stacks: uiContext.stacksInViews, 
+                                 mainStackView: uiContext.mainStackView,
+                                 sender: actionContext.sender,
+                                 controller: actionContext.controller,
+                                 buttons: uiContext.buttonsUpDownPlus, tagOffset: tagOffset)
         } else {
             // Если все поля заполнены, выполняем переход
-            UtilityManager.shared.changeBackButtonTextAndColor(for: controller)
-            performSegue()
+            UtilityManager.shared.changeBackButtonTextAndColor(for: actionContext.controller)
+            actionContext.performSegue()
         }
         
-        let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height + 33)
-        scrollView.setContentOffset(bottomOffset, animated: true)
+        let bottomOffset = CGPoint(x: 0, y: uiContext.scrollView.contentSize.height - uiContext.scrollView.bounds.size.height + 33)
+        uiContext.scrollView.setContentOffset(bottomOffset, animated: true)
     }
     
     private func isViewHidden(_ view: UIView?, mainStackView: UIStackView) -> Bool {

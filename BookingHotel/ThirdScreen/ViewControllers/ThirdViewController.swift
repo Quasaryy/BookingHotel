@@ -83,9 +83,25 @@ class ThirdViewController: UIViewController {
     
     // Кнопка оплатить
     @IBAction func payButtonTapped(_ sender: UIButton) {
-        ActionManager.shared.payButtonAction(sender: sender, textFields: textFields, views: views, viewConstraints: viewConstaraints, stacksInViews: stacksInViews, buttonsUpDownPlus: buttonsUpDownPlus, scrollView: scrollView, mainStackView: mainStackView, controller: self, performSegue: { [weak self] in
-                self?.performSegue(withIdentifier: "ToFinalScreen", sender: self)
-            })
+        let uiContext = UIContext(
+            textFields: textFields,
+            views: views,
+            viewConstraints: viewConstaraints,
+            stacksInViews: stacksInViews,
+            buttonsUpDownPlus: buttonsUpDownPlus,
+            scrollView: scrollView,
+            mainStackView: mainStackView
+        )
+
+        let actionContext = ActionContext(
+            sender: sender,
+            controller: self,
+            performSegue: { [weak self] in
+                self?.performSegue(withIdentifier: "ToFinalScreen", sender: nil)
+            }
+        )
+        
+        ActionManager.shared.payButtonAction(uiContext: uiContext, actionContext: actionContext)
         }
     
 }
