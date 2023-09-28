@@ -51,7 +51,6 @@ class SecondViewController: UIViewController {
     
 }
 
-
 // MARK: - Table View
 
 extension SecondViewController: UITableViewDelegate, UITableViewDataSource {

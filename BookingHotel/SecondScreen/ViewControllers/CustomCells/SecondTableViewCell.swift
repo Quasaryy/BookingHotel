@@ -71,7 +71,8 @@ class SecondTableViewCell: UITableViewCell {
 extension SecondTableViewCell {
     
     // Для таргета кнопки
-    @objc func chooseRoomButtonAction() {
+    @objc 
+    func chooseRoomButtonAction() {
         delegate?.changeBackButtonTextAndColor()
     }
     

@@ -113,7 +113,6 @@ extension UIManager {
         TableViewManager.shared.setupViewAppearance(customCell: customCell)
     }
     
-    
     // MARK: - Второй экран
     
     func setupSecondScreenUI(

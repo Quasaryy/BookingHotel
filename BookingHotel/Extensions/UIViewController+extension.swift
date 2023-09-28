@@ -10,7 +10,9 @@ import UIKit
 
 // Расширение для UIViewController чтобы добавить метод hideKeyboard
 extension UIViewController {
-    @objc func hideKeyboard() {
+    
+    @objc
+    func hideKeyboard() {
         view.endEditing(true)
     }
     

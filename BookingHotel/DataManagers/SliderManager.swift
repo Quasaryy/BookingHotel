@@ -122,7 +122,8 @@ extension SliderManager {
     
     // MARK: Page Control
     
-    @objc func pageControlDidChange(sender: UIPageControl) {
+    @objc 
+    func pageControlDidChange(sender: UIPageControl) {
         guard let collectionView = currentCollectionView else { return }
         changePage(sender: sender, collectionView: collectionView)
         

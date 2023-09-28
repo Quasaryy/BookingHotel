@@ -180,7 +180,8 @@ extension TextFieldManager: UITextFieldDelegate {
     }
     
     // Метод textFieldDidChange обрабатывает изменения в текстовом поле и форматирует ввод номера телефона
-    @objc func textFieldDidChange(_ textField: UITextField) {
+    @objc 
+    func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
         
         // Фильтруем введенный текст, оставляя только цифры
@@ -228,7 +229,7 @@ extension TextFieldManager: UITextFieldDelegate {
         var inputIndex = 0
         
         // Проходим по каждому символу в маске
-        for ch in mask {
+        for maskCharacter in mask {
             // Проверяем, достигли ли мы заданной позиции курсора
             if inputIndex >= cursor {
                 break
@@ -238,7 +239,7 @@ extension TextFieldManager: UITextFieldDelegate {
             cursorPosition += 1
             
             // Если текущий символ в маске является символом "*" (пропуском), то увеличиваем inputIndex
-            if ch == "*" {
+            if maskCharacter == "*" {
                 inputIndex += 1
             }
         }
@@ -269,7 +270,8 @@ extension TextFieldManager: UITextFieldDelegate {
     }
     
     // Метод, вызываемый при тапе по view, чтобы скрыть клавиатуру
-    @objc func hideKeyboard() {
+    @objc 
+    func hideKeyboard() {
         // Закрываем клавиатуру, прекращая редактирование
         viewController?.view.endEditing(true)
     }

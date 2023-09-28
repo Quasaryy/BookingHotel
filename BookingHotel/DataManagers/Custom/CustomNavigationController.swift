@@ -30,7 +30,8 @@ extension CustomNavigationController: UINavigationControllerDelegate {
         viewController.navigationItem.leftBarButtonItem = backButton
     }
     
-    @objc func backButtonTapped() {
+    @objc 
+    func backButtonTapped() {
         self.popViewController(animated: true)
     }
     

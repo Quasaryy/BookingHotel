@@ -49,7 +49,6 @@ class MainViewController: UIViewController {
         UIManager.shared.setupFirstScreenUI(for: settings)
     }
     
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
