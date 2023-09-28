@@ -68,12 +68,12 @@ extension ActionManager {
     }
     
     // Функция для обработки незаполненных полей и сворачивания/разворачивания соответствующих вью
-    func handleUnfilledFields(in views: [UIView], withConstraints viewConstraints: [NSLayoutConstraint], stacks: [UIStackView], mainStackView: UIStackView, sender: UIButton, controller: UIViewController, buttons: [UIButton], tagOffset: Int) {
-        for (index, view) in views.enumerated() {
-            // Проверяем, является ли видимым данное вью
-            if !isViewHidden(view, mainStackView: mainStackView) {
-                UtilityManager.shared.changeSizeforView(constraints: viewConstraints, stackViews: stacks, sender: sender, in: controller.view, isCollapsible: false, shouldChangeImage: false, withTag: index + tagOffset)
-                if let button = buttons.first(where: { $0.tag == index + 1 }) {
+    func handleUnfilledFields(uiContext: UIContext, tagOffset: Int) {
+        for (index, view) in uiContext.views.enumerated() {
+            if !isViewHidden(view, mainStackView: uiContext.mainStackView) {
+                UtilityManager.shared.changeSizeforView(constraints: uiContext.viewConstraints, stackViews: uiContext.stacksInViews, sender: uiContext.buttonsUpDownPlus.first!, in: uiContext.mainStackView, isCollapsible: false, shouldChangeImage: false, withTag: index + tagOffset)
+                
+                if let button = uiContext.buttonsUpDownPlus.first(where: { $0.tag == index + 1 }) {
                     button.setImage(UIImage(named: "upArrow"), for: .normal)
                 }
             }
@@ -82,28 +82,24 @@ extension ActionManager {
     
     // Основной метод кнопки оплатить
     func payButtonAction(uiContext: UIContext, actionContext: ActionContext) {
+        // Устанавливаем смещение тега для кнопок
         let tagOffset = 21
-        
-        // Проверка наличия пустых полей
+        // Проверяем, есть ли пустые поля ввода
         let hasEmptyField = checkTextFields(uiContext.textFields, mainStackView: uiContext.mainStackView)
-        
+        // Если есть пустые поля
         if hasEmptyField {
-            // Показываем уведомление если есть пустые поля
+            // Показываем предупреждение пользователю
             UtilityManager.shared.showAlert(from: actionContext.controller, title: "Не все поля заполнены", message: "Или заполнены не корректно. Проверьте все поля помеченные красным")
-            // Обрабатываем незаполненные поля
-            handleUnfilledFields(in: uiContext.views,
-                                 withConstraints: uiContext.viewConstraints,
-                                 stacks: uiContext.stacksInViews, 
-                                 mainStackView: uiContext.mainStackView,
-                                 sender: actionContext.sender,
-                                 controller: actionContext.controller,
-                                 buttons: uiContext.buttonsUpDownPlus, tagOffset: tagOffset)
+            // Обрабатываем вьюшки, где поля не заполнены
+            handleUnfilledFields(uiContext: uiContext, tagOffset: tagOffset)
         } else {
-            // Если все поля заполнены, выполняем переход
+            // Если все поля заполнены, изменяем текст и цвет кнопки "Назад"
             UtilityManager.shared.changeBackButtonTextAndColor(for: actionContext.controller)
+            // Выполняем переход к следующему экрану
             actionContext.performSegue()
         }
         
+        // Прокручиваем ScrollView до нижнего края (когда открываются вью с незаполенными полями
         let bottomOffset = CGPoint(x: 0, y: uiContext.scrollView.contentSize.height - uiContext.scrollView.bounds.size.height + 33)
         uiContext.scrollView.setContentOffset(bottomOffset, animated: true)
     }

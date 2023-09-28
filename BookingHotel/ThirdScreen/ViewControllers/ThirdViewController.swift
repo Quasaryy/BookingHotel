@@ -18,16 +18,16 @@ class ThirdViewController: UIViewController {
     // Переменная для отслеживания текущего индекса скрытого вью
     private var currentViewIndex = 4
     // Создаем обект PaymentHandler
-    lazy var paymentHandler: PaymentHandler = {
-        return PaymentHandler(viewController: self,
-                              textFields: textFields,
-                              views: views,
-                              viewConstraints: viewConstaraints,
-                              stacksInViews: stacksInViews,
-                              buttonsUpDownPlus: buttonsUpDownPlus,
-                              scrollView: scrollView,
-                              mainStackView: mainStackView)
-    }()
+    lazy var paymentHandler = PaymentHandler(
+        viewController: self,
+        textFields: textFields,
+        views: views,
+        viewConstraints: viewConstaraints,
+        stacksInViews: stacksInViews,
+        buttonsUpDownPlus: buttonsUpDownPlus,
+        scrollView: scrollView,
+        mainStackView: mainStackView
+    )
     
     // MARK: - IB Outlets
     

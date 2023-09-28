@@ -31,7 +31,7 @@ extension UIManager {
     func setupFirstScreenUI(for screen: FirstScreenUISettings) {
         // Установка делегатов для управления поведением таблицы
         screen.tableView.delegate = screen.viewController as? UITableViewDelegate
-                                        screen.tableView.dataSource = screen.viewController as? UITableViewDataSource
+        screen.tableView.dataSource = screen.viewController as? UITableViewDataSource
         
         // Настройка закругления кнопки
         UtilityManager.shared.cornerRadius(for: screen.blueButton, radius: 15)

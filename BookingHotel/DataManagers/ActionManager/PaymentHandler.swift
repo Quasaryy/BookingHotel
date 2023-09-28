@@ -42,7 +42,7 @@ class PaymentHandler {
         self.mainStackView = mainStackView
     }
 }
- 
+
 // MARK: Methods
 
 extension PaymentHandler {

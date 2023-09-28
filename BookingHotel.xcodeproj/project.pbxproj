@@ -283,7 +283,6 @@
 			children = (
 				D277951C2AB2F9C10096180C /* UIManager.swift */,
 				D28E47B92AC4E99700381C77 /* FirstScreenUISettings.swift */,
-				D28E47BF2AC5D27A00381C77 /* PaymentHandler.swift */,
 			);
 			path = UIManager;
 			sourceTree = "<group>";
@@ -293,6 +292,7 @@
 			children = (
 				D277951A2AB28B930096180C /* ActionManager.swift */,
 				D28E47BD2AC4F37E00381C77 /* ActionManagerSetting.swift */,
+				D28E47BF2AC5D27A00381C77 /* PaymentHandler.swift */,
 			);
 			path = ActionManager;
 			sourceTree = "<group>";

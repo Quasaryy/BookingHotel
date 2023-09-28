@@ -20,6 +20,20 @@ class MainViewController: UIViewController {
     // Урл для URLSession
     private let url = "https://run.mocky.io/v3/35e0d18e-2521-4f1b-a575-f0fe366f66e3"
     
+    // Создаем экземпляр структуры FirstScreenUISettings
+    lazy var settings = FirstScreenUISettings(
+        viewController: self,
+        tableView: tableView,
+        blueButton: blueButton,
+        bottomViewWithButton: bottomViewWithButton,
+        whiteView: whiteView,
+        navigationTitle: nil,
+        url: url,
+        completion: { [weak self] hotelData in
+            self?.dataModelHotel = hotelData
+        }
+    )
+    
     // MARK: - IB Outlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -31,24 +45,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Создаем экземпляр структуры FirstScreenUISettings
-        let settings = FirstScreenUISettings(
-            viewController: self,
-            tableView: tableView,
-            blueButton: blueButton,
-            bottomViewWithButton: bottomViewWithButton,
-            whiteView: whiteView,
-            navigationTitle: nil,
-            url: url,
-            completion: { [weak self] hotelData in
-                self?.dataModelHotel = hotelData
-            }
-        )
-        
         // Первоначальная настройка UI
         UIManager.shared.setupFirstScreenUI(for: settings)
     }
-
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
