@@ -106,7 +106,7 @@ extension SliderManager {
     
     // MARK: UIScrollViewDelegate
     
-    // Метод вызывается при окончании декелерации скролла, обновляя индикатор текущей страницы в UIPageControl.
+    // Метод вызывается при окончании декелерации скролла, обновляя индикатор текущей страницы в UIPageControl
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         guard let collectionView = scrollView as? UICollectionView else { return }
         

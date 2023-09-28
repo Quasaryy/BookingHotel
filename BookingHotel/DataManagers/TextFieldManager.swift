@@ -70,7 +70,6 @@ extension TextFieldManager: UITextFieldDelegate {
                 placeholderLabel.frame.origin = CGPoint(x: self.leftPadding, y: (self.textFieldHeight - self.sizeNormalPlaceHolder) / 2)
             }
             // Удаляем текст из текстового поля
-            //textField.text = nil
             textField.backgroundColor = UIColor(red: 235/255, green: 87/255, blue: 87/255, alpha: 0.15)
         } else {
             // Если поле не пустое, возвращаем его старую окраску
