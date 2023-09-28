@@ -69,14 +69,17 @@ extension ActionManager {
     
     // Функция для обработки незаполненных полей и сворачивания/разворачивания соответствующих вью
     func handleUnfilledFields(uiContext: UIContext, tagOffset: Int) {
-        for (index, view) in uiContext.views.enumerated() {
-            if !isViewHidden(view, mainStackView: uiContext.mainStackView) {
-                UtilityManager.shared.changeSizeforView(constraints: uiContext.viewConstraints, stackViews: uiContext.stacksInViews, sender: uiContext.buttonsUpDownPlus.first!, in: uiContext.mainStackView, isCollapsible: false, shouldChangeImage: false, withTag: index + tagOffset)
-                
-                if let button = uiContext.buttonsUpDownPlus.first(where: { $0.tag == index + 1 }) {
-                    button.setImage(UIImage(named: "upArrow"), for: .normal)
-                }
-            }
+        for (index, view) in uiContext.views.enumerated() where !isViewHidden(view, mainStackView: uiContext.mainStackView) {
+            let newTag = index + tagOffset
+            UtilityManager.shared.changeSizeforView(
+                constraints: uiContext.viewConstraints,
+                stackViews: uiContext.stacksInViews,
+                sender: uiContext.buttonsUpDownPlus.first!,
+                in: uiContext.mainStackView,
+                isCollapsible: false,
+                shouldChangeImage: false,
+                withTag: newTag
+            )
         }
     }
     
