@@ -50,5 +50,3 @@ extension Main2TableViewCell {
     }
     
 }
-
-

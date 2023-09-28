@@ -25,7 +25,6 @@ class UtilityManager {
     
 }
 
-
 // MARK: - Methods
 
 extension UtilityManager {

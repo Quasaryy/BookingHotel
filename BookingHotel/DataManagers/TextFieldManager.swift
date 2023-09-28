@@ -163,16 +163,16 @@ extension TextFieldManager: UITextFieldDelegate {
         var index = cleanPhoneNumber.startIndex // Индекс для обхода чистого номера
         
         // Проходим по маске и заменяем символы '*' на соответствующие цифры из чистого номера
-        for ch in mask {
-            if ch == "*" {
+        for maskCharacter in mask {
+            if maskCharacter == "*" {
                 if index < cleanPhoneNumber.endIndex {
                     result.append(cleanPhoneNumber[index])
                     index = cleanPhoneNumber.index(after: index)
                 } else {
-                    result.append(ch)
+                    result.append(maskCharacter)
                 }
             } else {
-                result.append(ch)
+                result.append(maskCharacter)
             }
         }
         
@@ -275,4 +275,3 @@ extension TextFieldManager: UITextFieldDelegate {
     }
     
 }
-

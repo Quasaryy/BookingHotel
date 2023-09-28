@@ -94,7 +94,6 @@ extension DynamicCreatingViewManager {
         }
     }
     
-    
     // Приватный метод для создания нового горизонтального StackView
     private func createNewHorizontalStackView() -> UIStackView {
         let stackView = UIStackView()

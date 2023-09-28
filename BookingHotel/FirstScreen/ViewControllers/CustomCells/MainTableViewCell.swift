@@ -31,7 +31,6 @@ class MainTableViewCell: UITableViewCell {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     // MARK: - awakeFromNib
     
     override func awakeFromNib() {

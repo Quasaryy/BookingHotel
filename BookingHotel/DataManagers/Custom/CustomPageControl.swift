@@ -76,8 +76,8 @@ class CustomPageControl: UIPageControl {
                                       height: dotSize + Constants.containerInset.top + Constants.containerInset.bottom)
         
         for (index, dotView) in dotViews.enumerated() {
-            let x = startX + CGFloat(index) * (dotSize + dotSpacing)
-            dotView.frame = CGRect(x: x - (startX - Constants.containerInset.left),
+            let dotPositionX = startX + CGFloat(index) * (dotSize + dotSpacing)
+            dotView.frame = CGRect(x: dotPositionX - (startX - Constants.containerInset.left),
                                    y: Constants.containerInset.top,
                                    width: dotSize,
                                    height: dotSize)

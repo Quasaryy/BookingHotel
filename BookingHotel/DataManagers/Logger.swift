@@ -20,7 +20,6 @@ struct Logger {
 
 extension Logger {
     
-    
     // Метод для логирования информации об ответе от сервера
     static func logResponse(_ response: URLResponse) {
         guard isLoggingEnabled else { return }

@@ -123,4 +123,3 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-

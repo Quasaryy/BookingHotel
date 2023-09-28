@@ -15,7 +15,6 @@ class NestedTableViewController: UITableViewController {
     // Коллекция кастомных сепараторов для ячеек таблицы
     @IBOutlet var customSeparatorForTableCell: [UIView]!
     
-    
     // MARK: - viewDidLoad
     
     override func viewDidLoad() {

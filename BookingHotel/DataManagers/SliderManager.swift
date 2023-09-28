@@ -133,10 +133,10 @@ extension SliderManager {
     // Метод реагирующий на изменение выбранной страницы в UIPageControl
     func changePage(sender: UIPageControl, collectionView: UICollectionView) {
         // Рассчитываем новую позицию прокрутки, умножая текущую выбранную страницу на ширину ячейки коллекции.
-        let x = CGFloat(sender.currentPage) * collectionView.frame.size.width
+        let currentPageOffset = CGFloat(sender.currentPage) * collectionView.frame.size.width
         
         // Устанавливаем новую позицию прокрутки для коллекции, создавая CGPoint с новым значением x и текущим значением y (которое остается 0, так как прокрутка горизонтальная)
-        collectionView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
+        collectionView.setContentOffset(CGPoint(x: currentPageOffset, y: 0), animated: true)
     }
     
     // MARK: Конфигурируем слайдер
