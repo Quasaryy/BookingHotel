@@ -13,15 +13,24 @@ class ThirdViewController: UIViewController {
     
     // Синглтон модели данных для хранения информации об отеле, хотя для структуры синглтон не нужен
     private var dataModelCustomers  = Customers.shared
-    
     // Урл для URLSession
     private let url = "https://run.mocky.io/v3/e8868481-743f-4eb2-a0d7-2bc4012275c8"
-    
     // Переменная для отслеживания текущего индекса скрытого вью
     private var currentViewIndex = 4
-    
+    // Создаем обект PaymentHandler
+    lazy var paymentHandler: PaymentHandler = {
+        return PaymentHandler(viewController: self,
+                              textFields: textFields,
+                              views: views,
+                              viewConstraints: viewConstaraints,
+                              stacksInViews: stacksInViews,
+                              buttonsUpDownPlus: buttonsUpDownPlus,
+                              scrollView: scrollView,
+                              mainStackView: mainStackView)
+    }()
     
     // MARK: - IB Outlets
+    
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var buttonsUpDownPlus: [UIButton]!
@@ -78,31 +87,13 @@ class ThirdViewController: UIViewController {
     // Сворачивание и разворачивание секции
     @IBAction func upOrDownArrowButtonTapped(_ sender: UIButton) {
         let tagOffset = 20
-            ActionManager.shared.toggleSectionVisibility(sender: sender, constraints: viewConstaraints, stackViews: stacksInViews, in: self.view, withTag: tagOffset)
+        ActionManager.shared.toggleSectionVisibility(sender: sender, constraints: viewConstaraints, stackViews: stacksInViews, in: self.view, withTag: tagOffset)
     }
     
     // Кнопка оплатить
     @IBAction func payButtonTapped(_ sender: UIButton) {
-        let uiContext = UIContext(
-            textFields: textFields,
-            views: views,
-            viewConstraints: viewConstaraints,
-            stacksInViews: stacksInViews,
-            buttonsUpDownPlus: buttonsUpDownPlus,
-            scrollView: scrollView,
-            mainStackView: mainStackView
-        )
-
-        let actionContext = ActionContext(
-            sender: sender,
-            controller: self,
-            performSegue: { [weak self] in
-                self?.performSegue(withIdentifier: "ToFinalScreen", sender: nil)
-            }
-        )
-        
-        ActionManager.shared.payButtonAction(uiContext: uiContext, actionContext: actionContext)
-        }
+        paymentHandler.handlePaymentAction(for: sender)
+    }
     
 }
 
@@ -120,7 +111,7 @@ extension ThirdViewController {
         UIManager.shared.setupViewWithBorder(view: viewWithButton)
         UIManager.shared.setupKeyboardHiding(viewController: self, scrollView: scrollView)
     }
-
+    
     // Присваиваем из модели данные аутлетам
     private func updateUIWithModelData() {
         for hotel in self.hotelName {
