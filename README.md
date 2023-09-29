@@ -39,27 +39,6 @@
   - Extension for String
   - And many more
 
-
-# Перый экран с описанием отеля
-![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/1.png)
-
-# Вторая часть первого экрана
-![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/2.png)
-
-# Выбор номера
-![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/3.png)
-
-# Экран бронирования номера
-![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/4.png)
-
-# Вторая часть экрана бронирования номера
-![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/5.png)
-
-# Заполнение номера телефона по маске
-![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/6.png)
-
-# Подтверждение заказа
-![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/7.png)
-
 # Видео
 [![Watch the video](https://img.youtube.com/vi/rn5XewMEbSs/maxresdefault.jpg)](https://youtu.be/rn5XewMEbSs)
+
