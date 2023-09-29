@@ -19,7 +19,7 @@ class CustomNavigationController: UINavigationController {
 extension CustomNavigationController: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        guard navigationController.viewControllers.count > 1 else {
+        if viewController is MainViewController {
             viewController.navigationItem.leftBarButtonItem = nil
             return
         }
@@ -29,7 +29,7 @@ extension CustomNavigationController: UINavigationControllerDelegate {
         viewController.navigationItem.leftBarButtonItem = backButton
     }
     
-    @objc 
+    @objc
     func backButtonTapped() {
         self.popViewController(animated: true)
     }
