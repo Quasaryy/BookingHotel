@@ -22,18 +22,16 @@ jobs:
 
       - name: Build
         env:
-          scheme: ${{ 'default' }}
-          platform: ${{ 'iOS Simulator' }}
+          scheme: "BookingHotel"
+          platform: "iOS Simulator"
         run: |
-          if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=iOS Simulator,name=${{ env.DEVICE_NAME }}"
 
       - name: Test
         env:
-          scheme: ${{ 'default' }}
-          platform: ${{ 'iOS Simulator' }}
+          scheme: "BookingHotel"
+          platform: "iOS Simulator"
         run: |
-          if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\\.xcworkspace\\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\\.xcworkspace\\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\\.xcodeproj\\$`"; fi
           xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=iOS Simulator,name=${{ env.DEVICE_NAME }}"
