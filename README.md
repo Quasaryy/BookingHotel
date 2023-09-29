@@ -15,7 +15,7 @@
 # Tech Stack
 - **Language:** SWIFT 5
 - **IDE:** Xcode 15
-- **iOS:** 16
+- **iOS:** 17
 - **Archetecture:** MVC
 - **Frameworks:**  UIKit, Foundation, Core Animation
 - **Layout:** From Figma, Interface Builder
