@@ -13,10 +13,10 @@
 
 # Tech Stack
 - **Language:** SWIFT 5
-- **IDE:** Xcode
+- **IDE:** Xcode 15
 - **iOS:** 16
 - **Archetecture:** MVC
-- **Frameworks:**  UIKit, Foundation, Core Animation,
+- **Frameworks:**  UIKit, Foundation, Core Animation
 - **Layout:** From Figma, Interface Builder
 - **GCD:** Yes 
 - **Features:** 
