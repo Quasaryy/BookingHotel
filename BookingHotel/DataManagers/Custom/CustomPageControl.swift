@@ -12,7 +12,7 @@ class CustomPageControl: UIPageControl {
     // MARK: - Strutc
     
     // Константы, используемые в классе
-    private struct Constants {
+    private enum Constants {
         static let cornerRadius: CGFloat = 5.0
         static let containerInset: UIEdgeInsets = UIEdgeInsets(top: 5, left: 9, bottom: 5, right: 9)
         static let maxAlpha: CGFloat = 1

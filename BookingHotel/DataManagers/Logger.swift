@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Logger {
+enum Logger {
     
     // MARK: - Properties
     
