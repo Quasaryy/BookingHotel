@@ -8,6 +8,7 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Quasaryy_BookingHotel&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Quasaryy_BookingHotel)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Quasaryy_BookingHotel&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Quasaryy_BookingHotel)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Quasaryy_BookingHotel&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=Quasaryy_BookingHotel)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e07f6ef17f92487984bb2dc6480dc025)](https://app.codacy.com/gh/Quasaryy/BookingHotel/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/quasaryy/bookinghotel/badge)](https://www.codefactor.io/repository/github/quasaryy/bookinghotel)
 
 # Tech Stack
