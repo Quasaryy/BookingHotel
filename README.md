@@ -40,5 +40,26 @@
   - And many more
 
 # Видео
-[![Watch the video](https://img.youtube.com/vi/rn5XewMEbSs/maxresdefault.jpg)](https://youtu.be/rn5XewMEbSs)
+[![Watch the video](https://img.youtube.com/vi/6dWc197ImyQ/maxresdefault.jpg)](https://youtu.be/6dWc197ImyQ)
+
+# Перый экран с описанием отеля
+![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/1new.png)
+
+# Вторая часть первого экрана
+![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/2new.png)
+
+# Выбор номера
+![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/3new.png)
+
+# Экран бронирования номера
+![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/4new.png)
+
+# Вторая часть экрана бронирования номера
+![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/5new.png)
+
+# Заполнение номера телефона по маске
+![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/6new.png)
+
+# Подтверждение заказа
+![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/7new.png)
 
