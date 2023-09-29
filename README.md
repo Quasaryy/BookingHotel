@@ -12,7 +12,32 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/quasaryy/bookinghotel/badge)](https://www.codefactor.io/repository/github/quasaryy/bookinghotel)
 
 # Tech Stack
-Layout from Figma, MVC, GCD, UIKit, Core Animation, URLSession, TableView, CollectionView, ScrollView, Slider with page control, Custom Navigatiom bar, Filling text fields by mask, checking text field for right email, Custom place holders for text fields etc.
+- **Language:** SWIFT 5
+- **IDE:** Xcode
+- **iOS:** 16
+- **Archetecture:** MVC
+- **Frameworks:**  UIKit, Foundation, Core Animation,
+- **Layout:** From Figma, Interface Builder
+- **GCD:** Yes 
+- **Features:** 
+  - URLSession
+  - DataModel
+  - Rest API
+  - Json decoding and ecoding
+  - TableView
+  - CollectionView
+  - ScrollView
+  - Custom Sliders
+  - Custom page control
+  - Custom Navigation bar
+  - Filling text fields by mask
+  - Checking text field for right email
+  - Custom placeholders for text fields with animation
+  - Custom animation
+  - Extension for UIViewController
+  - Extension for String
+  - And many more
+
 
 # Перый экран с описанием отеля
 ![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/1.png)
