@@ -71,10 +71,11 @@ extension ActionManager {
     func handleUnfilledFields(uiContext: UIContext, tagOffset: Int) {
         for (index, view) in uiContext.views.enumerated() where !isViewHidden(view, mainStackView: uiContext.mainStackView) {
             let newTag = index + tagOffset
+            guard let firstButton = uiContext.buttonsUpDownPlus.first else { fatalError("buttonsUpDownPlus is nil") }
             UtilityManager.shared.changeSizeforView(
                 constraints: uiContext.viewConstraints,
                 stackViews: uiContext.stacksInViews,
-                sender: uiContext.buttonsUpDownPlus.first!,
+                sender: firstButton,
                 in: uiContext.mainStackView,
                 isCollapsible: false,
                 shouldChangeImage: false,

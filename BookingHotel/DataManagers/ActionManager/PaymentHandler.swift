@@ -60,14 +60,15 @@ extension PaymentHandler {
     }
     
     func makeActionContext(for sender: UIButton) -> ActionContext {
-        return ActionContext(
-            sender: sender,
-            controller: viewController!,
-            performSegue: { [weak self] in
-                self?.viewController?.performSegue(withIdentifier: "ToFinalScreen", sender: nil)
+        guard let controller = viewController else { fatalError("viewController is nil") }
+            return ActionContext(
+                    sender: sender,
+                    controller: controller,
+                    performSegue: { [weak self] in
+                        self?.viewController?.performSegue(withIdentifier: "ToFinalScreen", sender: nil)
+                    }
+                )
             }
-        )
-    }
     
     func handlePaymentAction(for sender: UIButton) {
         let uiContext = makeUIContext()
