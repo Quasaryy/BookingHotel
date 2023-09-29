@@ -77,9 +77,8 @@ extension ActionManager {
                 stackViews: uiContext.stacksInViews,
                 sender: firstButton,
                 in: uiContext.mainStackView,
-                isCollapsible: false,
-                shouldChangeImage: false,
-                withTag: newTag
+                withTag: newTag, isCollapsible: false,
+                shouldChangeImage: false
             )
         }
     }

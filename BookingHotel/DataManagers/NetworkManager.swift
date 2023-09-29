@@ -27,7 +27,7 @@ class NetworkManager {
 extension NetworkManager {
     
     // Метод для получения данных от удаленного сервера. Принимает UITableView и UIViewController для последующей обработки данных и обновления интерфейса
-    func getDataFromRemoteServer<T: Decodable>(urlString: String, tableView: UITableView? = nil, from viewController: UIViewController, completion: @escaping (T) -> Void
+    func getDataFromRemoteServer<T: Decodable>(urlString: String, from viewController: UIViewController, tableView: UITableView? = nil, completion: @escaping (T) -> Void
     ) {
         guard let url = URL(string: urlString) else { return }
         

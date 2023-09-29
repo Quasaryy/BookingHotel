@@ -84,7 +84,7 @@ extension UtilityManager {
     }
     
     // Метод изменения размера вью
-    func changeSizeforView(constraints: [NSLayoutConstraint], stackViews: [UIStackView], sender: UIButton, in view: UIView, isCollapsible: Bool = true, shouldChangeImage: Bool = true, withTag tag: Int) {
+    func changeSizeforView(constraints: [NSLayoutConstraint], stackViews: [UIStackView], sender: UIButton, in view: UIView, withTag tag: Int, isCollapsible: Bool = true, shouldChangeImage: Bool = true) {
         guard let stackView = stackViews.first(where: { $0.tag == tag }) else {
             return
         }

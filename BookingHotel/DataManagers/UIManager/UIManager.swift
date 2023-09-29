@@ -47,7 +47,7 @@ extension UIManager {
         screen.tableView.register(UINib(nibName: "Main2TableViewCell", bundle: nil), forCellReuseIdentifier: "MainSecondCell")
         
         // Запрос данных с удаленного сервера для модели данных
-        NetworkManager.shared.getDataFromRemoteServer(urlString: screen.url, tableView: screen.tableView, from: screen.viewController) { hotelData in
+        NetworkManager.shared.getDataFromRemoteServer(urlString: screen.url, from: screen.viewController, tableView: screen.tableView) { hotelData in
             screen.completion(hotelData)
         }
         
@@ -136,7 +136,7 @@ extension UIManager {
         viewController.navigationItem.title = navigationTitle
         
         // Запрос данных с удаленного сервера для модели данных
-        NetworkManager.shared.getDataFromRemoteServer(urlString: url, tableView: tableView, from: viewController) { roomsData in
+        NetworkManager.shared.getDataFromRemoteServer(urlString: url, from: viewController, tableView: tableView) { roomsData in
             completion(roomsData)
         }
     }
