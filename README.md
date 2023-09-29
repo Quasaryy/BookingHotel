@@ -39,9 +39,6 @@
   - Extension for String
   - And many more
 
-# Видео
-[![Watch the video](https://img.youtube.com/vi/6dWc197ImyQ/maxresdefault.jpg)](https://youtu.be/6dWc197ImyQ)
-
 # Перый экран с описанием отеля
 ![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/1new.png)
 
@@ -62,4 +59,7 @@
 
 # Подтверждение заказа
 ![Иллюстрация к проекту](https://github.com/Quasaryy/BookingHotel/blob/main/7new.png)
+
+# Видео
+[![Watch the video](https://img.youtube.com/vi/6dWc197ImyQ/maxresdefault.jpg)](https://youtu.be/6dWc197ImyQ)
 
