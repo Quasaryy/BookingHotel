@@ -93,7 +93,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             
             // Регистрируем ячейку и кастим как кастомную
-            let mainCell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! MainTableViewCell
+            guard let mainCell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
             
             // Настройка кастомной ячейки
             mainCell.configCell(dataModel: dataModelHotel)
@@ -103,7 +103,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             
             // Регистрируем ячейку и кастим как кастомную
-            let mainSecondCell = tableView.dequeueReusableCell(withIdentifier: "MainSecondCell", for: indexPath) as! Main2TableViewCell
+            guard let mainSecondCell = tableView.dequeueReusableCell(withIdentifier: "MainSecondCell", for: indexPath) as? Main2TableViewCell else { return UITableViewCell() }
             
             // Настройка кастомной ячейки
             mainSecondCell.configCell(dataModel: dataModelHotel, indexPath: indexPath)

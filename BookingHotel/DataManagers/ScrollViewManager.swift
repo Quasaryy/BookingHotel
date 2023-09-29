@@ -20,7 +20,7 @@ class ScrollViewManager: NSObject {
     private weak var viewController: UIViewController?
     
     // MARK: - Init
-
+    
     // Закрытый инициализатор, чтобы предотвратить создание новых экземпляров класса
     private override init() {}
     
@@ -55,7 +55,8 @@ extension ScrollViewManager: UIScrollViewDelegate {
     }
     
     // Метод, вызываемый перед появлением клавиатуры
-    @objc private func keyboardWillShow(notification: NSNotification) {
+    @objc
+    private func keyboardWillShow(notification: NSNotification) {
         // Получаем информацию из уведомления, включая размер клавиатуры
         guard let userInfo = notification.userInfo,
               let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
@@ -68,7 +69,8 @@ extension ScrollViewManager: UIScrollViewDelegate {
     }
     
     // Метод, вызываемый перед скрытием клавиатуры
-    @objc private func keyboardWillHide(notification: NSNotification) {
+    @objc
+    private func keyboardWillHide(notification: NSNotification) {
         // Устанавливаем нулевые отступы для scrollView, возвращая его в исходное состояние
         let contentInsets = UIEdgeInsets.zero
         scrollView?.contentInset = contentInsets

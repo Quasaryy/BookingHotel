@@ -66,7 +66,7 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Регистрируем ячейку и кастим как кастомную
-        let roomsCell = tableView.dequeueReusableCell(withIdentifier: "RoomsCell", for: indexPath) as! SecondTableViewCell
+        guard let roomsCell = tableView.dequeueReusableCell(withIdentifier: "RoomsCell", for: indexPath) as? SecondTableViewCell else { return UITableViewCell() }
         
         // Настройка кастомной ячейки
         roomsCell.configCell(dataModel: dataModelRooms, indexPath: indexPath, delegate: self)
