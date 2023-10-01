@@ -37,6 +37,7 @@
   - Custom animation
   - Extension for UIViewController
   - Extension for String
+  - Custom fonts
   - And many more
 
 # Перый экран с описанием отеля
