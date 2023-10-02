@@ -38,6 +38,7 @@
   - Extension for UIViewController
   - Extension for String
   - Custom fonts
+  - Segues
   - And many more
 
 # Перый экран с описанием отеля
