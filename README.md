@@ -18,7 +18,7 @@
 - **iOS:** 17
 - **Archetecture:** MVC
 - **Frameworks:**  UIKit, Foundation, Core Animation
-- **Layout:** From Figma, Interface Builder
+- **Layout:** From Figma, Interface Builder, Xib
 - **GCD:** Yes 
 - **Features:** 
   - URLSession
