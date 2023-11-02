@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     private let whiteView = UIView()
     
     // Урл для URLSession
-    private let url = "https://run.mocky.io/v3/35e0d18e-2521-4f1b-a575-f0fe366f66e3"
+    private let url = "https://run.mocky.io/v3/9dcf1c93-10dd-4d99-8f47-874d92883a9c"
     
     // Создаем экземпляр структуры FirstScreenUISettings
     lazy var settings = FirstScreenUISettings(

@@ -18,7 +18,7 @@ class SecondViewController: UIViewController {
     private var dataModelRooms = Rooms.shared
     
     // Урл для URLSession
-    private let url = "https://run.mocky.io/v3/f9a38183-6f95-43aa-853a-9c83cbb05ecd"
+    private let url = "https://run.mocky.io/v3/2a8ee4bb-ab26-4587-8881-bc85462a50c1"
         
     // MARK: - IB Outlets
     

@@ -14,7 +14,7 @@ class ThirdViewController: UIViewController {
     // Синглтон модели данных для хранения информации об отеле, хотя для структуры синглтон не нужен
     private var dataModelCustomers  = Customers.shared
     // Урл для URLSession
-    private let url = "https://run.mocky.io/v3/e8868481-743f-4eb2-a0d7-2bc4012275c8"
+    private let url = "https://run.mocky.io/v3/8be37676-d6bb-47db-81d5-760add161326"
     // Переменная для отслеживания текущего индекса скрытого вью
     private var currentViewIndex = 4
     // Создаем обект PaymentHandler
